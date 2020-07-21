@@ -19,23 +19,18 @@ Background
 Projects
 ======
 1. Reconstruction of focal amplifications
-
-    - **AmpliconArchitect** (maintainer)
-    - **PrepareAA** (developer)
-    - **AmpliconReconstructor** (developer)
+- **AmpliconArchitect** (maintainer)
+- **PrepareAA** (developer)
+- **AmpliconReconstructor** (developer)
 
 2. Alignment of optical maps
-
-    - **SegAligner** (developer)
-    - **FaNDOM** (co-developer)
+- **SegAligner** (developer)
+- **FaNDOM** (co-developer)
 
 3. Visualization of focal amplifications
+- **CycleViz** (developer)
 
-    - **CycleViz** (developer)
-
-- Other:
-
-    - **ecSimulator** (simulating focal amplifications)
-
-    - **ReactionDiffusionSimulator** (simulating and visualizing Turing patterns)
+4. Other:
+- **ecSimulator** (simulating focal amplifications)
+- **ReactionDiffusionSimulator** (simulating and visualizing Turing patterns)
 
