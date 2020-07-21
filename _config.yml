@@ -172,6 +172,26 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
+scholar:
+  style: apa
+  locale: en
+
+  sort_by: none
+  order: ascending
+
+  source: ./_pages
+  bibliography: refs.bib
+  bibliography_template: "{{reference}}"
+
+  replace_strings: true
+  join_strings:    true
+
+  details_dir:    bibliography
+  details_layout: bibtex.html
+  details_link:   Details
+
+  query: "@*"
+
 
 # Collections
 collections:
@@ -227,10 +247,6 @@ defaults:
       author_profile: true
       share: true
       comments: true
-      style: apa
-      bibliography: refs.bib
-      replace_strings: true
-      query: "@*"
       
   # _portfolio
   - scope:
