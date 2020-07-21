@@ -227,7 +227,6 @@ defaults:
       author_profile: true
       share: true
       comments: true
-    scholar:
       style: apa
       bibliography: refs.bib
       replace_strings: true
