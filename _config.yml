@@ -88,7 +88,7 @@ author:
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=jens+luebeck"
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=bn4vrPUAAAAJ"
   email            : jluebeck(at)ucsd.edu
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  researchgate     : "https://www.researchgate.net/profile/Jens_Luebeck"
   uri              :
   bitbucket        :
   codepen          :
@@ -175,18 +175,18 @@ kramdown:
 
 # Collections
 collections:
-#   teaching:
-#     output: true
-#     permalink: /:collection/:path/
+  teaching:
+    output: true
+    permalink: /:collection/:path/
   publications:
     output: true
     permalink: /:collection/:path/
-#   portfolio:
-#     output: true
-#     permalink: /:collection/:path/
-#   talks:
-#     output: true
-#     permalink: /:collection/:path/
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+  talks:
+    output: true
+    permalink: /:collection/:path/
 
 
 # Defaults
