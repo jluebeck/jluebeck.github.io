@@ -7,7 +7,7 @@ author_profile: true
 
 You can find my articles on my [Google Scholar profile](https://scholar.google.com/citations?hl=en&user=bn4vrPUAAAAJ).
 
-• Kim H, Nguyen N, Turner K, Wu S, Gujar A, Luebeck J, et al. “Frequent extrachromosomal oncogene amplification drives aggressive tumors.”  **Nature**. 2020 (Accepted, preprint on biorXiv).
+• Kim H, Nguyen N, Turner K, Wu S, Gujar A, Luebeck J, et al. “Frequent extrachromosomal oncogene amplification drives aggressive tumors.”  **Nature Genetics**. 2020 (Accepted, preprint on biorXiv).
     
 • **Luebeck J**, Coruh C, Dehkordi S, et al. “Integrated analysis of NGS and optical mapping resolves the complex structures of focal amplifications in cancer.”  **Nature Communications**. 2020. (Accepted, preprint on biorXiv).
     
