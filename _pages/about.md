@@ -12,9 +12,9 @@ Currently a  Ph.D. student with Professor Vineet Bafna at UC San Diego. I study 
 
 Background
 ======
-- B.S., Applied Computational & Mathematical Sciences (Biological & Life Sciences track), University of Washington, Seattle (2015).
-- M.S., Computer Science, University of California, San Diego (2019).
 - Ph.D., Bioinformatics & Systems Biology, University of California, San Diego (In progress).
+- M.S., Computer Science, University of California, San Diego (2019).
+- B.S., Applied Computational & Mathematical Sciences (Biological & Life Sciences track), University of Washington, Seattle (2015).
 
 Projects
 ======
