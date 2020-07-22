@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Graduate student in Bioinformatics & Systems Biology at UC San Diego"
+title: ""
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -19,18 +19,24 @@ Background
 Projects
 ======
 1. Reconstruction of focal amplifications
-- **AmpliconArchitect** (maintainer)
-- **PrepareAA** (developer)
-- **AmpliconReconstructor** (developer)
+- **AmpliconArchitect**: Detect and analyze focal amplifications with NGS data (maintainer).
+- **PrepareAA**: Standardize the process of using AmpliconArchitect.
+- **AmpliconReconstructor**: Reconstruct focal amplifications using NGS data and optical mapping.
 
 2. Alignment of optical maps
-- **SegAligner** (developer)
-- **FaNDOM** (co-developer)
+- **SegAligner**: Sensitive alignment of small reference genome segments to optical map contigs.
+- **FaNDOM**: Fast, open-source aligner for Bionano optical map data (co-developer).
 
 3. Visualization of focal amplifications
-- **CycleViz** (developer)
+- **CycleViz**: Visualize focal amplificaitons detected by AmpliconArchitect and AmpliconReconstructor.
 
-4. Other:
-- **ecSimulator** (simulating focal amplifications)
-- **ReactionDiffusionSimulator** (simulating and visualizing Turing patterns)
+4. Simulation projects:
+- **ecSimulator**: For simulating focal amplifications from the ground up.
+- **ReactionDiffusionSimulator**: Simulating and visualizing Turing patterns.
+
+Contact
+======
+Email: jluebeck[at]ucsd.edu.
+
+Address: Computer Science and Engineering Building (EBU3B), Office 4252. 9500 Gilman Drive, La Jolla, CA 92093
 
