@@ -18,16 +18,18 @@ Background
 
 Projects
 ======
-1. Reconstruction of focal amplifications
-- **AmpliconArchitect**: Detect and analyze focal amplifications with NGS data (maintainer).
+The following are available on [Github](https://github.com/jluebeck).
+
+1. Detecting and reconstructing focal amplifications:
+- **AmpliconArchitect** Detect and analyze focal amplifications with NGS data (maintainer).
 - **PrepareAA**: Standardize the process of using AmpliconArchitect.
 - **AmpliconReconstructor**: Reconstruct focal amplifications using NGS data and optical mapping.
 
-2. Alignment of optical maps
-- **SegAligner**: Sensitive alignment of small reference genome segments to optical map contigs.
+2. Alignment of optical maps:
+- **SegAligner**: Sensitive alignment of small reference genome segments to optical map contigs (part of AmpliconReconstructor).
 - **FaNDOM**: Fast, open-source aligner for Bionano optical map data (co-developer).
 
-3. Visualization of focal amplifications
+3. Visualization of focal amplifications:
 - **CycleViz**: Visualize focal amplificaitons detected by AmpliconArchitect and AmpliconReconstructor.
 
 4. Simulation projects:
