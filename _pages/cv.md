@@ -74,7 +74,7 @@ Service and leadership
 * ***Bafna Lab Server Systems Administrator*** (June 2016 - present)
   * Manage multi-node, 120 core, 350Tb Ubuntu cluster computer with approximately 10 active users.
 
-* ***BISB Peer Mentor program*** (September 2018 - June 2019)
+* ***BISB Peer Mentor Program*** (September 2018 - June 2019)
 
 * ***UC San Diego Graduate Bioinformatics Student Council*** 
   * **President** (June 2017 – June 2018)
