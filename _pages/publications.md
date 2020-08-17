@@ -7,9 +7,9 @@ author_profile: true
 
 You can find my articles on my [Google Scholar profile](https://scholar.google.com/citations?hl=en&user=bn4vrPUAAAAJ).
 
-• Kim H, Nguyen N, Turner K, Wu S, Gujar A, Luebeck J, et al. “Frequent extrachromosomal oncogene amplification drives aggressive tumors.”  **Nature Genetics**. 2020 (Accepted, preprint on biorXiv).
-    
 • **Luebeck J**, Coruh C, Dehkordi S, et al. “Integrated analysis of NGS and optical mapping resolves the complex structures of focal amplifications in cancer.”  **Nature Communications**. 2020. (Accepted, preprint on biorXiv).
+
+• Kim H, Nguyen N, Turner K, Wu S, Gujar A, Luebeck J, et al. “Extrachromosomal DNA is associated with oncogene amplification and poor outcome across multiple cancers.”  **Nature Genetics**. 2020.
     
 • Rocca C, Rainaldi J, Sharma J, Shi Y, Haquang J, Luebeck J, Mali P, Cherqui S, “CRISPR/Cas9 gene editing of hematopoietic stem cells from patients with Friedreich’s ataxia.”  **Molecular Therapy – Methods & Clinical Development**. 2020.
     
