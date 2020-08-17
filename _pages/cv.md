@@ -14,6 +14,7 @@ Education
 - ***UC San Diego***, (La Jolla, CA) 2015 - present.
 	- **Ph.D.**, Bioinformatics & Systems Biology (in progress).
 	- **M.S.**, Computer Science (Winter Quarter, 2019).
+	
     • Masters’ and Ph.D. thesis advised by Professor Vineet Bafna.
 
 
