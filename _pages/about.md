@@ -21,20 +21,19 @@ Projects
 The following are available on [Github](https://github.com/jluebeck).
 
 1. Detecting and reconstructing focal amplifications:
-- **AmpliconArchitect** Detect and analyze focal amplifications with NGS data (maintainer).
-- **PrepareAA**: Standardize the process of using AmpliconArchitect.
-- **AmpliconReconstructor**: Reconstruct focal amplifications using NGS data and optical mapping.
+- [**AmpliconArchitect**](https://github.com/jluebeck/AmpliconArchitect) Detect and analyze focal amplifications with NGS data (maintainer).
+- [**AmpliconReconstructor**](https://github.com/jluebeck/AmpliconReconstructor): Reconstruct focal amplifications using NGS and optical mapping data.
 
 2. Alignment of optical maps:
-- **SegAligner**: Sensitive alignment of small reference genome segments to optical map contigs (part of AmpliconReconstructor).
-- **FaNDOM**: Fast, open-source aligner for Bionano optical map data (co-developer).
+- [**FaNDOM**](https://github.com/jluebeck/FaNDOM): Fast, open-source aligner for Bionano optical map data (co-developer).
+- [**SegAligner**](https://github.com/jluebeck/AmpliconReconstructor): Sensitive alignment of small reference genome segments to optical map contigs (part of AmpliconReconstructor).
 
 3. Visualization of focal amplifications:
-- **CycleViz**: Visualize focal amplificaitons detected by AmpliconArchitect and AmpliconReconstructor.
+- [**CycleViz**](https://github.com/jluebeck/CycleViz): Visualize focal amplifications detected by AmpliconArchitect and AmpliconReconstructor.
 
 4. Simulation projects:
-- **ecSimulator**: For simulating focal amplifications from the ground up.
-- **ReactionDiffusionSimulator**: Simulating and visualizing Turing patterns.
+- [**ReactionDiffusionSimulator**](https://github.com/jluebeck/ReactionDiffusionSimulator): Simulating and visualizing Turing patterns.
+- [**ecSimulator**](https://github.com/jluebeck/ecSimulator): For simulating focal amplifications from the ground up.
 
 Contact
 ======
