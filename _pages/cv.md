@@ -96,7 +96,7 @@ Service and leadership
 * **Academic Support Program tutor/mentor**, (University of Washington) -- Fall 2013.
 
 
- Awards
+  Awards
  ======
  * (Nov. 2020) [Named JTech scholarship receipient for CSHL BDS 2020 conference](https://galaxyproject.org/news/2020-10-jxtx-awardees/).
  * (Feb. 2020) [Bionano Genomics Conference Grant](https://bionanogenomics.com/company/conference-grant/).
