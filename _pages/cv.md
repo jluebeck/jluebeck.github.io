@@ -96,10 +96,10 @@ Service and leadership
 * **Academic Support Program tutor/mentor**, (University of Washington) -- Fall 2013.
 
 
-  Awards
- ======
- * (Nov. 2020) [Named JTech scholarship receipient for CSHL BDS 2020 conference](https://galaxyproject.org/news/2020-10-jxtx-awardees/).
- * (Feb. 2020) [Bionano Genomics Conference Grant](https://bionanogenomics.com/company/conference-grant/).
- * (Feb. 2020) [UCSD CSE Research Open House Best Research Poster award](https://cse.ucsd.edu/about/news/innovation-and-community-display-cse-winter-research-open-house).
+ Awards
+======
+* (Nov. 2020) [Named JTech scholarship receipient for CSHL BDS 2020 conference](https://galaxyproject.org/news/2020-10-jxtx-awardees/).
+* (Feb. 2020) [Bionano Genomics Conference Grant](https://bionanogenomics.com/company/conference-grant/).
+* (Feb. 2020) [UCSD CSE Research Open House Best Research Poster award](https://cse.ucsd.edu/about/news/innovation-and-community-display-cse-winter-research-open-house).
  
  
