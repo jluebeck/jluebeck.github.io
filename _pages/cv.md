@@ -29,6 +29,9 @@ List available [here](https://jluebeck.github.io/publications/) or on [Google Sc
 
 Talks & Posters
 ======
+* **Moores Cancer Center Cancer Genomics Cross-Laboratory Meeting** (Online, Apr. 2021).
+  * Talk 
+
 * **CSHL Biological Data Science** (Online, Nov. 2020).
   * Lightning talk
   * Poster
