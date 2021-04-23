@@ -17,7 +17,7 @@ You can find my articles on my [Google Scholar profile](https://scholar.google.c
     
 • Rajkumar U, Turner K, Luebeck J, et al. “EcSeg: Semantic Segmentation of Metaphase Images Containing Extrachromosomal DNA.”  **iScience**. 2019.
     
-• Wu S, Turner KM, Nguyen N, Raviram R, Erb M, Santini J, Luebeck J, et al. “Circular ecDNA promotes accessible chromatin and high oncogene expression.”  **Nature**. 2019.
+• Wu S, Turner KM, Nguyen N, Raviram R, Erb M, Santini J, Luebeck J, et al. “Circular ecDNA promotes accessible chromatin and high oncogene expression.”  **Nature**. 2019. (Publication subsequently featured in a [New York Times article by Carl Zimmer](https://www.nytimes.com/2019/11/20/science/dna-genetics-cancer.html)).
     
 • Deshpande V, Luebeck J, Nguyen ND, et al. “Exploring the landscape of focal amplifications in cancer using AmpliconArchitect.”  **Nature Communications**. 2019.
     
