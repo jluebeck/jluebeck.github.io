@@ -101,7 +101,7 @@ Service and leadership
 
  Awards
 ======
-* [Named JTech scholarship receipient for CSHL BDS 2020 conference](https://galaxyproject.org/news/2020-10-jxtx-awardees/). (Nov. 2020)
+* [Named JTech (James Taylor memorial) scholarship recipient for CSHL BDS 2020 conference](https://galaxyproject.org/news/2020-10-jxtx-awardees/). (Nov. 2020)
 * [Bionano Genomics Conference Grant](https://bionanogenomics.com/company/conference-grant/). (Feb. 2020)
 * [UCSD CSE Research Open House Best Research Poster award](https://cse.ucsd.edu/about/news/innovation-and-community-display-cse-winter-research-open-house). (Feb. 2020)
  
