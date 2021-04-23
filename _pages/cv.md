@@ -75,6 +75,9 @@ Service and leadership
 
 * ***BISB Peer Mentor Program*** (September 2018 - June 2019)
 
+* ***UCSD Bioinformatics Booth at San Diego Festival of Sciences*** (Petco Park, San Diego, March 2018)
+  * Coordinated UCSD Bioinformatics booth at a K-12 STEM outreach event, featuring a [Lego DNA sequencer](https://www.earlham.ac.uk/articles/earlham-institute-lego-sequencer).
+
 * ***UC San Diego Graduate Bioinformatics Student Council*** 
   * **President** (June 2017 – June 2018)
     * Organized recruitment weekends, Town Hall meetings & program events. Managed annual budget. 
