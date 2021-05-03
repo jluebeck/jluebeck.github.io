@@ -29,10 +29,16 @@ List available [here](https://jluebeck.github.io/publications/) or on [Google Sc
 
 Talks & Posters
 ======
+* **CSHL Biology of Genomes Conference** (Online, May 2021).
+  * Talk 
+
+* **CSE Research Virtual Open House** (Online, Apr. 2021).
+  * Talk	
+
 * **Moores Cancer Center Cancer Genomics Cross-Laboratory Meeting** (Online, Apr. 2021).
   * Talk 
 
-* **CSHL Biological Data Science** (Online, Nov. 2020).
+* **CSHL Biological Data Science Conference** (Online, Nov. 2020).
   * Lightning talk
   * Poster
 
