@@ -10,13 +10,7 @@ redirect_from:
 
 Ph.D. student with Professor Vineet Bafna at UC San Diego. I study genomic focal amplifications and develop methods to reconstruct them, using a variety of different technologies. Specifically, I study circular extrachromosomal DNA and breakage-fusion-bridges to understand their structures and the consequences of these amplifications in cancer.
 
-Background
-======
-- Ph.D., Bioinformatics & Systems Biology, University of California, San Diego (In progress).
-- M.S., Computer Science, University of California, San Diego (2019).
-- B.S., Applied Computational & Mathematical Sciences (Biological & Life Sciences track), University of Washington, Seattle (2015).
-
-Projects
+Tools and Methods
 ======
 The following are available on [Github](https://github.com/jluebeck).
 
