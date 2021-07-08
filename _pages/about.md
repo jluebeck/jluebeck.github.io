@@ -8,14 +8,14 @@ redirect_from:
   - /about.html
 ---
 
-Ph.D. student with Professor Vineet Bafna at UC San Diego. I study genomic focal amplifications and develop methods to reconstruct them, using a variety of different technologies. Specifically, I study circular extrachromosomal DNA and breakage-fusion-bridges to understand their structures and the consequences of these amplifications in cancer.
+Ph.D. student with Professor Vineet Bafna at UC San Diego. I study genomic focal amplifications and develop methods to detect and reconstruct them, using a variety of different technologies. Specifically, I study circular extrachromosomal DNA and breakage-fusion-bridges to understand their structures and the consequences of these amplifications in cancer.
 
-Tools and Methods
+Methods development
 ======
-The following are available on [Github](https://github.com/jluebeck).
+The following tools are available on [Github](https://github.com/jluebeck).
 
 1. Detecting and reconstructing focal amplifications:
-- [**AmpliconArchitect**](https://github.com/jluebeck/AmpliconArchitect) Detect and analyze focal amplifications with NGS data (maintainer).
+- [**AmpliconArchitect**](https://github.com/jluebeck/AmpliconArchitect) Detect and analyze focal amplifications with NGS data (I am a maintainer of this codebase).
 - [**AmpliconReconstructor**](https://github.com/jluebeck/AmpliconReconstructor): Reconstruct focal amplifications using NGS and optical mapping data.
 
 2. Alignment of optical maps:
