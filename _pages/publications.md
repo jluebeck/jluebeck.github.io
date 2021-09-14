@@ -5,7 +5,7 @@ permalink: /publications/
 author_profile: true
 ---
 
-You can find my articles on my [Google Scholar profile](https://scholar.google.com/citations?hl=en&user=bn4vrPUAAAAJ). \* indicates shared first-authorship.
+You can also find my articles on [Google Scholar](https://scholar.google.com/citations?hl=en&user=bn4vrPUAAAAJ). \* indicates shared first-authorship.
 
 • Dehkordi SR\*, **Luebeck J\***, Bafna V. “FaNDOM: Fast Nested Distance-Based Seeding of Optical Maps.”  **Cell Patterns**. 2021. 
 
