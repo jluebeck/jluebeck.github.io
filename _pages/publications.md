@@ -7,7 +7,9 @@ author_profile: true
 
 You can also find these articles on my [Google Scholar profile](https://scholar.google.com/citations?hl=en&user=bn4vrPUAAAAJ). 
 
-\* indicates shared first-authorship.
+\* indicates shared first-authorship.\
+
+• Pang J\*, Nguyen NP\*, **Luebeck J\***, et al. “Extrachromosomal DNA in HPV mediated oropharyngeal cancer drives diverse oncogene transcription.”  **Clinical Cancer Research**. 2021.
 
 • Dehkordi SR\*, **Luebeck J\***, Bafna V. “FaNDOM: Fast Nested Distance-Based Seeding of Optical Maps.”  **Cell Patterns**. 2021. 
 
