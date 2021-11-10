@@ -52,6 +52,9 @@ Talks & Posters
 * **ASHG** (Houston, TX. October, 2019).
   * Platform talk
 
+* **Moores Cancer Center Delivering Discoveries Retreat** (La Jolla, CA. October, 2019).
+  * Poster 
+
 * **Salk Institute Inaugural Integrative Biology Symposium** (La Jolla, CA. September, 2019).
   * Poster
 
