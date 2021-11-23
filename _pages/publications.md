@@ -7,7 +7,9 @@ author_profile: true
 
 You can also find these articles on my [Google Scholar profile](https://scholar.google.com/citations?hl=en&user=bn4vrPUAAAAJ). 
 
-\* indicates shared first-authorship.\
+\* indicates shared first-authorship.
+
+• Hung KL, Yost KE, Xie L, Shi Q, Helmsauer K, **Luebeck J**, et al. “ecDNA hubs drive cooperative intermolecular oncogene expression.”  **Nature**. 2021.
 
 • Pang J\*, Nguyen NP\*, **Luebeck J\***, et al. “Extrachromosomal DNA in HPV mediated oropharyngeal cancer drives diverse oncogene transcription.”  **Clinical Cancer Research**. 2021.
 
