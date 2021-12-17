@@ -8,12 +8,18 @@ redirect_from:
 ---
 
 {% include base_path %}
+Current Position
+======
+- ***Postdoctoral Scholar***, (La Jolla, CA) January 2022 - present.
+         - Computer Science & Engineering, University of California, San Diego
+    • Vineet Bafna Lab.
+
 
 Education
 ======
-- ***UC San Diego***, (La Jolla, CA) 2015 - present.
-	- **Ph.D.**, Bioinformatics & Systems Biology (in progress).
-	- **M.S.**, Computer Science (Winter Quarter, 2019).
+- ***UC San Diego***, (La Jolla, CA) 2015 - 2021.
+	- **Ph.D.**, Bioinformatics & Systems Biology (December, 2021).
+	- **M.S.**, Computer Science (March, 2019).
 	
     • Masters’ and Ph.D. thesis advised by Professor Vineet Bafna.
 
