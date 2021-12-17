@@ -9,11 +9,11 @@ redirect_from:
 
 {% include base_path %}
 
+
 Current Position
 ======
 - ***Postdoctoral Scholar***, (La Jolla, CA) January 2022 - present.
-         - Computer Science & Engineering, University of California, San Diego
-    • Vineet Bafna Lab.
+	- Computer Science & Engineering, University of California, San Diego. Vineet Bafna Lab.
 
 
 Education
