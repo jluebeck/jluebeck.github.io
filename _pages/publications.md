@@ -9,6 +9,8 @@ You can also find these articles on my [Google Scholar profile](https://scholar.
 
 \* indicates shared first-authorship.
 
+• Song K, Minami JK, Huang A, Dehkordi SR, Lomeli SH, **Luebeck J**, et al. “Plasticity of extrachromosomal and intrachromosomal BRAF amplifications in overcoming targeted therapy dosage challenges.”  **Cancer Discovery**. 2021.
+
 • Hung KL, Yost KE, Xie L, Shi Q, Helmsauer K, **Luebeck J**, et al. “ecDNA hubs drive cooperative intermolecular oncogene expression.”  **Nature**. 2021.
 
 • Pang J\*, Nguyen NP\*, **Luebeck J\***, et al. “Extrachromosomal DNA in HPV mediated oropharyngeal cancer drives diverse oncogene transcription.”  **Clinical Cancer Research**. 2021.
