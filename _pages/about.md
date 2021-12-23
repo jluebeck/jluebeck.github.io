@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I'm recently-minted bioinformatics PhD working with Professor Vineet Bafna at UC San Diego. We study genomic focal amplifications and develop methods to detect and reconstruct them using a variety of different technologies. Specifically, I study circular extrachromosomal DNA and breakage-fusion-bridges to understand their structures and the consequences of these amplifications in cancer.
+I'm a recently-minted bioinformatics PhD working with Vineet Bafna at UC San Diego. We study genomic focal amplifications and develop methods to detect and reconstruct them using a variety of different technologies. Specifically, I study circular extrachromosomal DNA and breakage-fusion-bridges to understand their structures and the consequences of these amplifications in cancer.
 
 ### Some stuff I work on
 The following tools are available on [Github](https://github.com/jluebeck).
