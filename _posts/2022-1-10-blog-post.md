@@ -57,7 +57,7 @@ Ties introduced by this maximum entropy method can be resolved with a few heuris
 
 So, how well does this strategy perform?
 
-<center><img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/WordleResults.png" alt="Wordle solver results" width="800"/></center>
+<center><img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/WordleResults_full.png" alt="Wordle solver results" width="800"/></center>
 
 On the default Wordle answer set, **the strategy always guesses the correct answer within six turns**, and uses the starting word "SOARE". However since the Wordle developers only use a reduced answer-space
 to make the game easier, how well does it do if the possible answer can be any of the 12927 words in the Wordle dictionary? How about for the Scrabble five 
