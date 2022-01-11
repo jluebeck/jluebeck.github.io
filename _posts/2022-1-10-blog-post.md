@@ -73,7 +73,12 @@ On the default Wordle answer set, **the strategy always guesses the correct answ
 to make the game easier, how well does it do if the possible answer can be any of the 12927 words in the Wordle dictionary? How about for the Scrabble five 
 letter words? In those two cases, this strategy gets **99.67%** and **99.71%** of the words correct, respectively within six turns when we start with "TARES".
 
+One of the most revealing things about this method is that sometimes when the player is getting close to having an answer, it is better to take a step back to a guess which uses fewer correct letters, but which reduces the remaining search space by a larger amount. For instance, in our "WATER" example, if one knew `-ATER`, then the maximum entropy answer actually backs off and picks something like `ELCHI`, which eliminates "LATER", "CATER", "HATER" and "EATER" all in one go!
+
 Link to tool coming very soon!
+
+#### Acknowledgements:
+I'd like to thank Ben Pullman for good discussions about this problem.
 
 
 
