@@ -42,9 +42,11 @@ That is, for a given guess and a set of candidate words which may be the answer 
 This way, for any feedback that is returned by Wordle (the "oracle"), then the probability that the remaining set of words is as small as possible is maximized. If the bins did not have maximum entropy (words not spread as evenly as possible), then a random feedback would be more likely to land on a larger bin than a smaller one, and thus would not eliminate as many words as possible given the feedback.
 
 A diagram of how the method works is shown below:
+
 <img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/WordleSolver.png" alt="Wordle solver schematic" width="800" align="center"/>
 
 Here's what the entropy distribution looks like for the top 15 hits in the full Wordle set. I found the maximum-entropy initial word for default Wordle is "SOARE" while for expanded wordlists it is "TARES".
+
 <img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/entropies_full.png" alt="Wordle full set entropies" width="500" align="center"/>
 
 Ties introduced by this maximum entropy method can be resolved with a few heuristics.
@@ -54,6 +56,7 @@ Ties introduced by this maximum entropy method can be resolved with a few heuris
 4. Consider the positional frequencies of the guess letters in the remaining possible answers and maximizes the total positional frequency.
 
 So, how well does this strategy perform?
+
 <center><img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/WordleResults.png" alt="Wordle solver results" width="800"/></center>
 
 On the default Wordle answer set, **the strategy always guesses the correct answer within six turns**, and uses the starting word "SOARE". However since the Wordle developers only use a reduced answer-space
