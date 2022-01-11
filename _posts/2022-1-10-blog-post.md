@@ -42,7 +42,7 @@ RATER
 ```
 etc...
 
-A second strategy is to guess words which eliminate as many words as possible on each guess. There are multiple ways to accomplish this, one naive approach is to look at which words have any overlap with other words, and pick ones that maximize how similarly size the overlap and non-overlap sets are, *a la* binary search.
+A second strategy is to guess words which eliminate as many words as possible on each guess. There are multiple ways to accomplish this, one naive approach is to look at which words have any overlap with other words, and pick ones that so that overlap and non-overlap words are separated as equally as possible, *a la* binary search.
 
 This idea is in theory quite good. A more refined version of this idea goes as follows. Instead of a binary overlap/no overlap strategy, what if the method attempts to maximize the entropy of the possible ways clues could be returned from the guess?
 
