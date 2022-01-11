@@ -10,7 +10,9 @@ tags:
 A maximum-entropy solver for the "Wordle" problem.
 =====
 
-If you don't know what Wordle is, take a quick break to familiarize yourself over at https://www.powerlanguage.co.uk/wordle/. 
+If you don't know what Wordle is, take a quick break to familiarize yourself over at [https://www.powerlanguage.co.uk/wordle/](https://www.powerlanguage.co.uk/wordle).
+
+
 This simple and elegantly designed game captures just the right amount of randomness with strategy, making it an addictive pandemic-era hobby, [with a neat backstory](https://www.nytimes.com/2022/01/03/technology/wordle-word-game-creator.html). In this word-guessing game, feedback is given on the basis of the identity and locations of letters in each guessed word, making it an elimination problem to identify the correct word. This game is very similar to the game [Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)) but with words.
 
 The rules are simple, if the player guesses a letter correctly, in the correct position, it is marked green. If the player guesses a letter correctly in the incorrect position, it is marked yellow. If the player guesses an incorrect letter (or exceeds the number of times the letter appears in the word), it is marked grey. Players have six turns to identify the "secret" word.
