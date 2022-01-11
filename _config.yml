@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Jens Luebeck"
+title                    : "About"
 title_separator          : "-"
 name                     : &name "Jens Luebeck"
 description              : &description "Detecting and reconstructing focal amplifications in cancer genomes"
