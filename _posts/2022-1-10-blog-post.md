@@ -22,13 +22,13 @@ The rules are simple, if the player guesses a letter correctly, in the correct p
 Alright so what? The game actually presents an interesting computational challenge. Can a player always pick the right combination of words in order to win the game in six turns or less?
 From a cursory check of [Twitter](https://twitter.com/search?q=wordle%20solver&src=typed_query), there are dozens of people who have developed or are developing their own solvers for this game.
 
-Wordle basically uses a Scrabble dictionary as a basis for the words the user can guess. However, the developers decided that many of the words are too obscure (e.g. "VOZHD") for use as answers in the game, and thus use a reduced letter set of 2315 words which are simple enough to be in the common lexicon.
+Wordle basically uses a Scrabble dictionary as a basis for the words the user can guess. However, the developers decided that many of the words are too obscure (e.g. `VOZHD`) for use as answers in the game, and thus use a reduced letter set of 2315 words which are simple enough to be in the common lexicon.
 
 Disapointingly, this reduced wordlist from which the answer may be drawn is available in the source code, and it appears that the game simply iterates over the list in ordered fashion, making it possible to immediately see which word will be selected the next day. :( While this doesn't ruin the game really, it's better to protect things that are not supposed to be known by a player in order to keep the game fun even for those who are curious enough to look at the source code. It's the same reason magicians use curtains - without them the magic is gone.
 
 Source-code cheating aside, the computational challenge still stands - how would you pick words so that you maximize your chances of winning the game?
 
-One of the more basic strategies is to make picks based on (positional) letter frequencies (e.g. start with "AROSE" or similar words whihc contain a combination of the most frequent letters in five letter words. This may get a user pretty far, but struggles on certain words which contain more infrequently used letters of the alphabet. It also struggles on wordsets that are highly similar, such as 
+One of the more basic strategies is to make picks based on (positional) letter frequencies (e.g. start with `AROSE` or similar words whihc contain a combination of the most frequent letters in five letter words. This may get a user pretty far, but struggles on certain words which contain more infrequently used letters of the alphabet. It also struggles on wordsets that are highly similar, such as 
 ```
 WATER
 HATER
@@ -51,14 +51,14 @@ A diagram of how the method works is shown below:
   <img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/WordleSolver_v2.png" alt="Wordle solver schematic" width="800" align="center"/>
 </p>
 
-Here's what the entropy distribution looks like for the top 15 hits in the full Wordle set. I found the maximum-entropy initial word for default Wordle is "SOARE" while for expanded wordlists it is "TARES".
+Here's what the entropy distribution looks like for the top 15 hits in the full Wordle set. I found the maximum-entropy initial word for default Wordle is `SOARE` while for expanded wordlists it is `TARES`.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/entropies_full.png" alt="Wordle full set entropies" width="500" align="center"/>
 </p>
 
 Ties introduced by this maximum entropy method can be resolved with a few heuristics.
-1. Check the non-overlap bin "00000" and pick the guess which minimizes its size.
+1. Check the non-overlap bin `00000` and pick the guess which minimizes its size.
 2. Pick a guess which is also a candidate (important when remaining set very small and few guesses left)
 3. Maximize the entropy of the letters in the guess.
 4. Consider the positional frequencies of the guess letters in the remaining possible answers and maximizes the total positional frequency.
@@ -69,13 +69,13 @@ So, how well does this strategy perform?
   <img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/WordleResults_full.png" alt="Wordle solver results" width="800"/>
 </p>
   
-On the default Wordle answer set, **the strategy always guesses the correct answer within six turns**, and uses the starting word "SOARE". However since the Wordle developers only use a reduced answer-space
+On the default Wordle answer set, **the strategy always guesses the correct answer within six turns**, and uses the starting word `SOARE`. However since the Wordle developers only use a reduced answer-space
 to make the game easier, how well does it do if the possible answer can be any of the 12927 words in the Wordle dictionary? How about for the Scrabble five 
-letter words? In those two cases, this strategy gets **99.67%** and **99.71%** of the words correct, respectively within six turns when we start with "TARES".
+letter words? In those two cases, this strategy gets **99.67%** and **99.71%** of the words correct, respectively within six turns when we start with `TARES`.
 
-One of the most revealing things about this method is that sometimes when the player is getting close to having an answer, it is better to take a step back to a guess which uses fewer correct letters, but which reduces the remaining search space by a larger amount. For instance, in our "WATER" example, if one knew `-ATER`, then the maximum entropy answer actually backs off and picks something like `ELCHI`, which eliminates "LATER", "CATER", "HATER" and "EATER" all in one go!
+One of the most revealing things about this method is that sometimes when the player is getting close to having an answer, it is better to take a step back to a guess which uses fewer correct letters, but which reduces the remaining search space by a larger amount. For instance, in our `WATER` example, if one knew `-ATER`, then the maximum entropy answer actually backs off and picks something like `ELCHI`, which eliminates `LATER`, `CATER`, `HATER` and `EATER` all in one go!
 
-Link to tool coming very soon!
+Link to tool coming very soon.
 
 #### Acknowledgements:
 I'd like to thank Ben Pullman for good discussions about this problem.
