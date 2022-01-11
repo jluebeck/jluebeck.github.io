@@ -73,9 +73,9 @@ So, how well does this strategy perform?
   <img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/WordleResults_full.png" alt="Wordle solver results" width="800"/>
 </p>
   
-On the default Wordle answer set, **the strategy always guesses the correct answer within six turns** (<mark>100% accuracy</mark>), and uses the starting word `SOARE`. However since the Wordle developers only use a reduced answer-space
+On the default Wordle answer set, **the strategy always guesses the correct answer within six turns** (**100% win rate**), and uses the starting word `SOARE`. However since the Wordle developers only use a reduced answer-space
 to make the game easier, how well does it do if the possible answer can be any of the 12927 words in the Wordle dictionary? How about for the Scrabble five 
-letter words? In those two cases, this strategy gets <mark>**99.67%**</mark> and <mark>**99.71%**</mark> of the words correct, respectively within six turns when we start with `TARES`.
+letter words? In those two cases, this strategy gets **<mark>99.67%</mark>** and **<mark>99.71%</mark>** of the words correct, respectively within six turns when we start with `TARES`.
 
 One of the most revealing things about this method is that sometimes when the player is getting close to having an answer, it is better to take a step back to a guess which uses fewer correct letters, but which reduces the remaining search space by a larger amount. For instance, in our `WATER` example, if one knew `-ATER`, then the maximum entropy answer actually backs off and picks something like `ELCHI`, which eliminates `LATER`, `CATER`, `HATER` and `EATER` all in one go!
 
