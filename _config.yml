@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Jens Luebeck"
 title_separator          : "-"
 name                     : &name "Jens Luebeck"
-description              : &description "Developing methods to reconstruct focal amplifications"
+description              : &description "Detecting and reconstructing focal amplifications in cancer genomes"
 url                      : https://jluebeck.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "jluebeck/jluebeck.github.io"
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Jens Luebeck"
   avatar           : "profile_072120.png"
-  bio              : "Graduate student in Bioinformatics & Systems Biology at UC San Diego"
+  bio              : "Postdoctoral researcher in bioinformatics"
   location         : "UC San Diego"
   employer         :
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=jens+luebeck"
