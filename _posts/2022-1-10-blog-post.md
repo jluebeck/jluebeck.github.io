@@ -7,11 +7,13 @@ tags:
   - algorithms
 ---
 
-Want to guarantee you win at Wordle? Here you go.
+A maximum-entropy solver for the "Wordle" problem.
 =====
 
 If you don't know what Wordle is, take a quick break to familiarize yourself over at https://www.powerlanguage.co.uk/wordle/. 
 This simple and elegantly designed game captures just the right amount of randomness with strategy, making it an addictive pandemic-era hobby, [with a neat backstory](https://www.nytimes.com/2022/01/03/technology/wordle-word-game-creator.html). In this word-guessing game, feedback is given on the basis of the identity and locations of letters in each guessed word, making it an elimination problem to identify the correct word. This game is very similar to the game [Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)) but with words.
+
+The rules are simple, if the player guesses a letter correctly, in the correct position, it is marked green. If the player guesses a letter correctly in the incorrect position, it is marked yellow. If the player guesses an incorrect letter (or exceeds the number of times the letter appears in the word), it is marked grey. Players have six turns to identify the "secret" word.
 
 Alright so what? The game actually presents an interesting computational challenge. Can a player always pick the right combination of words in order to win the game in six turns or less?
 From a cursory check of [Twitter](https://twitter.com/search?q=wordle%20solver&src=typed_query), there are dozens of people who have developed or are developing their own solvers for this game.
@@ -23,11 +25,13 @@ Disapointingly, this reduced wordlist from which the answer may be drawn is avai
 Source-code cheating aside, the computational challenge still stands - how would you pick words so that you maximize your chances of winning the game?
 
 One of the more basic strategies is to make picks based on (positional) letter frequencies (e.g. start with "AROSE" or similar words whihc contain a combination of the most frequent letters in five letter words. This may get a user pretty far, but struggles on certain words which contain more infrequently used letters of the alphabet. It also struggles on wordsets that are highly similar, such as 
+```
 WATER
 HATER
 LATER
 MATER
 RATER
+```
 etc...
 
 A second strategy is to guess words which eliminate as many words as possible on each guess. There are multiple ways to accomplish this, one naive approach is to look at which words have any overlap with other words, and pick ones that maximize how similarly size the overlap and non-overlap sets are, *a la* binary search.
@@ -38,13 +42,23 @@ That is, for a given guess and a set of candidate words which may be the answer 
 This way, for any feedback that is returned by Wordle (the "oracle"), then the probability that the remaining set of words is as small as possible is maximized. If the bins did not have maximum entropy (words not spread as evenly as possible), then a random feedback would be more likely to land on a larger bin than a smaller one, and thus would not eliminate as many words as possible given the feedback.
 
 A diagram of how the method works is shown below:
-<img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/WordleSolver.png" alt="Wordle solver schematic" width="800"/>
+<img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/WordleSolver.png" alt="Wordle solver schematic" width="800" align="center"/>
+
+Here's what the entropy distribution looks like for the top 15 hits in the full Wordle set. I found the maximum-entropy initial word for default Wordle is "SOARE" while for expanded wordlists it is "TARES".
+<img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/entropies_full.png" alt="Wordle full set entropies" width="500" align="center"//>
 
 Ties introduced by this maximum entropy method can be resolved with a few heuristics.
 1. Check the non-overlap bin "00000" and pick the guess which minimizes its size.
 2. Pick a guess which is also a candidate (important when remaining set very small and few guesses left)
 3. Maximize the entropy of the letters in the guess.
 4. Consider the positional frequencies of the guess letters in the remaining possible answers and maximizes the total positional frequency.
+
+So, how well does this strategy perform?
+<center><img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/WordleResults.png" alt="Wordle solver results" width="800"/></center>
+
+On the default Wordle answer set, **the strategy always guesses the correct answer within six turns**, and uses the starting word "SOARE". However since the Wordle developers only use a reduced answer-space
+to make the game easier, how well does it do if the possible answer can be any of the 12927 words in the Wordle dictionary? How about for the Scrabble five 
+letter words? In those two cases, this strategy gets **99.67%** and **99.71%** of the words correct, respectively within six turns when we start with "TARES".
 
 Link to tool coming very soon!
 
