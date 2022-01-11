@@ -15,10 +15,14 @@ This simple and elegantly designed game captures just the right amount of random
 
 The rules are simple, if the player guesses a letter correctly, in the correct position, it is marked green. If the player guesses a letter correctly in the incorrect position, it is marked yellow. If the player guesses an incorrect letter (or exceeds the number of times the letter appears in the word), it is marked grey. Players have six turns to identify the "secret" word.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/example_wordle.png" alt="Example Wordle">
+</p>
+
 Alright so what? The game actually presents an interesting computational challenge. Can a player always pick the right combination of words in order to win the game in six turns or less?
 From a cursory check of [Twitter](https://twitter.com/search?q=wordle%20solver&src=typed_query), there are dozens of people who have developed or are developing their own solvers for this game.
 
-Wordle basically uses a Scrabble dictionary as a basis for the words the user can guess. However, the developers decided that many of the words are too obscure (e.g. "vozhd") for use as answers in the game, and thus use a reduced letter set of 2315 words which are simple enough to be in the common lexicon.
+Wordle basically uses a Scrabble dictionary as a basis for the words the user can guess. However, the developers decided that many of the words are too obscure (e.g. "VOZHD") for use as answers in the game, and thus use a reduced letter set of 2315 words which are simple enough to be in the common lexicon.
 
 Disapointingly, this reduced wordlist from which the answer may be drawn is available in the source code, and it appears that the game simply iterates over the list in ordered fashion, making it possible to immediately see which word will be selected the next day. :( My disappointment in that design decision is immeasurable.
 
@@ -43,11 +47,15 @@ This way, for any feedback that is returned by Wordle (the "oracle"), then the p
 
 A diagram of how the method works is shown below:
 
-<img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/WordleSolver.png" alt="Wordle solver schematic" width="800" align="center"/>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/WordleSolver.png" alt="Wordle solver schematic" width="800" align="center"/>
+</p>
 
 Here's what the entropy distribution looks like for the top 15 hits in the full Wordle set. I found the maximum-entropy initial word for default Wordle is "SOARE" while for expanded wordlists it is "TARES".
 
-<img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/entropies_full.png" alt="Wordle full set entropies" width="500" align="center"/>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/entropies_full.png" alt="Wordle full set entropies" width="500" align="center"/>
+</p>
 
 Ties introduced by this maximum entropy method can be resolved with a few heuristics.
 1. Check the non-overlap bin "00000" and pick the guess which minimizes its size.
@@ -57,8 +65,10 @@ Ties introduced by this maximum entropy method can be resolved with a few heuris
 
 So, how well does this strategy perform?
 
-<center><img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/WordleResults_full.png" alt="Wordle solver results" width="800"/></center>
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/WordleResults_full.png" alt="Wordle solver results" width="800"/>
+</p>
+  
 On the default Wordle answer set, **the strategy always guesses the correct answer within six turns**, and uses the starting word "SOARE". However since the Wordle developers only use a reduced answer-space
 to make the game easier, how well does it do if the possible answer can be any of the 12927 words in the Wordle dictionary? How about for the Scrabble five 
 letter words? In those two cases, this strategy gets **99.67%** and **99.71%** of the words correct, respectively within six turns when we start with "TARES".
