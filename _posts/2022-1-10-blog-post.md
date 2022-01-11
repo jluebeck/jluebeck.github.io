@@ -48,7 +48,7 @@ This way, for any feedback that is returned by Wordle (the "oracle"), then the p
 A diagram of how the method works is shown below:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/WordleSolver.png" alt="Wordle solver schematic" width="800" align="center"/>
+  <img src="https://raw.githubusercontent.com/jluebeck/jluebeck.github.io/master/images/WordleSolver_v2.png" alt="Wordle solver schematic" width="800" align="center"/>
 </p>
 
 Here's what the entropy distribution looks like for the top 15 hits in the full Wordle set. I found the maximum-entropy initial word for default Wordle is "SOARE" while for expanded wordlists it is "TARES".
