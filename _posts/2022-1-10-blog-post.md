@@ -80,7 +80,7 @@ letter words? In those two cases, this strategy gets **<mark>99.67%</mark>** and
 One of the most revealing things about this method is that sometimes when the player is getting close to having an answer, it is better to take a step back to a guess which uses fewer correct letters, but which reduces the remaining search space by a larger amount. For instance, in our `WATER` example, if one knew `-ATER`, then the maximum entropy answer actually backs off and picks something like `ELCHI`, which eliminates `EATER`, `LATER`, `CATER` and `HATER` all in one go!
 
 ### WordleSolver
-[Here is a link to the web-app which runs this method.](https://wordle-solver.herokuapp.com/)
+**[Here is a link to the web-app which runs this method.](https://wordle-solver.herokuapp.com/)**
 
 #### Acknowledgments:
 I'd like to thank Ben Pullman for good discussions about this problem.
