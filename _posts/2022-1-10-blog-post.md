@@ -10,7 +10,9 @@ tags:
 A maximum-entropy solver for the "Wordle" problem.
 =====
 
-If you don't know what Wordle is, take a quick break to familiarize yourself over at [https://www.powerlanguage.co.uk/wordle/](https://www.powerlanguage.co.uk/wordle).
+If you don't know what Wordle is, take a quick break to familiarize yourself over at [https://www.powerlanguage.co.uk/wordle/](https://www.powerlanguage.co.uk/wordle). 
+
+**If you just want to see the solver itself, see the link at the bottom of the page.**
 
 
 This simple and elegantly designed game captures just the right amount of randomness with strategy, making it an addictive pandemic-era hobby, [with a neat backstory](https://www.nytimes.com/2022/01/03/technology/wordle-word-game-creator.html). In this word-guessing game, feedback is given on the basis of the identity and locations of letters in each guessed word, making it an elimination problem to identify the correct word. This game is very similar to the game [Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)) but with words.
@@ -26,11 +28,11 @@ From a cursory check of [Twitter](https://twitter.com/search?q=wordle%20solver&s
 
 Wordle basically uses a Scrabble dictionary as a basis for the words the user can guess. However, the developers decided that many of the words are too obscure (e.g. `VOZHD`) for use as answers in the game, and thus use a reduced letter set of 2315 words which are simple enough to be in the common lexicon.
 
-Disapointingly, this reduced wordlist from which the answer may be drawn is available in the source code, and it appears that the game simply iterates over the list in ordered fashion, making it possible to immediately see which word will be selected the next day. :( While this doesn't ruin the game really, it's better to protect things that are not supposed to be known by a player in order to keep the game fun even for those who are curious enough to look at the source code. It's the same reason magicians use curtains - without them the magic is gone.
+Disappointingly, this reduced word list from which the answer may be drawn is available in the source code, and it appears that the game simply iterates over the list in ordered fashion, making it possible to immediately see which word will be selected the next day. :( While this doesn't ruin the game really, it's better to protect things that are not supposed to be known by a player in order to keep the game fun even for those who are curious enough to look at the source code. It's the same reason magicians use curtains - without them the magic is gone.
 
 Source-code cheating aside, the computational challenge still stands - how would you pick words so that you maximize your chances of winning the game?
 
-One of the more basic strategies is to make picks based on (positional) letter frequencies (e.g. start with `AROSE` or similar words whihc contain a combination of the most frequent letters in five letter words. This may get a user pretty far, but struggles on certain words which contain more infrequently used letters of the alphabet. It also struggles on wordsets that are highly similar, such as 
+One of the more basic strategies is to make picks based on (positional) letter frequencies - e.g. start with `AROSE` or similar words which contain a combination of the most frequent letters in all five letter words. This may get a user pretty far, but struggles on certain words which contain more infrequently used letters of the alphabet. The approach also struggles to reduce wordsets that are highly similar, such as 
 ```
 WATER
 HATER
@@ -77,9 +79,10 @@ letter words? In those two cases, this strategy gets **99.67%** and **99.71%** o
 
 One of the most revealing things about this method is that sometimes when the player is getting close to having an answer, it is better to take a step back to a guess which uses fewer correct letters, but which reduces the remaining search space by a larger amount. For instance, in our `WATER` example, if one knew `-ATER`, then the maximum entropy answer actually backs off and picks something like `ELCHI`, which eliminates `LATER`, `CATER`, `HATER` and `EATER` all in one go!
 
-Link to tool coming very soon.
+### WordleSolver
+[Here is a link to the web-app which runs this method.](https://wordle-solver.herokuapp.com/)
 
-#### Acknowledgements:
+#### Acknowledgments:
 I'd like to thank Ben Pullman for good discussions about this problem.
 
 
