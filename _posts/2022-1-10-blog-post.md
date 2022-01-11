@@ -7,7 +7,7 @@ tags:
   - algorithms
 ---
 
-A maximum-entropy solver for the "Wordle" problem.
+Maximum entropy solver for the "Wordle" problem.
 =====
 
 If you don't know what Wordle is, take a quick break to familiarize yourself over at [https://www.powerlanguage.co.uk/wordle/](https://www.powerlanguage.co.uk/wordle). 
