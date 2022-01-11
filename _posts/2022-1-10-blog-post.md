@@ -24,7 +24,7 @@ From a cursory check of [Twitter](https://twitter.com/search?q=wordle%20solver&s
 
 Wordle basically uses a Scrabble dictionary as a basis for the words the user can guess. However, the developers decided that many of the words are too obscure (e.g. "VOZHD") for use as answers in the game, and thus use a reduced letter set of 2315 words which are simple enough to be in the common lexicon.
 
-Disapointingly, this reduced wordlist from which the answer may be drawn is available in the source code, and it appears that the game simply iterates over the list in ordered fashion, making it possible to immediately see which word will be selected the next day. :( My disappointment in that design decision is immeasurable.
+Disapointingly, this reduced wordlist from which the answer may be drawn is available in the source code, and it appears that the game simply iterates over the list in ordered fashion, making it possible to immediately see which word will be selected the next day. :( While this doesn't ruin the game really, it's better to protect things that are not supposed to be known by a player in order to keep the game fun even for those who are curious enough to look at the source code. It's the same reason magicians use curtains - without them the magic is gone.
 
 Source-code cheating aside, the computational challenge still stands - how would you pick words so that you maximize your chances of winning the game?
 
