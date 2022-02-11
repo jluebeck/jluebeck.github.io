@@ -19,7 +19,7 @@ You can also find these articles on my [Google Scholar profile](https://scholar.
 
 • Dehkordi SR\*, **Luebeck J\***, Bafna V. “FaNDOM: Fast Nested Distance-Based Seeding of Optical Maps.”  **Cell Patterns**. 2021. 
 
-• **Luebeck J**, Coruh C, Dehkordi S, et al. “Integrated analysis of NGS and optical mapping resolves the complex structures of focal amplifications in cancer.”  **Nature Communications**. 2020.
+• **Luebeck J**, Coruh C, Dehkordi SR, et al. “Integrated analysis of NGS and optical mapping resolves the complex structures of focal amplifications in cancer.”  **Nature Communications**. 2020.
 
 • Kim H, Nguyen N, Turner K, Wu S, Gujar A, Luebeck J, et al. “Extrachromosomal DNA is associated with oncogene amplification and poor outcome across multiple cancers.”  **Nature Genetics**. 2020.
     
