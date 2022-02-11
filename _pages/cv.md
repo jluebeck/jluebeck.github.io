@@ -36,6 +36,10 @@ List available [here](https://jluebeck.github.io/publications/) or on [Google Sc
 
 Talks & Posters
 ======
+* **Bionano Genomics Symposium** (Online, January 2022).
+  * Talk 
+  * Panelist
+
 * **CSHL Biology of Genomes Conference** (Online, May 2021).
   * Talk 
 
