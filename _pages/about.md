@@ -13,7 +13,7 @@ I'm a recently-minted bioinformatics PhD working with Vineet Bafna at UC San Die
 The following tools are available on [Github](https://github.com/jluebeck).
 
 ##### 1. Detecting and reconstructing focal amplifications:
-- [**AmpliconArchitect**](https://github.com/jluebeck/AmpliconArchitect): Detect and analyze focal amplifications with NGS data (I am a maintainer of this codebase).
+- [**AmpliconArchitect**](https://github.com/jluebeck/AmpliconArchitect): Detect and analyze focal amplifications with NGS data. Developed by Viraj Deshpande - I am a maintainer of this codebase.
 - [**AmpliconReconstructor**](https://github.com/jluebeck/AmpliconReconstructor): Reconstruct focal amplifications using NGS and optical mapping data.
 - [**AmpliconClassifier**](https://github.com/jluebeck/AmpliconClassifier): Classify AA outputs to detect ecDNA, BFB, etc.
 - [**PrepareAA**](https://github.com/jluebeck/PrepareAA): A quickstart wrapper for AA + other upstream/downstream analysis utilities.
@@ -30,5 +30,5 @@ The following tools are available on [Github](https://github.com/jluebeck).
 - [**ecSimulator**](https://github.com/jluebeck/ecSimulator): For simulating focal amplifications from the ground up.
 
 #### Contact
-Email:jluebeck[ at] ucsd.edu.
+jluebeck[ at] ucsd.edu.
 
