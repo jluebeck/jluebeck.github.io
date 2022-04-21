@@ -87,6 +87,10 @@ Talks & Posters
 
 Service and leadership
 ======
+* ***Peer reviewer*** (April 2022 - present)
+  * Journals reviewed for:
+    * Cell Genomics
+
 * ***Bafna Lab Server Systems Administrator*** (June 2016 - present)
   * Manage multi-node, 120 core, 350Tb Ubuntu cluster computer with approximately 10 active users.
   * Conducted installation/configuration of multiple network filesystems, including hardware upgrades to SSD NFS.
