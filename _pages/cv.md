@@ -36,6 +36,9 @@ List available [here](https://jluebeck.github.io/publications/) or on [Google Sc
 
 Talks & Posters
 ======
+* **RECOMB** (La Jolla, CA, May 2022).
+  * Poster
+
 * **Bionano Genomics Symposium** (Online, January 2022).
   * Talk 
   * Panelist
