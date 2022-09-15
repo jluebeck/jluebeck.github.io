@@ -36,6 +36,9 @@ List available [here](https://jluebeck.github.io/publications/) or on [Google Sc
 
 Talks & Posters
 ======
+* **ITCR** (St. Louis, MO, September 2022).
+  * Poster 
+
 * **RECOMB** (La Jolla, CA, May 2022).
   * Poster
 
@@ -112,7 +115,7 @@ Service and leadership
   * **Director of Outreach** (June 2016 – June 2017)
     * Attended ABCRMS 2017 Conference & LMU 2017 Diversity Conference, on behalf of UCSD to recruit underrepresented students in STEM to pursue graduate degrees at UCSD.
 
-  * **First-year Student Representative** (September 2015 – June 2016)
+  * **Student Representative** (September 2015 – June 2016)
   
  
  Teaching
