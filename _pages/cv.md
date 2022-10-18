@@ -30,6 +30,11 @@ Education
   - Graduated with Interdisciplinary Honors. Member of UW Honors Program.
 
 
+Other professional experience
+======
+- Bioinformatics consultant: 2022 - present.
+      - Consulted with Boundless Bio, Inc. (San Diego, CA).
+
 Publications
 ======
 List available [here](https://jluebeck.github.io/publications/) or on [Google Scholar](https://scholar.google.com/citations?hl=en&user=bn4vrPUAAAAJ).
@@ -96,6 +101,7 @@ Service and leadership
 * ***Peer reviewer*** (April 2022 - present)
   * Journals reviewed for:
     * Cell Genomics
+    * Oncogene
 
 * ***Bafna Lab Server Systems Administrator*** (June 2016 - present)
   * Manage multi-node, 120 core, 350Tb Ubuntu cluster computer with approximately 10 active users.
