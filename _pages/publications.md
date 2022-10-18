@@ -13,13 +13,13 @@ You can also find these articles on my [Google Scholar profile](https://scholar.
 
 • Javadzadeh S, Rajkumar U, Nguyen N, Sarmashghi S, Luebeck J, Shang J, Bafna V. “FastViFi: Fast and accurate detection of (Hybrid) Viral DNA and RNA.”  **NAR Genomics and Bioinformatics**. 2022.
 
-• Bergstrom E, Luebeck J, Petljak M, et al. “Comprehensive analysis of clustered mutations in cancer reveals recurrent APOBEC3 mutagenesis of ecDNA.”  **Nature**. 2022.
+• Bergstrom E, Luebeck J, Petljak M, et al. “Mapping clustered mutations in cancer reveals APOBEC3 mutagenesis of ecDNA.”  **Nature**. 2022.
 
 • Song K, Minami JK, Huang A, Dehkordi SR, Lomeli SH, Luebeck J, et al. “Plasticity of extrachromosomal and intrachromosomal BRAF amplifications in overcoming targeted therapy dosage challenges.”  **Cancer Discovery**. 2021.
 
 • Hung KL, Yost KE, Xie L, Shi Q, Helmsauer K, Luebeck J, et al. “ecDNA hubs drive cooperative intermolecular oncogene expression.”  **Nature**. 2021.
 
-• Pang J\*, Nguyen NP\*, **Luebeck J\***, et al. “Extrachromosomal DNA in HPV mediated oropharyngeal cancer drives diverse oncogene transcription.”  **Clinical Cancer Research**. 2021.
+• Pang J\*, Nguyen NP\*, **Luebeck J\***, et al. “Extrachromosomal DNA in HPV-mediated oropharyngeal cancer drives diverse oncogene transcription.”  **Clinical Cancer Research**. 2021.
 
 • Dehkordi SR\*, **Luebeck J\***, Bafna V. “FaNDOM: Fast Nested Distance-Based Seeding of Optical Maps.”  **Cell Patterns**. 2021. 
 
