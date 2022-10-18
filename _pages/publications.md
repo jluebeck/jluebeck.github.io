@@ -9,6 +9,8 @@ You can also find these articles on my [Google Scholar profile](https://scholar.
 
 \* indicates shared first-authorship.
 
+• Hung K, **Luebeck, J**, Dehkordi SR, et al. “Targeted profiling of human extrachromosomal DNA by CRISPR-CATCH” **Nature Genetics**. 2022.
+
 • Javadzadeh S, Rajkumar U, Nguyen N, Sarmashghi S, Luebeck J, Shang J, Bafna V. “FastViFi: Fast and accurate detection of (Hybrid) Viral DNA and RNA.”  **NAR Genomics and Bioinformatics**. 2022.
 
 • Bergstrom E, Luebeck J, et al. “Comprehensive analysis of clustered mutations in cancer reveals recurrent APOBEC3 mutagenesis of ecDNA.”  **Nature**. 2022.
