@@ -13,7 +13,7 @@ You can also find these articles on my [Google Scholar profile](https://scholar.
 
 • Javadzadeh S, Rajkumar U, Nguyen N, Sarmashghi S, Luebeck J, Shang J, Bafna V. “FastViFi: Fast and accurate detection of (Hybrid) Viral DNA and RNA.”  **NAR Genomics and Bioinformatics**. 2022.
 
-• Bergstrom E, Luebeck J, Petljak M, et al. “Mapping clustered mutations in cancer reveals APOBEC3 mutagenesis of ecDNA.”  **Nature**. 2022.
+• Bergstrom EN, Luebeck J, Petljak M, et al. “Mapping clustered mutations in cancer reveals APOBEC3 mutagenesis of ecDNA.”  **Nature**. 2022.
 
 • Song K, Minami JK, Huang A, Dehkordi SR, Lomeli SH, Luebeck J, et al. “Plasticity of extrachromosomal and intrachromosomal BRAF amplifications in overcoming targeted therapy dosage challenges.”  **Cancer Discovery**. 2021.
 
