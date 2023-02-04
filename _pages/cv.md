@@ -43,6 +43,9 @@ List available [here](https://jluebeck.github.io/publications/) or on [Google Sc
 
 Talks & Posters
 ======
+* **ASHG** (Los Angeles, CA, October 2022).
+  * Poster 
+
 * **ITCR** (St. Louis, MO, September 2022).
   * Poster 
 
