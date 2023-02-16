@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-**A PDF-version of my CV is also [available here](https://drive.google.com/file/d/1EKmS6LrYFzqVlbdpvOxp2WegX4RU--8Y/view?usp=sharing).**
+**A complete PDF version of my CV is [available here](https://drive.google.com/file/d/1EKmS6LrYFzqVlbdpvOxp2WegX4RU--8Y/view?usp=sharing).**
 
 
 Current Position
