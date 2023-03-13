@@ -34,8 +34,8 @@ Education
 
 Other professional experience
 ======
-- Bioinformatics consultant: 2022 - present.
-      - Consulted with Boundless Bio, Inc. (San Diego, CA).
+- Bioinformatics consultant: April 2022 - September 2022.
+      - Consulted for Boundless Bio, Inc. (San Diego, CA).
 
 Publications
 ======
@@ -43,6 +43,12 @@ List available [here](https://jluebeck.github.io/publications/) or on [Google Sc
 
 Talks & Posters
 ======
+* **eDyNAmiC Symposium** (Stanford, CA, December 2022).
+  * Talk 
+
+* **Cancer Grand Challenges Future Leaders Conference** (Barcelona, Spain, November 2022).
+  * Talk
+
 * **ASHG** (Los Angeles, CA, October 2022).
   * Poster 
 
@@ -146,7 +152,8 @@ Service and leadership
 
  Awards
 ======
-* [Named JTech (James Taylor memorial) scholarship recipient for CSHL BDS 2020 conference](https://galaxyproject.org/news/2020-10-jxtx-awardees/). (Nov. 2020)
+* [Doreen J. Putrah Cancer Research Foundation AACR Scholar-in-Training Award](https://www.aacr.org/wp-content/uploads/2023/03/SITA-for-WebsitePDF-1.pdf). (Feb. 2023)
+* [JTech (James Taylor memorial) scholarship recipient for CSHL BDS 2020 conference](https://galaxyproject.org/news/2020-10-jxtx-awardees/). (Nov. 2020)
 * [Bionano Genomics Conference Grant](https://bionanogenomics.com/company/conference-grant/). (Feb. 2020)
 * [UCSD CSE Research Open House Best Research Poster award](https://cse.ucsd.edu/about/news/innovation-and-community-display-cse-winter-research-open-house). (Feb. 2020)
  
