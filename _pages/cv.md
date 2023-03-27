@@ -114,6 +114,7 @@ Service and leadership
     * Cell Genomics
     * Oncogenesis
     * Science Advances
+    * Heliyon (Cell Press)
 
 * ***Bafna Lab Server Systems Administrator*** (June 2016 - present)
   * Manage multi-node, 120 core, 350Tb Ubuntu cluster computer with approximately 10 active users.
