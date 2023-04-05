@@ -43,68 +43,47 @@ List available [here](https://jluebeck.github.io/publications/) or on [Google Sc
 
 Talks & Posters
 ======
-* **eDyNAmiC Symposium** (Stanford, CA, December 2022).
-  * Talk 
+* **AACR** (Orlando, FL, April 2023). Poster 
 
-* **Cancer Grand Challenges Future Leaders Conference** (Barcelona, Spain, November 2022).
-  * Talk
+* **eDyNAmiC Symposium** (Stanford, CA, December 2022). Talk 
 
-* **ASHG** (Los Angeles, CA, October 2022).
-  * Poster 
+* **Cancer Grand Challenges Future Leaders Conference** (Barcelona, Spain, November 2022). Talk
 
-* **ITCR** (St. Louis, MO, September 2022).
-  * Poster 
+* **ASHG** (Los Angeles, CA, October 2022). Poster 
 
-* **RECOMB** (La Jolla, CA, May 2022).
-  * Poster
+* **ITCR** (St. Louis, MO, September 2022). Poster 
 
-* **Bionano Genomics Symposium** (Online, January 2022).
-  * Talk 
-  * Panelist
+* **RECOMB** (La Jolla, CA, May 2022). Poster
 
-* **CSHL Biology of Genomes Conference** (Online, May 2021).
-  * Talk 
+* **Bionano Genomics Symposium** (Online, January 2022). Talk and Discussion Panelist
 
-* **CSE Research Virtual Open House** (Online, Apr. 2021).
-  * Talk	
+* **CSHL Biology of Genomes Conference** (Online, May 2021). Talk 
 
-* **Moores Cancer Center Cancer Genomics Cross-Laboratory Meeting** (Online, Apr. 2021).
-  * Talk 
+* **CSE Research Virtual Open House** (Online, Apr. 2021). Talk	
 
-* **CSHL Biological Data Science Conference** (Online, Nov. 2020).
-  * Lightning talk
-  * Poster
+* **Moores Cancer Center Cancer Genomics Cross-Laboratory Meeting** (Online, Apr. 2021). Talk 
 
-* **AGBT** (Marco Island, FL. February, 2020).
-  * Bionano Genomics Industry Session Talk
-  * Poster
+* **CSHL Biological Data Science Conference** (Online, Nov. 2020). Lightning talk and Poster
 
-* **CSE Research Open House** (La Jolla, CA. February, 2020).
-  * Poster, won "Best Research Poster" cash award
+* **AGBT** (Marco Island, FL. February, 2020). Bionano Genomics Industry Session Talk. Poster
 
-* **ASHG** (Houston, TX. October, 2019).
-  * Platform talk
+* **CSE Research Open House** (La Jolla, CA. February, 2020). Poster, won "Best Research Poster" cash award
 
-* **Moores Cancer Center Delivering Discoveries Retreat** (La Jolla, CA. October, 2019).
-  * Poster 
+* **ASHG** (Houston, TX. October, 2019). Platform talk
 
-* **Salk Institute Inaugural Integrative Biology Symposium** (La Jolla, CA. September, 2019).
-  * Poster
+* **Moores Cancer Center Delivering Discoveries Retreat** (La Jolla, CA. October, 2019). Poster 
 
-* **UCSD Bioinformatics EXchange (BEX)** (La Jolla, CA. September, 2015, 2016, 2017, 2019).
-  * Talk
+* **Salk Institute Inaugural Integrative Biology Symposium** (La Jolla, CA. September, 2019). Poster
 
-* **Southwestern Bioinformatics Conference** (La Jolla, CA. May, 2019).
-  * Talk
+* **UCSD Bioinformatics EXchange (BEX)** (La Jolla, CA. September, 2015, 2016, 2017, 2019). Talk
 
-* **Undergraduate Bioinformatics Council (UBIC) Graduate Panel** (La Jolla, CA. April, 2018).
-  * Panelist
+* **Southwestern Bioinformatics Conference** (La Jolla, CA. May, 2019). Talk
 
-* **ASHG** (San Diego, CA. October, 2018).
-  * Poster
+* **Undergraduate Bioinformatics Council (UBIC) Graduate Panel** (La Jolla, CA. April, 2018). Panelist
+
+* **ASHG** (San Diego, CA. October, 2018). Poster
  
-* **UBIC Industry and Academia Bioinformatics Symposium** (La Jolla, CA. March, 2017).
-  * Talk
+* **UBIC Industry and Academia Bioinformatics Symposium** (La Jolla, CA. March, 2017). Talk
   
 
 Service and leadership
@@ -112,9 +91,9 @@ Service and leadership
 * ***Peer reviewer*** (April 2022 - present)
   * Journals reviewed for:
     * Cell Genomics
-    * Oncogenesis
-    * Science Advances
     * Heliyon (Cell Press)
+    * Oncogenesis (Nature Porfolio)
+    * Science Advances
 
 * ***Bafna Lab Server Systems Administrator*** (June 2016 - present)
   * Manage multi-node, 120 core, 350Tb Ubuntu cluster computer with approximately 10 active users.
