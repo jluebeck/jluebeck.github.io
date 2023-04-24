@@ -138,6 +138,7 @@ Circles Common in Cancer Cells" by Carl Zimmer](https://www.nytimes.com/2019/11/
 * [UC San Diego Today: "UC San Diego Researchers Help Discover That Tiny DNA Circles are Key Drivers of Cancer"](https://today.ucsd.edu/story/tiny-dna-circles-are-key-drivers-of-cancer)
 * [UC San Diego Today: "Mapping Mutation 'Hotspots' in Cancer Reveals New Drivers and Biomarkers"](https://today.ucsd.edu/story/mapping-mutation-hotspots-in-cancer-reveals-new-drivers-and-biomarkers)
 * [Cancer Grand Challenges: "Novel insights into the role of ecDNA in the cancerous transition of Barrett's oesophagus"](https://cancergrandchallenges.org/news/novel-insights-role-ecdna-cancerous-transition-barretts-oesophagus)
+* [The UCSD Guardian: "UC San Diego Researchers Help Identify Correlation Between Extrachromosomal DNA and Cancer"](https://ucsdguardian.org/2023/04/23/uc-san-diego-researchers-help-identify-correlation-between-extrachromosomal-dna-and-cancer/)
 
  Awards
 ======
