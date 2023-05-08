@@ -9,6 +9,10 @@ You can also find these articles on my [Google Scholar profile](https://scholar.
 
 \* indicates shared first-authorship.
 
+• Raviram R, Raman A, Preissl S, Ning J, Wu S, Koga T, Zhang K, Brennan CW, Zhu C, Luebeck J, et al. "Integrated analysis of single-cell chromatin state and transcriptome identified common vulnerability despite glioblastoma heterogeneity" **PNAS**. 2023.
+
+• **Luebeck J**, Ng AWT, Galipeau PC, et al. "Extrachromosomal DNA in the cancerous transformation of Barrett’s oesophagus" **Nature**. 2023.
+
 • Hung KL, Luebeck J, Dehkordi SR, et al. “Targeted profiling of human extrachromosomal DNA by CRISPR-CATCH” **Nature Genetics**. 2022.
 
 • Javadzadeh S, Rajkumar U, Nguyen N, Sarmashghi S, Luebeck J, Shang J, Bafna V. “FastViFi: Fast and accurate detection of (Hybrid) Viral DNA and RNA.”  **NAR Genomics and Bioinformatics**. 2022.
