@@ -134,6 +134,7 @@ Service and leadership
  ======
 * [The New York Times, Science section: "Scientists Are Just Beginning to Understand Mysterious DNA
 Circles Common in Cancer Cells" by Carl Zimmer](https://www.nytimes.com/2019/11/20/science/dna-genetics-cancer.html)
+* [National Cancer Institute - Coming Full Circle on Cancer and Extrachromosomal DNA](https://www.cancer.gov/news-events/cancer-currents-blog/2023/extrachromosomal-dna-barretts-esophageal-cancer)
 * [Nature - News & Views: "Extrachromosomal DNA appears before cancer forms"](https://www.nature.com/articles/d41586-023-00982-6)
 * [UC San Diego Today: "UC San Diego Researchers Help Discover That Tiny DNA Circles are Key Drivers of Cancer"](https://today.ucsd.edu/story/tiny-dna-circles-are-key-drivers-of-cancer)
 * [UC San Diego Today: "Mapping Mutation 'Hotspots' in Cancer Reveals New Drivers and Biomarkers"](https://today.ucsd.edu/story/mapping-mutation-hotspots-in-cancer-reveals-new-drivers-and-biomarkers)
