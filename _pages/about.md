@@ -7,10 +7,10 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Bioinformatics postdoc working with Vineet Bafna at UC San Diego. We study extrachromosomal DNA and genomic focal amplifications - developing methods to detect and reconstruct them using a variety of different technologies.
+Bioinformatics postdoc working with Vineet Bafna at UC San Diego. We study extrachromosomal DNA and genomic focal amplifications - developing methods to detect and reconstruct them using a variety of different technologies. I also lead the [AmpliconSuite GitHub organization](https://github.com/AmpliconSuite) and manage the development of [AmpliconRepository.org](https://ampliconrepository.org/).
 
-### Some stuff I work on
-The following tools are available on [Github](https://github.com/jluebeck):
+### Tools I built or maintain
+The following tools are available on [GitHub](https://github.com/jluebeck):
 
 #### 1. Detecting and reconstructing focal amplifications:
 - [**AmpliconArchitect**](https://github.com/jluebeck/AmpliconArchitect): Detect and analyze focal amplifications with NGS data. Originally developed by Viraj Deshpande - I am a maintainer of this codebase.
