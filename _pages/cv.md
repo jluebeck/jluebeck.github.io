@@ -90,10 +90,11 @@ Service and leadership
 ======
 * ***Peer reviewer*** (April 2022 - present)
   * Journals reviewed for:
-    * Cell Genomics
-    * Heliyon (Cell Press)
-    * Oncogenesis (Nature Porfolio)
-    * Science Advances
+    * Bioinformatics (x1)
+    * Cell Genomics (x1)
+    * Heliyon - Cell Press (x1)
+    * Oncogenesis - Nature Porfolio (x1)
+    * Science Advances (x1)
 
 * ***Bafna Lab Server Systems Administrator*** (June 2016 - present)
   * Manage multi-node, 120 core, 350Tb Ubuntu cluster computer with approximately 10 active users.
