@@ -93,6 +93,7 @@ Service and leadership
     * Bioinformatics (x1)
     * Cell Genomics (x1)
     * Heliyon - Cell Press (x1)
+    * Nature Communications (x1)
     * Oncogenesis - Nature Porfolio (x1)
     * Science Advances (x1)
 
@@ -146,7 +147,7 @@ Circles Common in Cancer Cells" by Carl Zimmer](https://www.nytimes.com/2019/11/
  Awards
 ======
 * [Doreen J. Putrah Cancer Research Foundation AACR Scholar-in-Training Award](https://www.aacr.org/wp-content/uploads/2023/03/SITA-for-WebsitePDF-1.pdf). (Feb. 2023)
-* [JTech (James Taylor memorial) scholarship recipient for CSHL BDS 2020 conference](https://galaxyproject.org/news/2020-10-jxtx-awardees/). (Nov. 2020)
+* [JXTX James Taylor Memorial scholarship recipient for CSHL BDS 2020 conference](https://galaxyproject.org/news/2020-10-jxtx-awardees/). (Nov. 2020)
 * [Bionano Genomics Conference Grant](https://bionanogenomics.com/company/conference-grant/). (Feb. 2020)
 * [UCSD CSE Research Open House Best Research Poster award](https://cse.ucsd.edu/about/news/innovation-and-community-display-cse-winter-research-open-house). (Feb. 2020)
  
