@@ -43,6 +43,8 @@ List available [here](https://jluebeck.github.io/publications/) or on [Google Sc
 
 Talks & Posters
 ======
+* **UCSD Department of Biomedical Informatics Summer Intern Career Workshop - Academia and Industry Panel** (La Jolla, CA, August 2023). Panelist
+
 * **AACR** (Orlando, FL, April 2023). Poster 
 
 * **eDyNAmiC Symposium** (Stanford, CA, December 2022). Talk 
