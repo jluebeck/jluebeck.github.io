@@ -9,6 +9,8 @@ You can also find these articles on my [Google Scholar profile](https://scholar.
 
 **Bold** indicates first-authorship. **\*** indicates shared first-authorship.
 
+• Chapman OS, Luebeck J, Sridhar S, et al. "Circular extrachromosomal DNA promotes tumor heterogeneity in high-risk medulloblastoma" *Nature Genetics*. 2023.
+
 • Agustinus A, Al-Rawi D, Dameracharla B, Raviram R, Jones BSCL, Stransky S, Scipioni L, Luebeck J, et al. "Epigenetic dysregulation from chromosomal transit in micronuclei" *Nature*. 2023.
 
 • Raviram R, Raman A, Preissl S, Ning J, Wu S, Koga T, Zhang K, Brennan CW, Zhu C, Luebeck J, et al. "Integrated analysis of single-cell chromatin state and transcriptome identified common vulnerability despite glioblastoma heterogeneity" *PNAS*. 2023.
@@ -21,7 +23,7 @@ You can also find these articles on my [Google Scholar profile](https://scholar.
 
 • Bergstrom EN, Luebeck J, Petljak M, et al. “Mapping clustered mutations in cancer reveals APOBEC3 mutagenesis of ecDNA.”  *Nature*. 2022.
 
-• Song K, Minami JK, Huang A, Dehkordi SR, Lomeli SH, Luebeck J, et al. “Plasticity of extrachromosomal and intrachromosomal BRAF amplifications in overcoming targeted therapy dosage challenges.”  *Cancer Discovery*. 2021.
+• Song K, Minami JK, Huang A, Dehkordi SR, Lomeli SH, Luebeck J, et al. “Plasticity of extrachromosomal and intrachromosomal BRAF amplifications in overcoming targeted therapy dosage challenges.”  *Cancer Discovery*. 2022.
 
 • Hung KL, Yost KE, Xie L, Shi Q, Helmsauer K, Luebeck J, et al. “ecDNA hubs drive cooperative intermolecular oncogene expression.”  *Nature*. 2021.
 
