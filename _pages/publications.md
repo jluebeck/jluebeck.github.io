@@ -9,6 +9,8 @@ You can also find these articles on my [Google Scholar profile](https://scholar.
 
 **Bold** indicates first-authorship. **\*** indicates shared first-authorship.
 
+• Noorani I\*, **Luebeck J\***, Rowan A, et al. "Oncogenic extrachromosomal DNA identification using whole-genome sequencing from formalin-fixed glioblastomas" *Ann Oncol*. 2024.
+
 • Chapman OS, Luebeck J, Sridhar S, et al. "Circular extrachromosomal DNA promotes tumor heterogeneity in high-risk medulloblastoma" *Nature Genetics*. 2023.
 
 • Agustinus A, Al-Rawi D, Dameracharla B, Raviram R, Jones BSCL, Stransky S, Scipioni L, Luebeck J, et al. "Epigenetic dysregulation from chromosomal transit in micronuclei" *Nature*. 2023.
