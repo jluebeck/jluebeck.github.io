@@ -12,9 +12,12 @@ redirect_from:
 **A complete PDF version of my CV is [available here](https://drive.google.com/file/d/1F6BNKErYd7ilL7CxAAEkQoBL2D0QUOxc/view?usp=sharing).**
 
 
-Current Position
+Experience
 ======
-- ***Postdoctoral Scholar***, (La Jolla, CA) January 2022 - present.
+- ***Assistant Project Scientist***, (La Jolla, CA) August 2024 - present.
+	- Computer Science & Engineering, University of California, San Diego. Vineet Bafna Lab.
+
+- ***Postdoctoral Scholar***, (La Jolla, CA) January 2022 - August 2024.
 	- Computer Science & Engineering, University of California, San Diego. Vineet Bafna Lab.
 
 
