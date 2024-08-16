@@ -9,6 +9,26 @@ You can also find these articles on my [Google Scholar profile](https://scholar.
 
 **Bold** indicates first-authorship. **\*** indicates shared first-authorship.
 
+### Selected Publications
+• Noorani I\*, **Luebeck J\***, Rowan A, et al. "Oncogenic extrachromosomal DNA identification using whole-genome sequencing from formalin-fixed glioblastomas" *Ann Oncol*. 2024.
+
+• **Luebeck J**, Ng AWT, Galipeau PC, et al. "Extrachromosomal DNA in the cancerous transformation of Barrett’s oesophagus" *Nature*. 2023.
+
+• Pang J\*, Nguyen NP\*, **Luebeck J\***, et al. “Extrachromosomal DNA in HPV-mediated oropharyngeal cancer drives diverse oncogene transcription.”  *Clinical Cancer Research*. 2021.
+
+• Dehkordi SR\*, **Luebeck J\***, Bafna V. “FaNDOM: Fast Nested Distance-Based Seeding of Optical Maps.”  *Cell Patterns*. 2021. 
+
+• **Luebeck J**, Coruh C, Dehkordi SR, et al. “Integrated analysis of NGS and optical mapping resolves the complex structures of focal amplifications in cancer.”  *Nature Communications*. 2020.
+
+
+### All publications
+
+• Zhu K, Jones MG, Luebeck J, et al. "CoRAL accurately resolves extrachromosomal DNA genome structures with long-read sequencing" *Genome Research*. 2024. 
+
+• Rose JC, Belk JA, Wong ITL, Luebeck J, et al. "Disparate pathways for extrachromosomal DNA biogenesis and genomic DNA repair" *Cancer Discovery*. 2024.
+
+• Lin MS, Jo SY, Luebeck J, et al. "Transcriptional immune suppression and upregulation of double stranded DNA damage and repair repertoires in ecDNA-containing tumors" *eLife*. 2024. 
+
 • Noorani I\*, **Luebeck J\***, Rowan A, et al. "Oncogenic extrachromosomal DNA identification using whole-genome sequencing from formalin-fixed glioblastomas" *Ann Oncol*. 2024.
 
 • Chapman OS, Luebeck J, Sridhar S, et al. "Circular extrachromosomal DNA promotes tumor heterogeneity in high-risk medulloblastoma" *Nature Genetics*. 2023.
@@ -45,7 +65,7 @@ You can also find these articles on my [Google Scholar profile](https://scholar.
     
 • Deshpande V, Luebeck J, Nguyen ND, et al. “Exploring the landscape of focal amplifications in cancer using AmpliconArchitect.”  *Nature Communications*. 2019.
     
-•  	Nguyen ND, Deshpande V, Luebeck J, Mischel PS, Bafna V. “ViFi: accurate detection of viral integration and mRNA fusion reveals indiscriminate and unregulated transcription in proximal genomic regions in cervical cancer.”  *Nucleic Acids Research*. 2018.
+• Nguyen ND, Deshpande V, Luebeck J, Mischel PS, Bafna V. “ViFi: accurate detection of viral integration and mRNA fusion reveals indiscriminate and unregulated transcription in proximal genomic regions in cervical cancer.”  *Nucleic Acids Research*. 2018.
     
 • Zhao D, Badur MG, Luebeck J, et al. “Combinatorial CRISPR-Cas9 Metabolic Screens Reveal Critical Redox Control Points Dependent on the KEAP1-NRF2 Regulatory Axis.”  *Molecular Cell*. 2018.
     
