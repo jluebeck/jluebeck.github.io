@@ -7,9 +7,11 @@ author_profile: true
 
 You can also find these articles on my [Google Scholar profile](https://scholar.google.com/citations?hl=en&user=bn4vrPUAAAAJ). 
 
-**Bold** indicates first-authorship. **\*** indicates shared first-authorship.
+**Bold** indicates first-authorship. **\*** indicates shared first-authorship. **^** indicates senior authorship.
 
 ### Selected Publications
+• Kim H, Kim S, Wade T, ... **Luebeck J**^, Verhaak RGW. "Mapping extrachromosomal DNA amplifications during cancer progression." *Nature Genetics*. 2024.
+
 • Noorani I\*, **Luebeck J\***, Rowan A, et al. "Oncogenic extrachromosomal DNA identification using whole-genome sequencing from formalin-fixed glioblastomas" *Ann Oncol*. 2024.
 
 • **Luebeck J**, Ng AWT, Galipeau PC, et al. "Extrachromosomal DNA in the cancerous transformation of Barrett’s oesophagus" *Nature*. 2023.
@@ -23,9 +25,21 @@ You can also find these articles on my [Google Scholar profile](https://scholar.
 
 ### All publications
 
-• Zhu K, Jones MG, Luebeck J, et al. "CoRAL accurately resolves extrachromosomal DNA genome structures with long-read sequencing" *Genome Research*. 2024. 
+• Dehkordi SR, Wong ITL, Ni J, Luebeck J, et al. "Breakage fusion bridge cycles drive high oncogene number with moderate intratumoural heterogeneity." *Nature Communications*. 2025.
 
-• Rose JC, Belk JA, Wong ITL, Luebeck J, et al. "Disparate pathways for extrachromosomal DNA biogenesis and genomic DNA repair" *Cancer Discovery*. 2024.
+• Pradella D, Zhang M, Gao R, ... Luebeck J, ... Ventura A. "Engineered extrachromosomal oncogene amplifications promote tumorigensis." *Nature*. 2024.
+
+• Bailey C, Pich O, Thol K, Watkins TBK, Luebeck J, et al. "Origins and Impact of Extrachromosomal DNA." *Nature*. 2024.
+
+• Hung KL, Jones MG, Wong ITL, Curtis EJ, Lange JT, He BJ, Luebeck J, et al. "Coordinated inheritance of extrachromosomal DNAs in cancer cells." *Nature*. 2024.
+
+• Tang J, Weiser NE, Wang G, ... Luebeck J, ... Chang HY. "“Enhancing transcription replication conflict targets ecDNA positive cancers." *Nature*. 2024.
+
+• Kim H, Kim S, Wade T, ... Luebeck J^, Verhaak RGW. "Mapping extrachromosomal DNA amplifications during cancer progression." *Nature Genetics*. 2024.
+
+• Rose JC, Belk JA, Wong ITL, Luebeck J, et al. "Disparate pathways for extrachromosomal DNA biogenesis and genomic DNA repair" *Cancer Discovery*. 2024. 
+
+• Zhu K, Jones MG, Luebeck J, et al. "CoRAL accurately resolves extrachromosomal DNA genome structures with long-read sequencing" *Genome Research*. 2024. 
 
 • Lin MS, Jo SY, Luebeck J, et al. "Transcriptional immune suppression and upregulation of double stranded DNA damage and repair repertoires in ecDNA-containing tumors" *eLife*. 2024. 
 
