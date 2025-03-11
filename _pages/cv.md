@@ -59,7 +59,7 @@ Circles Common in Cancer Cells" by Carl Zimmer](https://www.nytimes.com/2019/11/
 
  Awards
 ======
-* AGBT Next Gen Leadership Award. (Feb. 2025)
+* [AGBT Next Gen Leadership Award](https://www.agbt.org/pressmention/agbt-announces-2025-next-gen-leadership-award-recipients-for-the-general-meeting/). (Feb. 2025)
 * [Doreen J. Putrah Cancer Research Foundation AACR Scholar-in-Training Award](https://www.aacr.org/wp-content/uploads/2023/03/SITA-for-WebsitePDF-1.pdf). (Feb. 2023)
 * [Cancer Grand Challenges UK Future Leader](https://cancergrandchallenges.org/sites/default/files/2022-10/Future%20Leaders%20FULL%20Programme.pdf). (Nov. 2022)
 * [JXTX James Taylor Memorial scholarship recipient for CSHL BDS 2020 conference](https://galaxyproject.org/news/2020-10-jxtx-awardees/). (Nov. 2020)
