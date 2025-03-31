@@ -25,6 +25,10 @@ You can also find these articles on my [Google Scholar profile](https://scholar.
 
 ### All publications
 
+• Nakagawa T, Luebeck J, Zhu K, et al. "Inhibition of human-HPV hybrid ecDNA enhancers reduces oncogene expression and tumor growth in oropharyngeal cancer." *Nature Communications*. 2025.
+
+• Lv W, Zheng Y, Li C, ... Luebeck J^, ... Han P. "Spatial-Temporal Diversity of Extrachromosomal DNA Shapes Urothelial Carcinoma Evolution and Tumor-Immune Microenvironment." *Cancer Discovery*. 2025.
+
 • Dehkordi SR, Wong ITL, Ni J, Luebeck J, et al. "Breakage fusion bridge cycles drive high oncogene number with moderate intratumoural heterogeneity." *Nature Communications*. 2025.
 
 • Pradella D, Zhang M, Gao R, ... Luebeck J, ... Ventura A. "Engineered extrachromosomal oncogene amplifications promote tumorigensis." *Nature*. 2024.
