@@ -14,7 +14,10 @@ redirect_from:
 
 Experience
 ======
-- ***Assistant Project Scientist***, (La Jolla, CA) August 2024 - present.
+- ***Associate Project Scientist***, (La Jolla, CA) July 2025 - present.
+	- Computer Science & Engineering, University of California, San Diego. Vineet Bafna Lab.
+   
+- ***Assistant Project Scientist***, (La Jolla, CA) August 2024 - July 2025.
 	- Computer Science & Engineering, University of California, San Diego. Vineet Bafna Lab.
 
 - ***Postdoctoral Scholar***, (La Jolla, CA) January 2022 - August 2024.
