@@ -25,6 +25,8 @@ You can also find these articles on my [Google Scholar profile](https://scholar.
 
 ### All publications
 
+• Yost KE, Zhao Y, Hung KL, ... Luebeck J, ... Chang HY. "Three-dimensional landscape of primary human cancers." *Nature Genetics*. 2025.
+
 • Nakagawa T, Luebeck J, Zhu K, et al. "Inhibition of human-HPV hybrid ecDNA enhancers reduces oncogene expression and tumor growth in oropharyngeal cancer." *Nature Communications*. 2025.
 
 • Lv W, Zheng Y, Li C, ... Luebeck J^, ... Han P. "Spatial-Temporal Diversity of Extrachromosomal DNA Shapes Urothelial Carcinoma Evolution and Tumor-Immune Microenvironment." *Cancer Discovery*. 2025.
