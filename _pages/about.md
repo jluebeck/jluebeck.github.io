@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Assistant Project Scientist working in Vineet Bafna's group at UC San Diego. We study extrachromosomal DNA and genomic focal amplifications - developing methods to detect and reconstruct them using a variety of different technologies. I also lead the [AmpliconSuite GitHub organization](https://github.com/AmpliconSuite) and manage the development of [AmpliconRepository.org](https://ampliconrepository.org/).
+Associate Project Scientist working in Vineet Bafna's group at UC San Diego. We study extrachromosomal DNA and genomic focal amplifications - developing methods to detect and reconstruct them using a variety of different technologies. I also lead the [AmpliconSuite GitHub organization](https://github.com/AmpliconSuite) and manage the development of [AmpliconRepository.org](https://ampliconrepository.org/).
 
 ### Tools I built or maintain
 The following tools are available on [GitHub](https://github.com/jluebeck):
