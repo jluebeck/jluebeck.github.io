@@ -25,6 +25,25 @@ You can also find these articles on my [Google Scholar profile](https://scholar.
 
 ### All publications
 
+• Jones MG, Weiser NE, Hung KL, … Luebeck J, …, Chang HY. "scAmp analyzes focal gene amplifications at single-cell resolution." *Nature Communications*. 2026.
+
+• Li C, Dehkordi SR, Muliaditan D, DasGupta R, Luebeck J, et al. "Detecting and reconstructing breakage-fusion-bridge cycles from long-read sequencing using BFBArchitect." *Bioinformatics*. 2026
+
+• Kenkre R, Chapman OS, Chow EYC, Luebeck J, et al. "Preservation and clonal behavior of extrachromosomal DNA in patientderived xenograft models of childhood cancers." *Genome Medicine*. 2026.
+
+• Chmelova L, Davies HR, Degasperi A, … Luebeck J, … Nik-Zainal S. "High-depth whole genome sequencing of premalignant breast lesions reveals rearrangement hotspots and personalized management opportunities." *Nature Communications*. 2026.
+
+• Yi H, Zhang S, Swinderman J, … Luebeck J, … Chang HY. "EcDNA-borne structural variants drive oncogenic fusion transcript amplification." *Cell*. 2026.
+
+• Chowdhury B, Zhu K, Li C, Alsing J, Luebeck J, et al. "Reconstructing the three-dimensional architecture of extrachromosomal DNA with ec3D." *Nature Communications*. 2025.
+
+• Kraft K, Murphy SE, Jones MG, … Luebeck J, … Chang HY. "Enhancer activation from transposable elements in extrachromosomal DNA." *Nature Cell Biology*. 2025.
+
+• Noorani I, Haughey M, Luebeck J, et al. "Extrachromosomal DNA-driven oncogene spatial heterogeneity and evolution in glioblastoma.” Cancer Discovery. 2025.
+
+• Lv W, Zeng Y, Li C … Luebeck J, … Han P. "Spatial-Temporal Diversity of Extrachromosomal  DNA Shapes Urothelial Carcinoma
+Evolution and Tumor-Immune Microenvironment." *Cancer Discovery*. 2025.
+
 • Yost KE, Zhao Y, Hung KL, ... Luebeck J, ... Chang HY. "Three-dimensional landscape of primary human cancers." *Nature Genetics*. 2025.
 
 • Nakagawa T, Luebeck J, Zhu K, et al. "Inhibition of human-HPV hybrid ecDNA enhancers reduces oncogene expression and tumor growth in oropharyngeal cancer." *Nature Communications*. 2025.
