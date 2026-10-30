@@ -7,7 +7,7 @@ import base64, json, pathlib, sys
 SRC = pathlib.Path(__file__).parent
 OUT = SRC.parent
 CV = "https://drive.google.com/file/d/1F6BNKErYd7ilL7CxAAEkQoBL2D0QUOxc/view?usp=sharing"
-IMAGES = {"{{PHOTO_SQ}}": "portrait-sq.jpg", "{{PHOTO_PORTRAIT}}": "portrait.jpg", "{{PHOTO_TALK}}": "talk-edynamic.jpg"}
+IMAGES = {"{{PHOTO_SQ}}": "portrait-sq.jpg", "{{PHOTO_PORTRAIT}}": "portrait.jpg", "{{PHOTO_TALK}}": "talk-edynamic.jpg", "{{LOGO_AS}}": "ampliconsuite-logo.png"}
 
 USAGE = json.loads((SRC / "aa_usage.json").read_text())
 SUBS = {
@@ -32,7 +32,8 @@ for f in sorted(SRC.glob("*.html")):
     for k, name in IMAGES.items():
         page = page.replace(k, "../images/" + name)
         if len(sys.argv) > 1:
-            uri = "data:image/jpeg;base64," + base64.b64encode((SRC.parent.parent / "images" / name).read_bytes()).decode()
+            mime = "image/png" if name.endswith(".png") else "image/jpeg"
+            uri = "data:" + mime + ";base64," + base64.b64encode((SRC.parent.parent / "images" / name).read_bytes()).decode()
             frag = frag.replace(k, uri)
     (OUT / f.name).write_text(page)
     if len(sys.argv) > 1:
