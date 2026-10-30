@@ -1,0 +1,17 @@
+---
+layout: page
+title: Projects
+nav: projects
+permalink: /projects/
+description: "Side projects, visualizations and games."
+redirect_from:
+  - /year-archive/
+---
+<p class="lede">Side projects, visualizations and games.</p>
+<section id="all" data-title="All projects">
+  <div class="cards">
+    {%- for p in site.data.projects %}
+    <a href="{{ p.url }}"><b>{{ p.title }}</b><small>{{ p.blurb }}</small><code>{{ p.where }}</code></a>
+    {%- endfor %}
+  </div>
+</section>

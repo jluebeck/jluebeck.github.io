@@ -1,0 +1,4 @@
+{%- comment -%} Prints include.n with thousands separators. {%- endcomment -%}
+{%- assign digits = include.n | append: "" | split: "" | reverse -%}
+{%- capture out -%}{%- for d in digits -%}{%- assign m = forloop.index0 | modulo: 3 -%}{%- if forloop.index0 > 0 and m == 0 -%},{%- endif -%}{{ d }}{%- endfor -%}{%- endcapture -%}
+{{- out | split: "" | reverse | join: "" -}}

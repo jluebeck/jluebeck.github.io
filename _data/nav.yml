@@ -1,0 +1,7 @@
+# Pages in the sidebar and on the landing page, in order. id also names the icon in _includes/icons.html.
+# "#papers" in a blurb is replaced by the number of peer-reviewed papers.
+- { id: research, title: Research, url: /research/, blurb: "ecDNA, amplicons" }
+- { id: software, title: Software, url: /software/, blurb: "15 tools" }
+- { id: publications, title: Publications, url: /publications/, blurb: "#papers papers" }
+- { id: about, title: About, url: /about/, blurb: "bio, talks, contact" }
+- { id: projects, title: Projects, url: /projects/, blurb: "visualizations, a game" }

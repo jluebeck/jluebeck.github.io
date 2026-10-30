@@ -1,0 +1,44 @@
+---
+layout: page
+title: About
+nav: about
+permalink: /about/
+description: "Bio, recognition, recent talks, mentorship and contact for Jens Luebeck."
+redirect_from:
+  - /about.html
+---
+<p class="lede">Computational cancer genomics scientist and scientific software developer.</p>
+<section id="bio" data-title="Bio">
+  <h2>Bio</h2>
+  <p>I am an Associate Project Scientist in Computer Science and Engineering at UC San Diego, working with Vineet Bafna. I completed my PhD in Bioinformatics and Systems Biology at UCSD in 2021, an MS in Computer Science along the way, and a BS in Applied and Computational Mathematical Sciences at the University of Washington. I have also previously consulted for Boundless Bio.</p>
+  <p>I live in the Seattle area. Outside work I run, hike, brew beer and cider, and play the cello.</p>
+</section>
+<section id="recognition" data-title="Recognition">
+  <h2>Recognition</h2>
+  <ul class="items dated">
+    {%- for w in site.data.awards %}
+    <li><span>{{ w.title }}</span><time>{{ w.year }}</time></li>
+    {%- endfor %}
+  </ul>
+</section>
+<section id="talks" data-title="Talks">
+  <h2>Recent talks</h2>
+  <figure class="talk">
+    <img src="/images/talk-edynamic.jpg" alt="Jens Luebeck presenting a slide on the AmpliconSuite-pipeline workflow" width="1200" height="750" loading="lazy">
+    <figcaption>Presenting AmpliconSuite-pipeline to the eDyNAmiC team at a Cancer Grand Challenges meeting.</figcaption>
+  </figure>
+  <ul class="items dated">
+    {%- for t in site.data.talks %}
+    <li><span>{{ t.title }}<span class="m">{{ t.where }}{% if t.recording %} · <a href="{{ t.recording }}">Recording</a>{% endif %}</span></span><time>{{ t.date }}</time></li>
+    {%- endfor %}
+  </ul>
+</section>
+<section id="mentorship" data-title="Mentorship">
+  <h2>Mentorship</h2>
+  <p>I have mentored students on research projects from undergraduate through post-baccalaureate and master's level, several of whom are now co-authors on published work. If you would like to ask about a project to collaborate on, reach out with your CV and/or GitHub.</p>
+</section>
+<section id="contact" data-title="Contact">
+  <h2>Contact</h2>
+  <p>I'm open to collaborations and consulting on ecDNA and copy-number analysis, structural variant reconstruction, and research software built for other people to use.</p>
+  <p class="addr" style="font-size:15px">{{ site.author.email }}</p>
+</section>

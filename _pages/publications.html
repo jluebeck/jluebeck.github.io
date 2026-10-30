@@ -1,0 +1,65 @@
+---
+layout: page
+title: Publications
+nav: publications
+permalink: /publications/
+description: "Peer-reviewed papers and preprints on ecDNA, focal amplification and cancer genome structure."
+---
+{% include count-papers.html %}
+<p class="lede">{{ npapers }} peer-reviewed papers and {{ npreprints }} preprints. * denotes equal contribution. Also on <a href="https://scholar.google.com/citations?hl=en&amp;user=bn4vrPUAAAAJ">Google Scholar</a>.</p>
+<section id="list" data-title="Papers">
+  <div class="filters" id="pubfilters" role="group" aria-label="Filter publications">
+    <button type="button" data-f="all" aria-pressed="true">All<span></span></button>
+    <button type="button" data-f="lead" aria-pressed="false">First or senior<span></span></button>
+    <button type="button" data-f="methods" aria-pressed="false">Computational methods<span></span></button>
+    <button type="button" data-f="pre" aria-pressed="false">Preprints<span></span></button>
+    <input id="pubq" type="search" placeholder="Search titles, journals, authors" aria-label="Search publications">
+  </div>
+  <div id="publist">
+    {%- assign yr = nil %}
+    {%- for p in site.data.publications %}
+    {%- assign key = p.year | append: "" %}{% if p.flags contains "p" %}{% assign key = key | append: "p" %}{% endif %}
+    {%- if key != yr %}{% unless forloop.first %}</ul>{% endunless %}
+    <div class="yr">{{ p.year }}{% if p.flags contains "p" %} · preprints{% endif %}</div><ul class="items" data-yr="{{ key }}">
+    {%- assign yr = key %}{% endif %}
+      <li data-flags="{{ p.flags }}">{% if p.pmid %}<a class="t" href="https://pubmed.ncbi.nlm.nih.gov/{{ p.pmid }}/">{{ p.title | escape }}</a>{% elsif p.url %}<a class="t" href="{{ p.url }}">{{ p.title | escape }}</a>{% else %}<b>{{ p.title | escape }}</b>{% endif %}<span class="m">{{ p.authors | escape | replace: "Luebeck J", "<mark>Luebeck J</mark>" }} <i>{{ p.venue | escape }}</i></span></li>
+    {%- if forloop.last %}</ul>{% endif %}
+    {%- endfor %}
+    <p class="note" id="nomatch" hidden></p>
+  </div>
+</section>
+<section id="writing" data-title="Other writing">
+  <h2>Other writing</h2>
+  <ul class="items dated">
+    <li><span><a class="t" href="https://communities.springernature.com/posts/ampliconsuite-and-ampliconrepository-enabling-ecdna-research-at-scale">AmpliconSuite and AmpliconRepository: enabling ecDNA research at scale</a><span class="m">Springer Nature Research Communities</span></span><time>2026</time></li>
+    <li><span><a class="t" href="https://www.cancergrandchallenges.org/news/closing-the-gap-between-tool-development-and-biology-to-decode-extrachromosomal-dna-in-cancer">Closing the gap between tool development and biology to decode extrachromosomal DNA in cancer</a><span class="m">Cancer Grand Challenges</span></span><time>2026</time></li>
+    <li><span><a class="t" href="https://cancercommunity.nature.com/posts/ampliconreconstructor-revealing-focally-amplified-rearrangements-in-cancer">AmpliconReconstructor: revealing focally amplified rearrangements in cancer</a><span class="m">Nature Research Cancer Community</span></span><time>2020</time></li>
+  </ul>
+</section>
+
+<script>
+(function () {
+  // Filters and search work on the list rendered above.
+  var items = Array.prototype.slice.call(document.querySelectorAll('#publist li')), groups = document.querySelectorAll('#publist ul[data-yr]');
+  var buttons = document.querySelectorAll('#pubfilters button'), q = document.getElementById('pubq'), none = document.getElementById('nomatch'), mode = 'all';
+  var test = {
+    all: function (f) { return f.indexOf('p') < 0; },
+    lead: function (f) { return /[fs]/.test(f); },
+    methods: function (f) { return f.indexOf('m') >= 0; },
+    pre: function (f) { return f.indexOf('p') >= 0; }
+  };
+  buttons.forEach(function (b) { b.querySelector('span').textContent = items.filter(function (li) { return test[b.dataset.f](li.dataset.flags); }).length; });
+  function render() {
+    var term = q.value.trim().toLowerCase(), shown = 0;
+    items.forEach(function (li) {
+      var ok = test[mode](li.dataset.flags) && (!term || li.textContent.toLowerCase().indexOf(term) >= 0);
+      li.hidden = !ok; if (ok) shown++;
+    });
+    groups.forEach(function (g) { var vis = !!g.querySelector('li:not([hidden])'); g.hidden = !vis; g.previousElementSibling.hidden = !vis; });
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.f === mode); });
+    none.hidden = shown > 0; none.textContent = 'No papers match "' + q.value + '".';
+  }
+  document.getElementById('pubfilters').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { mode = b.dataset.f; render(); } });
+  q.addEventListener('input', render); render();
+})();
+</script>

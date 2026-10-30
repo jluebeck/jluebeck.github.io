@@ -1,0 +1,497 @@
+[
+ {
+  "label": "NCI-60",
+  "date": "2017-03-01",
+  "samples": 113,
+  "citation": "Turner et al., Nature",
+  "url": "",
+  "external": false,
+  "preprint": false
+ },
+ {
+  "label": "AmpliconArchitect paper",
+  "date": "2019-01-23",
+  "samples": 68,
+  "citation": "Deshpande et al., Nature Communications",
+  "url": "https://doi.org/10.1038/s41467-018-08200-y",
+  "external": false,
+  "preprint": false
+ },
+ {
+  "label": "Pan-cancer (TCGA)",
+  "date": "2020-08-17",
+  "samples": 3212,
+  "citation": "Kim et al., Nature Genetics",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/32807987/",
+  "external": false,
+  "preprint": false
+ },
+ {
+  "label": "Gastric cardia adenocarcinoma",
+  "date": "2021-11-11",
+  "samples": 72,
+  "citation": "Zhao et al., Nature Communications",
+  "url": "",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Head-and-neck cancer (HPV-driven)",
+  "date": "2021-12-15",
+  "samples": 72,
+  "citation": "Pang et al., Clinical Cancer Research",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/34548317/",
+  "external": false,
+  "preprint": false
+ },
+ {
+  "label": "Pan-cancer (clustered mutations)",
+  "date": "2022-02-09",
+  "samples": 2583,
+  "citation": "Bergstrom et al., Nature",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/35140399/",
+  "external": false,
+  "preprint": false
+ },
+ {
+  "label": "eccDNAdb",
+  "date": "2022-04-06",
+  "samples": 191,
+  "citation": "Peng et al., Oncogene",
+  "url": "https://doi.org/10.1038/s41388-022-02286-x",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Esophageal squamous cell carcinoma",
+  "date": "2022-10-22",
+  "samples": 528,
+  "citation": "Cui et al., Nature Communications",
+  "url": "",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "eccDNA Atlas",
+  "date": "2023-02-09",
+  "samples": 319,
+  "citation": "Zhong et al., Briefings in Bioinformatics",
+  "url": "https://doi.org/10.1093/bib/bbad037",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Small cell lung cancer",
+  "date": "2023-04-01",
+  "samples": 143,
+  "citation": "Pongor et al., Cancer Discovery",
+  "url": "",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Barrett's and Esophageal adenocarcinoma",
+  "date": "2023-04-12",
+  "samples": 286,
+  "citation": "Luebeck et al., Nature",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/37046089/",
+  "external": false,
+  "preprint": false
+ },
+ {
+  "label": "Neuroblastoma",
+  "date": "2023-10-11",
+  "samples": 150,
+  "citation": "Rodriguez-Fos et al., Cell Genomics",
+  "url": "",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Medulloblastoma",
+  "date": "2023-11-01",
+  "samples": 481,
+  "citation": "Chapman et al., Nature Genetics",
+  "url": "https://doi.org/10.1038/s41588-023-01551-3",
+  "external": false,
+  "preprint": false
+ },
+ {
+  "label": "Hepatocellular carcinoma (HPV-driven)",
+  "date": "2024-02-01",
+  "samples": 494,
+  "citation": "Chen et al., Nature",
+  "url": "https://doi.org/10.1038/s41586-024-07054-3",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "GCAP Pancancer WES benchmark",
+  "date": "2024-02-19",
+  "samples": 386,
+  "citation": "Wang et al., Nature Communications",
+  "url": "https://www.nature.com/articles/s41467-024-45479-6",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "T cell lymphoma",
+  "date": "2024-04-02",
+  "samples": 71,
+  "citation": "Chen et al., Genome Medicine",
+  "url": "https://link.springer.com/article/10.1186/s13073-024-01324-5",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Small cell lung cancer",
+  "date": "2024-05-01",
+  "samples": 51,
+  "citation": "Choudhuri et al., Cancer Discovery",
+  "url": "https://aacrjournals.org/cancerdiscovery/article/14/5/804/745033",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Esophageal squamous cell carcinoma",
+  "date": "2024-05-14",
+  "samples": 710,
+  "citation": "Ng et al., Nature Communications",
+  "url": "https://doi.org/10.1038/s41467-024-47619-4",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Hematological malignancies",
+  "date": "2024-07-13",
+  "samples": 208,
+  "citation": "Zhang et al., Neoplasia",
+  "url": "",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Cancer cell lines",
+  "date": "2024-08-01",
+  "samples": 468,
+  "citation": "Fessler et al., NAR Cancer",
+  "url": "https://academic.oup.com/narcancer/article/6/3/zcae035/7725462",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Colorectal cancer",
+  "date": "2024-08-07",
+  "samples": 1761,
+  "citation": "Cornish et al., Nature",
+  "url": "https://www.nature.com/articles/s41586-024-07747-9",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Colorectal cancer",
+  "date": "2024-08-08",
+  "samples": 1063,
+  "citation": "Nunes et al., Nature",
+  "url": "https://www.nature.com/articles/s41586-024-07769-3",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Urothelial carcinoma",
+  "date": "2024-08-19",
+  "samples": 80,
+  "citation": "Lv et al., Theranostics",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11388072/",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Urothelial carcinoma",
+  "date": "2024-10-09",
+  "samples": 71,
+  "citation": "Nguyen et al., Nature",
+  "url": "https://doi.org/10.1038/s41586-024-07955-3",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Pan-cancer long read (matched WGS)",
+  "date": "2024-10-14",
+  "samples": 189,
+  "citation": "O'Neill et al., Cell Genomics",
+  "url": "https://www.cell.com/cell-genomics/fulltext/S2666-979X%2824%2900293-3",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Pan-cancer (TCGA, PCAWG, Hartwig)",
+  "date": "2024-10-15",
+  "samples": 8060,
+  "citation": "Kim et al., Nature Genetics",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/39402156/",
+  "external": false,
+  "preprint": false
+ },
+ {
+  "label": "Genomics England",
+  "date": "2024-11-15",
+  "samples": 14778,
+  "citation": "Bailey et al., Nature",
+  "url": "https://www.nature.com/articles/s41586-024-08107-3",
+  "external": false,
+  "preprint": false
+ },
+ {
+  "label": "Urothelial carcinoma",
+  "date": "2025-01-17",
+  "samples": 199,
+  "citation": "Zheng et al., iScience",
+  "url": "https://www.cell.com/iscience/fulltext/S2589-0042(24)02737-8?uuid=uuid%3Abbcdcde1-10ec-4f42-9658-f44d0e5c5e89",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Osteosarcoma",
+  "date": "2025-01-23",
+  "samples": 356,
+  "citation": "Valle-Inclan et al., Cell",
+  "url": "https://www.cell.com/cell/fulltext/S0092-8674(24)01418-1",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Urothelial carcinoma",
+  "date": "2025-03-11",
+  "samples": 1411,
+  "citation": "Lv et al., Cancer Discovery",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/40062518/",
+  "external": false,
+  "preprint": false
+ },
+ {
+  "label": "Glioma",
+  "date": "2025-04-14",
+  "samples": 579,
+  "citation": "Mayr et al., Cancer Cell",
+  "url": "https://www.cell.com/cancer-cell/fulltext/S1535-6108(25)00070-4",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Diffuse glioma (100kGP)",
+  "date": "2025-05-07",
+  "samples": 403,
+  "citation": "Kinnersley et al., Nature Communications",
+  "url": "https://doi.org/10.1038/s41467-025-59156-9",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Pan-cancer 3D genome (TCGA)",
+  "date": "2025-05-12",
+  "samples": 169,
+  "citation": "Yost et al., Nature Genetics",
+  "url": "https://www.nature.com/articles/s41588-025-02188-0",
+  "external": false,
+  "preprint": false
+ },
+ {
+  "label": "Glioma",
+  "date": "2025-05-21",
+  "samples": 93,
+  "citation": "Akdemir et al., bioRxiv",
+  "url": "https://www.biorxiv.org/content/10.1101/2025.05.16.654515v1.full.pdf",
+  "external": true,
+  "preprint": true
+ },
+ {
+  "label": "PanPedCan",
+  "date": "2025-06-15",
+  "samples": 3796,
+  "citation": "Sridhar et al., medRxiv",
+  "url": "https://www.medrxiv.org/content/10.1101/2025.07.22.24308163v2.full",
+  "external": false,
+  "preprint": true
+ },
+ {
+  "label": "Testicular cancer",
+  "date": "2025-06-16",
+  "samples": 252,
+  "citation": "Zhang et al., ResearchSquare",
+  "url": "https://www.researchsquare.com/article/rs-6735635/v1",
+  "external": true,
+  "preprint": true
+ },
+ {
+  "label": "Ovarian cancer",
+  "date": "2025-07-01",
+  "samples": 324,
+  "citation": "Ewing et al., Nature Communications",
+  "url": "https://www.nature.com/articles/s41467-025-60655-y",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Lung cancer",
+  "date": "2025-07-24",
+  "samples": 1216,
+  "citation": "Khandekar et al., bioRxiv",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/40501879/",
+  "external": false,
+  "preprint": true
+ },
+ {
+  "label": "Prostate cancer",
+  "date": "2025-08-12",
+  "samples": 69,
+  "citation": "Mout et al., bioRxiv",
+  "url": "https://www.biorxiv.org/content/10.1101/2025.08.08.668693v1.abstract",
+  "external": true,
+  "preprint": true
+ },
+ {
+  "label": "Pediatric PDX models",
+  "date": "2025-08-18",
+  "samples": 338,
+  "citation": "Kenkre et al., bioRxiv",
+  "url": "https://www.biorxiv.org/content/10.1101/2025.08.14.670153v1.abstract",
+  "external": false,
+  "preprint": true
+ },
+ {
+  "label": "Pancreatic organoids",
+  "date": "2025-09-04",
+  "samples": 260,
+  "citation": "Li et al., Cell Stem Cell",
+  "url": "https://www.cell.com/cell-stem-cell/fulltext/S1934-5909(25)00265-6#sec-8-1",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Bladder cancer",
+  "date": "2025-09-10",
+  "samples": 114,
+  "citation": "Xiao et al., Cell Genomics",
+  "url": "https://www.cell.com/cell-genomics/fulltext/S2666-979X(25)00184-3",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Gastric cancer",
+  "date": "2025-10-18",
+  "samples": 81,
+  "citation": "Hokazono et al., Gastric Cancer",
+  "url": "https://link.springer.com/article/10.1007/s10120-025-01666-y",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Breast cancer (ecDNAInspector)",
+  "date": "2025-12-02",
+  "samples": 231,
+  "citation": "Pribus et al., bioRxiv",
+  "url": "https://doi.org/10.64898/2025.12.01.691649",
+  "external": true,
+  "preprint": true
+ },
+ {
+  "label": "Breast cancer",
+  "date": "2025-12-03",
+  "samples": 1364,
+  "citation": "Kim et al., Nature",
+  "url": "https://www.nature.com/articles/s41586-025-09812-3",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Acute myeloid leukemia (ATLAS/MEASURE)",
+  "date": "2025-12-07",
+  "samples": 255,
+  "citation": "Yu et al., medRxiv",
+  "url": "https://doi.org/10.64898/2025.12.04.25340141",
+  "external": true,
+  "preprint": true
+ },
+ {
+  "label": "Glioblastoma (ecDNA atlas / ecLego3)",
+  "date": "2025-12-25",
+  "samples": 55,
+  "citation": "Wong et al., bioRxiv",
+  "url": "https://doi.org/10.64898/2025.12.24.696443",
+  "external": true,
+  "preprint": true
+ },
+ {
+  "label": "Renal cell carcinoma",
+  "date": "2026-02-26",
+  "samples": 164,
+  "citation": "Culliford et al., Molecular Cancer Research",
+  "url": "https://aacrjournals.org/mcr/article/doi/10.1158/1541-7786.MCR-25-0616/774897/Contrasting-Features-of-Papillary-and-Chromophobe",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Small cell lung cancer",
+  "date": "2026-03-17",
+  "samples": 76,
+  "citation": "Nones et al., Genome Medicine",
+  "url": "https://link.springer.com/article/10.1186/s13073-026-01624-y",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Prostate cancer (WCDT + CASCADE)",
+  "date": "2026-04-15",
+  "samples": 193,
+  "citation": "Moreno-Rodriguez et al., Genome Biology",
+  "url": "https://doi.org/10.1186/s13059-026-04074-2",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Ductal carcinoma in situ",
+  "date": "2026-05-19",
+  "samples": 113,
+  "citation": "Chmelova et al., Nature Communications",
+  "url": "https://www.nature.com/articles/s41467-026-72952-1",
+  "external": false,
+  "preprint": false
+ },
+ {
+  "label": "Bladder cancer (TCGA rerun)",
+  "date": "2026-07-04",
+  "samples": 408,
+  "citation": "Yesudhas et al., bioRxiv",
+  "url": "https://doi.org/10.64898/2026.07.01.735125",
+  "external": true,
+  "preprint": true
+ },
+ {
+  "label": "Cervical cancer (HTMCP)",
+  "date": "2026-07-20",
+  "samples": 118,
+  "citation": "MacLennan et al., bioRxiv",
+  "url": "https://doi.org/10.64898/2026.07.15.733834",
+  "external": true,
+  "preprint": true
+ },
+ {
+  "label": "HCMI models and tumors",
+  "date": "2026-08-05",
+  "samples": 989,
+  "citation": "ElHarouni et al., Nature",
+  "url": "https://doi.org/10.1038/s41586-026-10806-y",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Cancer cell lines (CCLE)",
+  "date": "2026-10-16",
+  "samples": 392,
+  "citation": "Luebeck et al., Nature Methods",
+  "url": "https://www.nature.com/articles/s41592-026-03264-x",
+  "external": false,
+  "preprint": false
+ }
+]

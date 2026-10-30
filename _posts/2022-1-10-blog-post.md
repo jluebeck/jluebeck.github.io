@@ -2,13 +2,11 @@
 title: 'Maximum entropy solver for the "Wordle" problem'
 date: 2022-1-10
 permalink: /posts/WordleSolver
+nav: projects
 tags:
   - games
   - algorithms
 ---
-
-Maximum entropy solver for the "Wordle" problem.
-=====
 
 If you don't know what Wordle is, take a quick break to familiarize yourself over at [https://www.powerlanguage.co.uk/wordle/](https://www.powerlanguage.co.uk/wordle). 
 

@@ -1,0 +1,25 @@
+---
+layout: default
+---
+{% include count-papers.html %}
+<main class="home">
+  <div class="who">
+    <img src="{{ '/images/portrait.jpg' | relative_url }}" alt="{{ site.author.name }}" width="112" height="140">
+    <div>
+      <h1>{{ site.author.name }}</h1>
+      <p>{{ site.author.role }}</p>
+      <p class="loc"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>{{ site.author.location }}</p>
+    </div>
+  </div>
+  <div class="bio">{{ content }}</div>
+  <nav class="doors" aria-label="Pages">
+    {%- for n in site.data.nav %}
+    <a href="{{ n.url | relative_url }}"><svg class="ico" aria-hidden="true"><use href="#i-{{ n.id }}"/></svg><span><b>{{ n.title }}</b><small>{{ n.blurb | replace: "#papers", npapers }}</small></span></a>
+    {%- endfor %}
+    <a href="{{ site.author.cv }}"><svg class="ico" aria-hidden="true"><use href="#i-cv"/></svg><span><b>CV</b><small>PDF</small></span></a>
+  </nav>
+  <div class="elsewhere">
+    <a href="{{ site.author.github }}">GitHub</a><a href="{{ site.author.scholar }}">Google Scholar</a><a href="{{ site.author.linkedin }}">LinkedIn</a><span class="addr">{{ site.author.email }}</span>
+  </div>
+  <p class="stamp">Updated {{ site.time | date: "%B %Y" }}</p>
+</main>
