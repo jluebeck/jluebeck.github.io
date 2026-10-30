@@ -7,7 +7,7 @@ import base64, json, pathlib, sys
 SRC = pathlib.Path(__file__).parent
 OUT = SRC.parent
 CV = "https://drive.google.com/file/d/1F6BNKErYd7ilL7CxAAEkQoBL2D0QUOxc/view?usp=sharing"
-PHOTO = SRC.parent.parent / "images" / "portrait-sq.jpg"
+IMAGES = {"{{PHOTO_SQ}}": "portrait-sq.jpg", "{{PHOTO_TALK}}": "talk-edynamic.jpg"}
 
 USAGE = json.loads((SRC / "aa_usage.json").read_text())
 SUBS = {
@@ -28,8 +28,13 @@ for f in sorted(SRC.glob("*.html")):
     # Split leading <title>/<meta>/<link>/<style> into <head>; the rest is body.
     i = s.index("</style>") + len("</style>")
     page = head + s[:i] + "\n</head>\n<body>\n" + s[i:] + "\n</body>\n</html>\n"
-    (OUT / f.name).write_text(page.replace("{{PHOTO_SQ}}", "../images/portrait-sq.jpg"))
+    frag = s
+    for k, name in IMAGES.items():
+        page = page.replace(k, "../images/" + name)
+        if len(sys.argv) > 1:
+            uri = "data:image/jpeg;base64," + base64.b64encode((SRC.parent.parent / "images" / name).read_bytes()).decode()
+            frag = frag.replace(k, uri)
+    (OUT / f.name).write_text(page)
     if len(sys.argv) > 1:
-        uri = "data:image/jpeg;base64," + base64.b64encode(PHOTO.read_bytes()).decode()
-        pathlib.Path(sys.argv[1], f.name).write_text(s.replace("{{PHOTO_SQ}}", uri))
+        pathlib.Path(sys.argv[1], f.name).write_text(frag)
     print("built", f.name)
