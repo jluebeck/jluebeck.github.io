@@ -39,7 +39,9 @@ h1, h2 { font-family: var(--serif); font-weight: 600; letter-spacing: -.01em; te
 /* ---------- landing ---------- */
 .home { max-width: 640px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); padding-block: clamp(40px, 10vh, 120px) 56px; }
 .who { display: flex; gap: 20px; align-items: center; }
-.who img { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; flex: none; }
+.who img { width: 112px; height: 140px; border-radius: 10px; object-fit: cover; flex: none; }
+.loc { display: inline-flex; align-items: center; gap: 4px; }
+.loc .ico { width: 15px; height: 15px; stroke: currentColor; stroke-width: 1.8; }
 .who h1 { font-size: 34px; line-height: 1.1; margin: 0; }
 .who p { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
 .bio { font-size: 18px; line-height: 1.6; margin: 28px 0 32px; }
@@ -163,14 +165,15 @@ td a { color: var(--fg); }
   <symbol id="i-publications" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7zM14 3v4h4M10 12h5M10 16h5"/></symbol>
   <symbol id="i-about" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c1.2-3.6 3.9-5.5 7-5.5s5.8 1.9 7 5.5"/></symbol>
   <symbol id="i-projects" viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1"/><circle cx="16.75" cy="16.75" r="3.25"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.8-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 15.2 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></symbol>
   <symbol id="i-cv" viewBox="0 0 24 24"><path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 20h14"/></symbol>
 </svg>
 
 <!-- ===== landing ===== -->
 <div class="home" data-view="home">
   <div class="who">
-    <img src="../images/portrait-sq.jpg" alt="Jens Luebeck">
-    <div><h1>Jens Luebeck</h1><p>Associate Project Scientist · CSE · UC San Diego</p></div>
+    <img src="../images/portrait.jpg" alt="Jens Luebeck" width="112" height="140">
+    <div><h1>Jens Luebeck</h1><p>Associate Project Scientist · CSE · UC San Diego</p><p class="loc"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Seattle, WA</p></div>
   </div>
   <p class="bio">I study the structure and consequences of complex cancer genomes. Much of our work focuses on extrachromosomal DNA, and on building methods and open-source software to detect and reconstruct it. I founded and lead <a href="#software">AmpliconSuite</a> and develop computational tooling for the eDyNAmiC Cancer Grand Challenges team.</p>
   <nav class="doors" aria-label="Pages">
@@ -188,7 +191,7 @@ td a { color: var(--fg); }
 <!-- ===== inner pages ===== -->
 <div class="shell" data-view="inner" hidden>
   <aside class="side">
-    <a class="me" href="#"><img src="../images/portrait-sq.jpg" alt=""><span><b>Jens Luebeck</b><small>UC San Diego</small></span></a>
+    <a class="me" href="#"><img src="../images/portrait-sq.jpg" alt=""><span><b>Jens Luebeck</b><small>UC San Diego · Seattle, WA</small></span></a>
     <nav aria-label="Pages"><ul class="pnav" id="pnav"></ul></nav>
     <div class="links"><a href="https://github.com/jluebeck">GitHub</a><a href="https://scholar.google.com/citations?hl=en&amp;user=bn4vrPUAAAAJ">Scholar</a><a href="https://www.linkedin.com/in/jens-luebeck-b5639a256/">LinkedIn</a><a href="https://drive.google.com/file/d/1F6BNKErYd7ilL7CxAAEkQoBL2D0QUOxc/view?usp=sharing">CV</a></div>
     <span class="addr">jluebeck@ucsd.edu</span>

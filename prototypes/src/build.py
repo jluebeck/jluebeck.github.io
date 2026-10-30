@@ -7,7 +7,7 @@ import base64, json, pathlib, sys
 SRC = pathlib.Path(__file__).parent
 OUT = SRC.parent
 CV = "https://drive.google.com/file/d/1F6BNKErYd7ilL7CxAAEkQoBL2D0QUOxc/view?usp=sharing"
-IMAGES = {"{{PHOTO_SQ}}": "portrait-sq.jpg", "{{PHOTO_TALK}}": "talk-edynamic.jpg"}
+IMAGES = {"{{PHOTO_SQ}}": "portrait-sq.jpg", "{{PHOTO_PORTRAIT}}": "portrait.jpg", "{{PHOTO_TALK}}": "talk-edynamic.jpg"}
 
 USAGE = json.loads((SRC / "aa_usage.json").read_text())
 SUBS = {
