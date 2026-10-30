@@ -122,6 +122,8 @@ td a { color: var(--fg); }
 .uc-tip span { color: var(--muted); }
 .uc-tip .uc-n { color: var(--fg); }
 
+.talk { margin: 0 0 16px; }
+.talk .slot { aspect-ratio: 16 / 7; max-width: 100%; border: 1px dashed var(--muted); border-radius: 10px; display: grid; place-items: center; text-align: center; padding: 16px; font: 400 13px/1.5 var(--mono); color: var(--muted); }
 .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .cards > * { display: flex; flex-direction: column; gap: 4px; padding: 16px; border-radius: 10px; background: var(--tile); border: 1px solid transparent; text-decoration: none; color: var(--fg); min-width: 0; }
 .cards a:hover { border-color: var(--accent); }
@@ -164,12 +166,12 @@ td a { color: var(--fg); }
     <img src="../images/portrait-sq.jpg" alt="Jens Luebeck">
     <div><h1>Jens Luebeck</h1><p>Associate Project Scientist · CSE · UC San Diego</p></div>
   </div>
-  <p class="bio">I build algorithms and open-source software for finding extrachromosomal DNA and other oncogene amplifications in cancer genomes. I founded and lead <a href="#software">AmpliconSuite</a>, and lead bioinformatics for the eDyNAmiC Cancer Grand Challenges team.</p>
+  <p class="bio">I study the structure of complex cancer genomes, with a focus on extrachromosomal DNA. I build methods and open-source software to detect and reconstruct it, and use them to understand its consequences in cancer. I founded and lead <a href="#software">AmpliconSuite</a> and develop computational tooling for the eDyNAmiC Cancer Grand Challenges team.</p>
   <nav class="doors" aria-label="Pages">
     <a href="#research"><svg class="ico"><use href="#i-research"/></svg><span><b>Research</b><small>ecDNA, amplicons</small></span></a>
-    <a href="#software"><svg class="ico"><use href="#i-software"/></svg><span><b>Software</b><small>15 tools · 55 studies</small></span></a>
+    <a href="#software"><svg class="ico"><use href="#i-software"/></svg><span><b>Software</b><small>15 tools</small></span></a>
     <a href="#publications"><svg class="ico"><use href="#i-publications"/></svg><span><b>Publications</b><small>45 papers</small></span></a>
-    <a href="#about"><svg class="ico"><use href="#i-about"/></svg><span><b>About</b><small>roles, talks, contact</small></span></a>
+    <a href="#about"><svg class="ico"><use href="#i-about"/></svg><span><b>About</b><small>bio, talks, contact</small></span></a>
     <a href="#projects"><svg class="ico"><use href="#i-projects"/></svg><span><b>Projects</b><small>visualizations, a game</small></span></a>
     <a href="https://drive.google.com/file/d/1F6BNKErYd7ilL7CxAAEkQoBL2D0QUOxc/view?usp=sharing"><svg class="ico"><use href="#i-cv"/></svg><span><b>CV</b><small>PDF</small></span></a>
   </nav>
@@ -191,24 +193,25 @@ td a { color: var(--fg); }
     <article class="page" data-page="research" hidden>
       <h1>Research</h1>
       <p class="lede">Detecting and reconstructing extrachromosomal DNA and other focal amplifications in cancer genomes.</p>
-      <section id="problem" data-title="The problem">
-        <h2>The problem</h2>
+      <section id="problem" data-title="Overview">
+        <h2>Overview</h2>
         <p>Cancers often amplify oncogenes on circles of DNA outside the chromosomes. These circles, ecDNA, have no centromere and are split unevenly at each cell division, so a tumour can raise or lower oncogene dose within a few generations. ecDNA is linked to drug resistance and poor outcomes.</p>
-        <p>Seeing ecDNA in sequencing data is hard. Its structure has to be reconstructed from short fragments by building and searching a breakpoint graph. I develop those methods for short-read, long-read and optical-mapping data, and apply them in large collaborative cancer studies.</p>
+        <p>Seeing ecDNA in sequencing data is hard. Its structure has to be reconstructed from short fragments by building and searching a breakpoint graph. I develop those methods for short-read, long-read and optical-mapping data, use them to study how ecDNA and other complex rearrangements shape cancer genomes, and apply them in large collaborative cancer studies.</p>
+        <p>The tools have become a common starting point for ecDNA research. They have been used in 55 large-scale studies, 39 of them by other groups, including pan-cancer analyses of TCGA, PCAWG and the 100,000 Genomes Project. Our work in Barrett's oesophagus showed that ecDNA can arise before cancer does, challenging the view of ecDNA as a late event in tumour evolution.</p>
       </section>
       <section id="selected" data-title="Selected work">
         <h2>Selected work</h2>
         <ul class="items">
-          <li><a class="t" href="https://www.nature.com/articles/s41592-026-03264-x">AmpliconSuite: an end-to-end workflow for analyzing focal amplifications in cancer genomes</a><span class="r">co-first</span><span class="m"><i>Nature Methods</i>, 2026. The toolkit and AmpliconRepository, validated against FISH for 175 genes. <a href="https://communities.springernature.com/posts/ampliconsuite-and-ampliconrepository-enabling-ecdna-research-at-scale">Behind the paper</a> · <a href="https://www.cancergrandchallenges.org/news/closing-the-gap-between-tool-development-and-biology-to-decode-extrachromosomal-dna-in-cancer">CGC feature</a></span></li>
-          <li><a class="t" href="https://pubmed.ncbi.nlm.nih.gov/37046089/">Extrachromosomal DNA in the cancerous transformation of Barrett's oesophagus</a><span class="r">first</span><span class="m"><i>Nature</i>, 2023. ecDNA appears before cancer and predicts progression.</span></li>
-          <li><a class="t" href="https://pubmed.ncbi.nlm.nih.gov/39402156/">Mapping extrachromosomal DNA amplifications during cancer progression</a><span class="r">senior</span><span class="m"><i>Nature Genetics</i>, 2024.</span></li>
-          <li><a class="t" href="https://pubmed.ncbi.nlm.nih.gov/32873787/">Integrated analysis of NGS and optical mapping resolves the complex structures of focal amplifications in cancer</a><span class="r">first</span><span class="m"><i>Nature Communications</i>, 2020. AmpliconReconstructor.</span></li>
+          <li><a class="t" href="https://www.nature.com/articles/s41592-026-03264-x">AmpliconSuite: an end-to-end workflow for analyzing focal amplifications in cancer genomes</a><span class="m"><i>Nature Methods</i>, 2026. The toolkit and AmpliconRepository, validated against FISH for 175 genes. <a href="https://communities.springernature.com/posts/ampliconsuite-and-ampliconrepository-enabling-ecdna-research-at-scale">Behind the paper</a> · <a href="https://www.cancergrandchallenges.org/news/closing-the-gap-between-tool-development-and-biology-to-decode-extrachromosomal-dna-in-cancer">CGC feature</a></span></li>
+          <li><a class="t" href="https://pubmed.ncbi.nlm.nih.gov/37046089/">Extrachromosomal DNA in the cancerous transformation of Barrett's oesophagus</a><span class="m"><i>Nature</i>, 2023. ecDNA appears before cancer and predicts progression.</span></li>
+          <li><a class="t" href="https://pubmed.ncbi.nlm.nih.gov/39402156/">Mapping extrachromosomal DNA amplifications during cancer progression</a><span class="m"><i>Nature Genetics</i>, 2024.</span></li>
+          <li><a class="t" href="https://pubmed.ncbi.nlm.nih.gov/32873787/">Integrated analysis of NGS and optical mapping resolves the complex structures of focal amplifications in cancer</a><span class="m"><i>Nature Communications</i>, 2020. AmpliconReconstructor.</span></li>
         </ul>
       </section>
       <section id="collabs" data-title="Collaborations">
         <h2>Collaborations</h2>
         <ul class="items dated">
-          <li><span>eDyNAmiC, Cancer Grand Challenges<span class="m">Bioinformatics lead for an international ecDNA team.</span></span><time>2022–</time></li>
+          <li><span>eDyNAmiC, Cancer Grand Challenges<span class="m">Computational tooling for an international ecDNA team.</span></span><time>2022–</time></li>
           <li><span>ARPA-H ADAPT program</span><time>2025–</time></li>
           <li><span>Molecular Tumor Board, Moores Cancer Center</span><time>2024–</time></li>
           <li><span>The Cancer Genome Atlas Analysis Network</span><time>2021–23</time></li>
@@ -220,7 +223,7 @@ td a { color: var(--fg); }
     <article class="page" data-page="software" hidden>
       <h1>Software</h1>
       <p class="lede">AmpliconSuite is a set of 15 interoperable open-source tools for analysing focal amplifications, from raw reads to classified, visualised structures. I founded the project and lead its development.</p>
-      <div class="facts"><span><b>50,626</b> samples analysed</span><span><b>55</b> published studies</span><span><b>39</b> by other groups</span><a href="https://github.com/AmpliconSuite">github.com/AmpliconSuite</a></div>
+      <div class="facts"><span><b>55</b> large-scale studies</span><span><b>39</b> by other groups</span><span><b>50,626</b> samples analysed</span><a href="https://github.com/AmpliconSuite">github.com/AmpliconSuite</a></div>
       <section id="tools" data-title="Tools">
         <h2>Tools</h2>
         <div class="tw"><table>
@@ -235,12 +238,13 @@ td a { color: var(--fg); }
             <tr><td class="name"><a href="https://github.com/jluebeck/CycleViz">CycleViz</a></td><td>Circular and linear structure visualization</td><td><span class="chip lead">lead</span></td></tr>
             <tr><td class="name"><a href="https://github.com/jluebeck/FaNDOM">FaNDOM</a></td><td>Fast optical genome map alignment</td><td><span class="chip lead">co-lead</span></td></tr>
             <tr><td class="name"><a href="https://github.com/jluebeck/ecSimulator">ecSimulator</a></td><td>Simulated ecDNA structures for benchmarking</td><td><span class="chip lead">lead</span></td></tr>
+            <tr><td class="name">Cycle-Extractor</td><td>Fast resolution of ecDNA sequence from the breakpoint graph</td><td><span class="chip">contributor</span></td></tr>
           </tbody>
         </table></div>
       </section>
       <section id="usage" data-title="Usage">
         <h2>Usage</h2>
-        <p>Samples analysed with AmpliconArchitect or AmpliconSuite in published studies and preprints, by publication date. Hover a step to see the study.</p>
+        <p>Large-scale studies (50 or more samples) that used AmpliconArchitect or AmpliconSuite, counted by samples analysed and plotted by publication date. Preprints are included. Hover a step to see the study.</p>
         <div class="filters" role="group" aria-label="Which studies to count">
           <button type="button" data-u="all" aria-pressed="true">All studies</button>
           <button type="button" data-u="ext" aria-pressed="false">Other groups only</button>
@@ -250,6 +254,7 @@ td a { color: var(--fg); }
       </section>
       <section id="studies" data-title="Studies">
         <h2>Studies using the tools</h2>
+        <p>Published studies and preprints with 50 or more samples.</p>
         <div class="tw"><table><thead><tr><th>Date</th><th>Study</th><th>Cohort</th><th style="text-align:right">Samples</th></tr></thead><tbody id="studytable"></tbody></table></div>
         <button class="more" type="button" id="showall">Show all 55 studies</button>
       </section>
@@ -258,16 +263,24 @@ td a { color: var(--fg); }
     <!-- Publications -->
     <article class="page" data-page="publications" hidden>
       <h1>Publications</h1>
-      <p class="lede">45 peer-reviewed papers and 4 preprints. * equal contribution, ^ senior author. Also on <a href="https://scholar.google.com/citations?hl=en&amp;user=bn4vrPUAAAAJ">Google Scholar</a>.</p>
-      <section id="list" data-title="All papers">
+      <p class="lede">45 peer-reviewed papers and 4 preprints. * equal contribution. Also on <a href="https://scholar.google.com/citations?hl=en&amp;user=bn4vrPUAAAAJ">Google Scholar</a>.</p>
+      <section id="list" data-title="Papers">
         <div class="filters" id="pubfilters" role="group" aria-label="Filter publications">
           <button type="button" data-f="all" aria-pressed="true">All<span></span></button>
           <button type="button" data-f="lead" aria-pressed="false">First or senior<span></span></button>
-          <button type="button" data-f="methods" aria-pressed="false">Methods &amp; software<span></span></button>
+          <button type="button" data-f="methods" aria-pressed="false">Computational methods<span></span></button>
           <button type="button" data-f="pre" aria-pressed="false">Preprints<span></span></button>
           <input id="pubq" type="search" placeholder="Search titles, journals, authors" aria-label="Search publications">
         </div>
         <div id="publist"></div>
+      </section>
+      <section id="writing" data-title="Other writing">
+        <h2>Other writing</h2>
+        <ul class="items dated">
+          <li><span><a class="t" href="https://communities.springernature.com/posts/ampliconsuite-and-ampliconrepository-enabling-ecdna-research-at-scale">AmpliconSuite and AmpliconRepository: enabling ecDNA research at scale</a><span class="m">Springer Nature Research Communities</span></span><time>2026</time></li>
+          <li><span><a class="t" href="https://www.cancergrandchallenges.org/news/closing-the-gap-between-tool-development-and-biology-to-decode-extrachromosomal-dna-in-cancer">Closing the gap between tool development and biology to decode extrachromosomal DNA in cancer</a><span class="m">Cancer Grand Challenges</span></span><time>2026</time></li>
+          <li><span><a class="t" href="https://cancercommunity.nature.com/posts/ampliconreconstructor-revealing-focally-amplified-rearrangements-in-cancer">AmpliconReconstructor: revealing focally amplified rearrangements in cancer</a><span class="m">Nature Research Cancer Community</span></span><time>2020</time></li>
+        </ul>
       </section>
     </article>
 
@@ -277,8 +290,8 @@ td a { color: var(--fg); }
       <p class="lede">Computational cancer genomics scientist and scientific software developer.</p>
       <section id="bio" data-title="Bio">
         <h2>Bio</h2>
-        <p>I am an Associate Project Scientist in Computer Science and Engineering at UC San Diego, working with Vineet Bafna. I completed my PhD in Bioinformatics and Systems Biology at UCSD in 2021, an MS in Computer Science along the way, and a BS in Applied and Computational Mathematical Sciences at the University of Washington. In 2022 I consulted for Boundless Bio.</p>
-        <p>Alongside research I run our group's compute cluster (182 cores, 375 TB) and led its NIST 800-171 compliance for controlled-access genomic data.</p>
+        <p>I am an Associate Project Scientist in Computer Science and Engineering at UC San Diego, working with Vineet Bafna. I completed my PhD in Bioinformatics and Systems Biology at UCSD in 2021, an MS in Computer Science along the way, and a BS in Applied and Computational Mathematical Sciences at the University of Washington. I have also previously consulted for Boundless Bio.</p>
+        <p>I look after Genomequery, our group's research computing cluster. I live in the Seattle area.</p>
       </section>
       <section id="recognition" data-title="Recognition">
         <h2>Recognition</h2>
@@ -290,18 +303,22 @@ td a { color: var(--fg); }
         </ul>
       </section>
       <section id="talks" data-title="Talks">
-        <h2>Recent talks</h2>
+        <h2>Selected talks</h2>
+        <figure class="talk">
+          <div class="slot">Talk photo goes here: presenting AmpliconSuite-pipeline at a Cancer Grand Challenges meeting.</div>
+        </figure>
         <ul class="items dated">
           <li><span>eDyNAmiC Symposium<span class="m">Stanford, CA</span></span><time>Oct 2026</time></li>
-          <li><span>NCI Informatics Technology for Cancer Research<span class="m">Online</span></span><time>Sep 2026</time></li>
+          <li><span>AmpliconSuite and AmpliconRepository: enabling ecDNA biology at scale<span class="m">NCI Informatics Technology for Cancer Research · <a href="https://www.cancer.gov/about-nci/organization/cbiit/news-events/events/ampliconsuite-ampliconrepository-enabling-ecdna-biology-at-scale">Recording</a></span></span><time>Sep 2026</time></li>
           <li><span>Cancer Genomics Consortium Annual Meeting<span class="m">Houston, TX</span></span><time>Aug 2026</time></li>
           <li><span>Cancer Grand Challenges Conference: ecDNA<span class="m">London, UK</span></span><time>Jun 2025</time></li>
           <li><span>AACR Annual Meeting, minisymposium<span class="m">Chicago, IL</span></span><time>Apr 2025</time></li>
+          <li><span>Combined NGS and optical genome mapping reveal the complex structures of circular ecDNA and other focal amplifications<span class="m">Bionano Genomics Symposium · <a href="https://bionanogenomics.com/videos/combined-ngs-and-optical-genome-mapping-reveal-the-complex-structures-of-circular-extrachromosomal-dna-and-other-focal-amplifications-in-cancer-genomes/">Recording</a></span></span><time>Jan 2022</time></li>
         </ul>
       </section>
       <section id="mentoring" data-title="Mentoring">
         <h2>Mentoring</h2>
-        <p>Since 2022 I have mentored twelve undergraduate researchers, several of whom are now co-authors on published work.</p>
+        <p>I mentor students from undergraduate through post-baccalaureate and master's level, several of whom are now co-authors on published work. If you would like to ask about a project to collaborate on, reach out with your CV.</p>
       </section>
       <section id="contact" data-title="Contact">
         <h2>Contact</h2>
@@ -317,9 +334,7 @@ td a { color: var(--fg); }
       <section id="all" data-title="All projects">
         <div class="cards">
           <a href="https://github.com/jluebeck/ReactionDiffusionSimulator"><b>Turing patterns</b><small>A reaction-diffusion simulator for spots and stripes.</small><code>/lab/turing</code></a>
-          <a href="#"><b>Maximum-entropy Wordle solver</b><small>Choosing the guess that splits the remaining words most evenly. 2022.</small><code>/writing/wordle</code></a>
-          <div><b>ecDNA inheritance</b><small>An interactive look at uneven segregation. Planned.</small><code>/lab/ecdna</code></div>
-          <div><b>Untitled game</b><small>In progress, in its own repository.</small><code>/game</code></div>
+          <a href="https://jluebeck.github.io/posts/WordleSolver"><b>Maximum-entropy Wordle solver</b><small>Choosing the guess that splits the remaining words most evenly. 2022.</small><code>/posts/WordleSolver</code></a>
         </div>
       </section>
     </article>
@@ -404,7 +419,7 @@ function UsageChart(el, all, opts) {
 
 (function () {
   var U = [{"label":"NCI-60","date":"2017-03-01","samples":113,"citation":"Turner et al., Nature","url":"","external":false,"preprint":false},{"label":"AmpliconArchitect paper","date":"2019-01-23","samples":68,"citation":"Deshpande et al., Nature Communications","url":"https://doi.org/10.1038/s41467-018-08200-y","external":false,"preprint":false},{"label":"Pan-cancer (TCGA)","date":"2020-08-17","samples":3212,"citation":"Kim et al., Nature Genetics","url":"https://pubmed.ncbi.nlm.nih.gov/32807987/","external":false,"preprint":false},{"label":"Gastric cardia adenocarcinoma","date":"2021-11-11","samples":72,"citation":"Zhao et al., Nature Communications","url":"","external":true,"preprint":false},{"label":"Head-and-neck cancer (HPV-driven)","date":"2021-12-15","samples":72,"citation":"Pang et al., Clinical Cancer Research","url":"https://pubmed.ncbi.nlm.nih.gov/34548317/","external":false,"preprint":false},{"label":"Pan-cancer (clustered mutations)","date":"2022-02-09","samples":2583,"citation":"Bergstrom et al., Nature","url":"https://pubmed.ncbi.nlm.nih.gov/35140399/","external":false,"preprint":false},{"label":"eccDNAdb","date":"2022-04-06","samples":191,"citation":"Peng et al., Oncogene","url":"https://doi.org/10.1038/s41388-022-02286-x","external":true,"preprint":false},{"label":"Esophageal squamous cell carcinoma","date":"2022-10-22","samples":528,"citation":"Cui et al., Nature Communications","url":"","external":true,"preprint":false},{"label":"eccDNA Atlas","date":"2023-02-09","samples":319,"citation":"Zhong et al., Briefings in Bioinformatics","url":"https://doi.org/10.1093/bib/bbad037","external":true,"preprint":false},{"label":"Small cell lung cancer","date":"2023-04-01","samples":143,"citation":"Pongor et al., Cancer Discovery","url":"","external":true,"preprint":false},{"label":"Barrett's and Esophageal adenocarcinoma","date":"2023-04-12","samples":286,"citation":"Luebeck et al., Nature","url":"https://pubmed.ncbi.nlm.nih.gov/37046089/","external":false,"preprint":false},{"label":"Neuroblastoma","date":"2023-10-11","samples":150,"citation":"Rodriguez-Fos et al., Cell Genomics","url":"","external":true,"preprint":false},{"label":"Medulloblastoma","date":"2023-11-01","samples":481,"citation":"Chapman et al., Nature Genetics","url":"https://doi.org/10.1038/s41588-023-01551-3","external":false,"preprint":false},{"label":"Hepatocellular carcinoma (HPV-driven)","date":"2024-02-01","samples":494,"citation":"Chen et al., Nature","url":"https://doi.org/10.1038/s41586-024-07054-3","external":true,"preprint":false},{"label":"GCAP Pancancer WES benchmark","date":"2024-02-19","samples":386,"citation":"Wang et al., Nature Communications","url":"https://www.nature.com/articles/s41467-024-45479-6","external":true,"preprint":false},{"label":"T cell lymphoma","date":"2024-04-02","samples":71,"citation":"Chen et al., Genome Medicine","url":"https://link.springer.com/article/10.1186/s13073-024-01324-5","external":true,"preprint":false},{"label":"Small cell lung cancer","date":"2024-05-01","samples":51,"citation":"Choudhuri et al., Cancer Discovery","url":"https://aacrjournals.org/cancerdiscovery/article/14/5/804/745033","external":true,"preprint":false},{"label":"Esophageal squamous cell carcinoma","date":"2024-05-14","samples":710,"citation":"Ng et al., Nature Communications","url":"https://doi.org/10.1038/s41467-024-47619-4","external":true,"preprint":false},{"label":"Hematological malignancies","date":"2024-07-13","samples":208,"citation":"Zhang et al., Neoplasia","url":"","external":true,"preprint":false},{"label":"Cancer cell lines","date":"2024-08-01","samples":468,"citation":"Fessler et al., NAR Cancer","url":"https://academic.oup.com/narcancer/article/6/3/zcae035/7725462","external":true,"preprint":false},{"label":"Colorectal cancer","date":"2024-08-07","samples":1761,"citation":"Cornish et al., Nature","url":"https://www.nature.com/articles/s41586-024-07747-9","external":true,"preprint":false},{"label":"Colorectal cancer","date":"2024-08-08","samples":1063,"citation":"Nunes et al., Nature","url":"https://www.nature.com/articles/s41586-024-07769-3","external":true,"preprint":false},{"label":"Urothelial carcinoma","date":"2024-08-19","samples":80,"citation":"Lv et al., Theranostics","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC11388072/","external":true,"preprint":false},{"label":"Urothelial carcinoma","date":"2024-10-09","samples":71,"citation":"Nguyen et al., Nature","url":"https://doi.org/10.1038/s41586-024-07955-3","external":true,"preprint":false},{"label":"Pan-cancer long read (matched WGS)","date":"2024-10-14","samples":189,"citation":"O'Neill et al., Cell Genomics","url":"https://www.cell.com/cell-genomics/fulltext/S2666-979X%2824%2900293-3","external":true,"preprint":false},{"label":"Pan-cancer (TCGA, PCAWG, Hartwig)","date":"2024-10-15","samples":8060,"citation":"Kim et al., Nature Genetics","url":"https://pubmed.ncbi.nlm.nih.gov/39402156/","external":false,"preprint":false},{"label":"Genomics England","date":"2024-11-15","samples":14778,"citation":"Bailey et al., Nature","url":"https://www.nature.com/articles/s41586-024-08107-3","external":false,"preprint":false},{"label":"Urothelial carcinoma","date":"2025-01-17","samples":199,"citation":"Zheng et al., iScience","url":"https://www.cell.com/iscience/fulltext/S2589-0042(24)02737-8?uuid=uuid%3Abbcdcde1-10ec-4f42-9658-f44d0e5c5e89","external":true,"preprint":false},{"label":"Osteosarcoma","date":"2025-01-23","samples":356,"citation":"Valle-Inclan et al., Cell","url":"https://www.cell.com/cell/fulltext/S0092-8674(24)01418-1","external":true,"preprint":false},{"label":"Urothelial carcinoma","date":"2025-03-11","samples":1411,"citation":"Lv et al., Cancer Discovery","url":"https://pubmed.ncbi.nlm.nih.gov/40062518/","external":false,"preprint":false},{"label":"Glioma","date":"2025-04-14","samples":579,"citation":"Mayr et al., Cancer Cell","url":"https://www.cell.com/cancer-cell/fulltext/S1535-6108(25)00070-4","external":true,"preprint":false},{"label":"Diffuse glioma (100kGP)","date":"2025-05-07","samples":403,"citation":"Kinnersley et al., Nature Communications","url":"https://doi.org/10.1038/s41467-025-59156-9","external":true,"preprint":false},{"label":"Pan-cancer 3D genome (TCGA)","date":"2025-05-12","samples":169,"citation":"Yost et al., Nature Genetics","url":"https://www.nature.com/articles/s41588-025-02188-0","external":false,"preprint":false},{"label":"Glioma","date":"2025-05-21","samples":93,"citation":"Akdemir et al., bioRxiv","url":"https://www.biorxiv.org/content/10.1101/2025.05.16.654515v1.full.pdf","external":true,"preprint":true},{"label":"PanPedCan","date":"2025-06-15","samples":3796,"citation":"Sridhar et al., medRxiv","url":"https://www.medrxiv.org/content/10.1101/2025.07.22.24308163v2.full","external":false,"preprint":true},{"label":"Testicular cancer","date":"2025-06-16","samples":252,"citation":"Zhang et al., ResearchSquare","url":"https://www.researchsquare.com/article/rs-6735635/v1","external":true,"preprint":true},{"label":"Ovarian cancer","date":"2025-07-01","samples":324,"citation":"Ewing et al., Nature Communications","url":"https://www.nature.com/articles/s41467-025-60655-y","external":true,"preprint":false},{"label":"Lung cancer","date":"2025-07-24","samples":1216,"citation":"Khandekar et al., bioRxiv","url":"https://pubmed.ncbi.nlm.nih.gov/40501879/","external":false,"preprint":true},{"label":"Prostate cancer","date":"2025-08-12","samples":69,"citation":"Mout et al., bioRxiv","url":"https://www.biorxiv.org/content/10.1101/2025.08.08.668693v1.abstract","external":true,"preprint":true},{"label":"Pediatric PDX models","date":"2025-08-18","samples":338,"citation":"Kenkre et al., bioRxiv","url":"https://www.biorxiv.org/content/10.1101/2025.08.14.670153v1.abstract","external":false,"preprint":true},{"label":"Pancreatic organoids","date":"2025-09-04","samples":260,"citation":"Li et al., Cell Stem Cell","url":"https://www.cell.com/cell-stem-cell/fulltext/S1934-5909(25)00265-6#sec-8-1","external":true,"preprint":false},{"label":"Bladder cancer","date":"2025-09-10","samples":114,"citation":"Xiao et al., Cell Genomics","url":"https://www.cell.com/cell-genomics/fulltext/S2666-979X(25)00184-3","external":true,"preprint":false},{"label":"Gastric cancer","date":"2025-10-18","samples":81,"citation":"Hokazono et al., Gastric Cancer","url":"https://link.springer.com/article/10.1007/s10120-025-01666-y","external":true,"preprint":false},{"label":"Breast cancer (ecDNAInspector)","date":"2025-12-02","samples":231,"citation":"Pribus et al., bioRxiv","url":"https://doi.org/10.64898/2025.12.01.691649","external":true,"preprint":true},{"label":"Breast cancer","date":"2025-12-03","samples":1364,"citation":"Kim et al., Nature","url":"https://www.nature.com/articles/s41586-025-09812-3","external":true,"preprint":false},{"label":"Acute myeloid leukemia (ATLAS/MEASURE)","date":"2025-12-07","samples":255,"citation":"Yu et al., medRxiv","url":"https://doi.org/10.64898/2025.12.04.25340141","external":true,"preprint":true},{"label":"Glioblastoma (ecDNA atlas / ecLego3)","date":"2025-12-25","samples":55,"citation":"Wong et al., bioRxiv","url":"https://doi.org/10.64898/2025.12.24.696443","external":true,"preprint":true},{"label":"Renal cell carcinoma","date":"2026-02-26","samples":164,"citation":"Culliford et al., Molecular Cancer Research","url":"https://aacrjournals.org/mcr/article/doi/10.1158/1541-7786.MCR-25-0616/774897/Contrasting-Features-of-Papillary-and-Chromophobe","external":true,"preprint":false},{"label":"Small cell lung cancer","date":"2026-03-17","samples":76,"citation":"Nones et al., Genome Medicine","url":"https://link.springer.com/article/10.1186/s13073-026-01624-y","external":true,"preprint":false},{"label":"Prostate cancer (WCDT + CASCADE)","date":"2026-04-15","samples":193,"citation":"Moreno-Rodriguez et al., Genome Biology","url":"https://doi.org/10.1186/s13059-026-04074-2","external":true,"preprint":false},{"label":"Ductal carcinoma in situ","date":"2026-05-19","samples":113,"citation":"Chmelova et al., Nature Communications","url":"https://www.nature.com/articles/s41467-026-72952-1","external":false,"preprint":false},{"label":"Bladder cancer (TCGA rerun)","date":"2026-07-04","samples":408,"citation":"Yesudhas et al., bioRxiv","url":"https://doi.org/10.64898/2026.07.01.735125","external":true,"preprint":true},{"label":"Cervical cancer (HTMCP)","date":"2026-07-20","samples":118,"citation":"MacLennan et al., bioRxiv","url":"https://doi.org/10.64898/2026.07.15.733834","external":true,"preprint":true},{"label":"HCMI models and tumors","date":"2026-08-05","samples":989,"citation":"ElHarouni et al., Nature","url":"https://doi.org/10.1038/s41586-026-10806-y","external":true,"preprint":false},{"label":"Cancer cell lines (CCLE)","date":"2026-10-16","samples":392,"citation":"Luebeck et al., Nature Methods","url":"https://www.nature.com/articles/s41592-026-03264-x","external":false,"preprint":false}], chart = null;
-  // [year, authors, title, venue, pmid, flags]  flags: f = first/co-first, s = senior, m = methods/software, p = preprint
+  // [year, authors, title, venue, pmid, flags]  flags: f = first/co-first, s = senior, m = computational methods, p = preprint
   var P = [
     [2026,"Luebeck J*, Liefeld T*, Wong ITL*, Huang E*, et al.","AmpliconSuite: an end-to-end workflow for analyzing focal amplifications in cancer genomes","Nature Methods","42888240","fm"],
     [2026,"Zhao W, Cheng Z, Tian K, … Luebeck J, … Hua Y.","A living multi-omics PDX biobank of high-risk sarcomas reveals ecDNA-driven oncogene amplification in osteosarcoma","Advanced Science","42864811",""],
@@ -417,7 +432,7 @@ function UsageChart(el, all, opts) {
     [2025,"Chowdhury B, Zhu K, Li C, Alsing J, Luebeck J, et al.","Reconstructing the three-dimensional architecture of extrachromosomal DNA with ec3D","Nature Communications","41422275","m"],
     [2025,"Kraft K, Murphy SE, Jones MG, … Luebeck J, … Chang HY.","Enhancer activation from transposable elements in extrachromosomal DNA","Nature Cell Biology","39282372",""],
     [2025,"Noorani I, Haughey M, Luebeck J, et al.","Extrachromosomal DNA-driven oncogene spatial heterogeneity and evolution in glioblastoma","Cancer Discovery","39484416",""],
-    [2025,"Lv W, Zeng Y, Li C, … Luebeck J^, … Han P.","Spatial-temporal diversity of extrachromosomal DNA shapes urothelial carcinoma evolution and tumor-immune microenvironment","Cancer Discovery","40062518","s"],
+    [2025,"Lv W, Zeng Y, Li C, … Luebeck J, … Han P.","Spatial-temporal diversity of extrachromosomal DNA shapes urothelial carcinoma evolution and tumor-immune microenvironment","Cancer Discovery","40062518",""],
     [2025,"Yost KE, Zhao Y, Hung KL, … Luebeck J, … Chang HY.","Three-dimensional genome landscape of primary human cancers","Nature Genetics","40355593",""],
     [2025,"Nakagawa T, Luebeck J, Zhu K, et al.","Inhibition of human-HPV hybrid ecDNA enhancers reduces oncogene expression and tumor growth in oropharyngeal cancer","Nature Communications","40140353",""],
     [2025,"Dehkordi SR, Wong ITL, Ni J, Luebeck J, et al.","Breakage fusion bridge cycles drive high oncogene number with moderate intratumoural heterogeneity","Nature Communications","39929823",""],
@@ -426,7 +441,7 @@ function UsageChart(el, all, opts) {
     [2024,"Bailey C, Pich O, Thol K, Watkins TBK, Luebeck J, et al.","Origins and impact of extrachromosomal DNA","Nature","39506150",""],
     [2024,"Hung KL, Jones MG, Wong ITL, … Luebeck J, et al.","Coordinated inheritance of extrachromosomal DNAs in cancer cells","Nature","39506152",""],
     [2024,"Tang J, Weiser NE, Wang G, … Luebeck J, … Chang HY.","Enhancing transcription–replication conflict targets ecDNA-positive cancers","Nature","39506153",""],
-    [2024,"Kim H, Kim S, Wade T, … Luebeck J^, Verhaak RGW.","Mapping extrachromosomal DNA amplifications during cancer progression","Nature Genetics","39402156","s"],
+    [2024,"Kim H, Kim S, Wade T, … Luebeck J, Verhaak RGW.","Mapping extrachromosomal DNA amplifications during cancer progression","Nature Genetics","39402156","s"],
     [2024,"Zhu K, Jones MG, Luebeck J, et al.","CoRAL accurately resolves extrachromosomal DNA genome structures with long-read sequencing","Genome Research","38981681","m"],
     [2024,"Lin MS, Jo SY, Luebeck J, et al.","Transcriptional immune suppression and upregulation of double-stranded DNA damage and repair repertoires in ecDNA-containing tumors","eLife","38896472",""],
     [2024,"Noorani I*, Luebeck J*, Rowan A, et al.","Oncogenic extrachromosomal DNA identification using whole-genome sequencing from formalin-fixed glioblastomas","Annals of Oncology","38555024","f"],
@@ -434,7 +449,7 @@ function UsageChart(el, all, opts) {
     [2023,"Agustinus A, Al-Rawi D, Dameracharla B, … Luebeck J, et al.","Epigenetic dysregulation from chromosomal transit in micronuclei","Nature","37286593",""],
     [2023,"Raviram R, Raman A, Preissl S, … Luebeck J, et al.","Integrated analysis of single-cell chromatin state and transcriptome identified common vulnerability despite glioblastoma heterogeneity","PNAS","",""],
     [2023,"Luebeck J, Ng AWT, Galipeau PC, et al.","Extrachromosomal DNA in the cancerous transformation of Barrett's esophagus","Nature","37046089","f"],
-    [2022,"Hung KL, Luebeck J, Dehkordi SR, et al.","Targeted profiling of human extrachromosomal DNA by CRISPR-CATCH","Nature Genetics","36253572","m"],
+    [2022,"Hung KL, Luebeck J, Dehkordi SR, et al.","Targeted profiling of human extrachromosomal DNA by CRISPR-CATCH","Nature Genetics","36253572",""],
     [2022,"Javadzadeh S, Rajkumar U, Nguyen N, Sarmashghi S, Luebeck J, Shang J, Bafna V.","FastViFi: fast and accurate detection of (hybrid) viral DNA and RNA","NAR Genomics and Bioinformatics","35493723","m"],
     [2022,"Bergstrom EN, Luebeck J, Petljak M, et al.","Mapping clustered mutations in cancer reveals APOBEC3 mutagenesis of ecDNA","Nature","35140399",""],
     [2021,"Song K, Minami JK, Huang A, Dehkordi SR, Lomeli SH, Luebeck J, et al.","Plasticity of extrachromosomal and intrachromosomal BRAF amplifications in overcoming targeted therapy dosage challenges","Cancer Discovery","34930786",""],
@@ -449,7 +464,7 @@ function UsageChart(el, all, opts) {
     [2019,"Deshpande V, Luebeck J, Nguyen ND, et al.","Exploring the landscape of focal amplifications in cancer using AmpliconArchitect","Nature Communications","30674876","m"],
     [2018,"Nguyen ND, Deshpande V, Luebeck J, Mischel PS, Bafna V.","ViFi: accurate detection of viral integration and mRNA fusion","Nucleic Acids Research","29579309","m"],
     [2018,"Zhao D, Badur MG, Luebeck J, et al.","Combinatorial CRISPR-Cas9 metabolic screens reveal critical redox control points dependent on the KEAP1-NRF2 regulatory axis","Molecular Cell","29452643",""],
-    [2018,"Gray VE, Hause RJ, Luebeck J, Shendure J, Fowler DM.","Quantitative missense variant effect prediction using large-scale mutagenesis data","Cell Systems","29226803","m"],
+    [2018,"Gray VE, Hause RJ, Luebeck J, Shendure J, Fowler DM.","Quantitative missense variant effect prediction using large-scale mutagenesis data","Cell Systems","29226803",""],
     [2017,"Shen JP, Zhao D, Sasik R, Luebeck J, et al.","Combinatorial CRISPR-Cas9 screens for de novo mapping of genetic interactions","Nature Methods","28319113",""],
     [2026,"Dameracharla B, Prasad G, Luebeck J, … Bafna V.","Inferring ecDNA evolution from allele frequency spectra","bioRxiv","","p"],
     [2026,"Sang J, Zhang M, Chavez S, … Luebeck J, … Zhang T.","Endogenous mutational mechanisms and metabolic context shape endometrial cancer","bioRxiv","","p"],
@@ -519,7 +534,7 @@ function UsageChart(el, all, opts) {
     rows.forEach(function (p) {
       if (p[0] !== yr) { if (yr !== null) html += '</ul>'; yr = p[0]; html += '<div class="yr">' + yr + '</div><ul class="items">'; }
       var au = esc(p[1]).replace(/Luebeck J(\*|\^)?/, function (m) { return '<mark>' + m + '</mark>'; });
-      var role = /f/.test(p[5]) ? '<span class="r">first</span>' : /s/.test(p[5]) ? '<span class="r">senior</span>' : '';
+      var role = '';
       html += '<li>' + (p[4] ? '<a class="t" href="https://pubmed.ncbi.nlm.nih.gov/' + p[4] + '/">' + esc(p[2]) + '</a>' : '<b>' + esc(p[2]) + '</b>') + role + '<span class="m">' + au + ' <i>' + esc(p[3]) + '</i></span></li>';
     });
     list.innerHTML = rows.length ? html + '</ul>' : '<p class="note">No papers match "' + esc(q.value) + '".</p>';

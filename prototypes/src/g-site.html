@@ -117,6 +117,8 @@ td a { color: var(--fg); }
 .uc-tip span { color: var(--muted); }
 .uc-tip .uc-n { color: var(--fg); }
 
+.talk { margin: 0 0 16px; }
+.talk .slot { aspect-ratio: 16 / 7; max-width: 100%; border: 1px dashed var(--muted); border-radius: 10px; display: grid; place-items: center; text-align: center; padding: 16px; font: 400 13px/1.5 var(--mono); color: var(--muted); }
 .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .cards > * { display: flex; flex-direction: column; gap: 4px; padding: 16px; border-radius: 10px; background: var(--tile); border: 1px solid transparent; text-decoration: none; color: var(--fg); min-width: 0; }
 .cards a:hover { border-color: var(--accent); }
@@ -156,12 +158,12 @@ td a { color: var(--fg); }
     <img src="{{PHOTO_SQ}}" alt="Jens Luebeck">
     <div><h1>Jens Luebeck</h1><p>Associate Project Scientist · CSE · UC San Diego</p></div>
   </div>
-  <p class="bio">I build algorithms and open-source software for finding extrachromosomal DNA and other oncogene amplifications in cancer genomes. I founded and lead <a href="#software">AmpliconSuite</a>, and lead bioinformatics for the eDyNAmiC Cancer Grand Challenges team.</p>
+  <p class="bio">I study the structure of complex cancer genomes, with a focus on extrachromosomal DNA. I build methods and open-source software to detect and reconstruct it, and use them to understand its consequences in cancer. I founded and lead <a href="#software">AmpliconSuite</a> and develop computational tooling for the eDyNAmiC Cancer Grand Challenges team.</p>
   <nav class="doors" aria-label="Pages">
     <a href="#research"><svg class="ico"><use href="#i-research"/></svg><span><b>Research</b><small>ecDNA, amplicons</small></span></a>
-    <a href="#software"><svg class="ico"><use href="#i-software"/></svg><span><b>Software</b><small>15 tools · {{USAGE_STUDIES}} studies</small></span></a>
+    <a href="#software"><svg class="ico"><use href="#i-software"/></svg><span><b>Software</b><small>15 tools</small></span></a>
     <a href="#publications"><svg class="ico"><use href="#i-publications"/></svg><span><b>Publications</b><small>45 papers</small></span></a>
-    <a href="#about"><svg class="ico"><use href="#i-about"/></svg><span><b>About</b><small>roles, talks, contact</small></span></a>
+    <a href="#about"><svg class="ico"><use href="#i-about"/></svg><span><b>About</b><small>bio, talks, contact</small></span></a>
     <a href="#projects"><svg class="ico"><use href="#i-projects"/></svg><span><b>Projects</b><small>visualizations, a game</small></span></a>
     <a href="{{CV}}"><svg class="ico"><use href="#i-cv"/></svg><span><b>CV</b><small>PDF</small></span></a>
   </nav>
@@ -183,24 +185,25 @@ td a { color: var(--fg); }
     <article class="page" data-page="research" hidden>
       <h1>Research</h1>
       <p class="lede">Detecting and reconstructing extrachromosomal DNA and other focal amplifications in cancer genomes.</p>
-      <section id="problem" data-title="The problem">
-        <h2>The problem</h2>
+      <section id="problem" data-title="Overview">
+        <h2>Overview</h2>
         <p>Cancers often amplify oncogenes on circles of DNA outside the chromosomes. These circles, ecDNA, have no centromere and are split unevenly at each cell division, so a tumour can raise or lower oncogene dose within a few generations. ecDNA is linked to drug resistance and poor outcomes.</p>
-        <p>Seeing ecDNA in sequencing data is hard. Its structure has to be reconstructed from short fragments by building and searching a breakpoint graph. I develop those methods for short-read, long-read and optical-mapping data, and apply them in large collaborative cancer studies.</p>
+        <p>Seeing ecDNA in sequencing data is hard. Its structure has to be reconstructed from short fragments by building and searching a breakpoint graph. I develop those methods for short-read, long-read and optical-mapping data, use them to study how ecDNA and other complex rearrangements shape cancer genomes, and apply them in large collaborative cancer studies.</p>
+        <p>The tools have become a common starting point for ecDNA research. They have been used in {{USAGE_STUDIES}} large-scale studies, {{USAGE_EXTERNAL}} of them by other groups, including pan-cancer analyses of TCGA, PCAWG and the 100,000 Genomes Project. Our work in Barrett's oesophagus showed that ecDNA can arise before cancer does, challenging the view of ecDNA as a late event in tumour evolution.</p>
       </section>
       <section id="selected" data-title="Selected work">
         <h2>Selected work</h2>
         <ul class="items">
-          <li><a class="t" href="https://www.nature.com/articles/s41592-026-03264-x">AmpliconSuite: an end-to-end workflow for analyzing focal amplifications in cancer genomes</a><span class="r">co-first</span><span class="m"><i>Nature Methods</i>, 2026. The toolkit and AmpliconRepository, validated against FISH for 175 genes. <a href="https://communities.springernature.com/posts/ampliconsuite-and-ampliconrepository-enabling-ecdna-research-at-scale">Behind the paper</a> · <a href="https://www.cancergrandchallenges.org/news/closing-the-gap-between-tool-development-and-biology-to-decode-extrachromosomal-dna-in-cancer">CGC feature</a></span></li>
-          <li><a class="t" href="https://pubmed.ncbi.nlm.nih.gov/37046089/">Extrachromosomal DNA in the cancerous transformation of Barrett's oesophagus</a><span class="r">first</span><span class="m"><i>Nature</i>, 2023. ecDNA appears before cancer and predicts progression.</span></li>
-          <li><a class="t" href="https://pubmed.ncbi.nlm.nih.gov/39402156/">Mapping extrachromosomal DNA amplifications during cancer progression</a><span class="r">senior</span><span class="m"><i>Nature Genetics</i>, 2024.</span></li>
-          <li><a class="t" href="https://pubmed.ncbi.nlm.nih.gov/32873787/">Integrated analysis of NGS and optical mapping resolves the complex structures of focal amplifications in cancer</a><span class="r">first</span><span class="m"><i>Nature Communications</i>, 2020. AmpliconReconstructor.</span></li>
+          <li><a class="t" href="https://www.nature.com/articles/s41592-026-03264-x">AmpliconSuite: an end-to-end workflow for analyzing focal amplifications in cancer genomes</a><span class="m"><i>Nature Methods</i>, 2026. The toolkit and AmpliconRepository, validated against FISH for 175 genes. <a href="https://communities.springernature.com/posts/ampliconsuite-and-ampliconrepository-enabling-ecdna-research-at-scale">Behind the paper</a> · <a href="https://www.cancergrandchallenges.org/news/closing-the-gap-between-tool-development-and-biology-to-decode-extrachromosomal-dna-in-cancer">CGC feature</a></span></li>
+          <li><a class="t" href="https://pubmed.ncbi.nlm.nih.gov/37046089/">Extrachromosomal DNA in the cancerous transformation of Barrett's oesophagus</a><span class="m"><i>Nature</i>, 2023. ecDNA appears before cancer and predicts progression.</span></li>
+          <li><a class="t" href="https://pubmed.ncbi.nlm.nih.gov/39402156/">Mapping extrachromosomal DNA amplifications during cancer progression</a><span class="m"><i>Nature Genetics</i>, 2024.</span></li>
+          <li><a class="t" href="https://pubmed.ncbi.nlm.nih.gov/32873787/">Integrated analysis of NGS and optical mapping resolves the complex structures of focal amplifications in cancer</a><span class="m"><i>Nature Communications</i>, 2020. AmpliconReconstructor.</span></li>
         </ul>
       </section>
       <section id="collabs" data-title="Collaborations">
         <h2>Collaborations</h2>
         <ul class="items dated">
-          <li><span>eDyNAmiC, Cancer Grand Challenges<span class="m">Bioinformatics lead for an international ecDNA team.</span></span><time>2022–</time></li>
+          <li><span>eDyNAmiC, Cancer Grand Challenges<span class="m">Computational tooling for an international ecDNA team.</span></span><time>2022–</time></li>
           <li><span>ARPA-H ADAPT program</span><time>2025–</time></li>
           <li><span>Molecular Tumor Board, Moores Cancer Center</span><time>2024–</time></li>
           <li><span>The Cancer Genome Atlas Analysis Network</span><time>2021–23</time></li>
@@ -212,7 +215,7 @@ td a { color: var(--fg); }
     <article class="page" data-page="software" hidden>
       <h1>Software</h1>
       <p class="lede">AmpliconSuite is a set of 15 interoperable open-source tools for analysing focal amplifications, from raw reads to classified, visualised structures. I founded the project and lead its development.</p>
-      <div class="facts"><span><b>{{USAGE_TOTAL}}</b> samples analysed</span><span><b>{{USAGE_STUDIES}}</b> published studies</span><span><b>{{USAGE_EXTERNAL}}</b> by other groups</span><a href="https://github.com/AmpliconSuite">github.com/AmpliconSuite</a></div>
+      <div class="facts"><span><b>{{USAGE_STUDIES}}</b> large-scale studies</span><span><b>{{USAGE_EXTERNAL}}</b> by other groups</span><span><b>{{USAGE_TOTAL}}</b> samples analysed</span><a href="https://github.com/AmpliconSuite">github.com/AmpliconSuite</a></div>
       <section id="tools" data-title="Tools">
         <h2>Tools</h2>
         <div class="tw"><table>
@@ -227,12 +230,13 @@ td a { color: var(--fg); }
             <tr><td class="name"><a href="https://github.com/jluebeck/CycleViz">CycleViz</a></td><td>Circular and linear structure visualization</td><td><span class="chip lead">lead</span></td></tr>
             <tr><td class="name"><a href="https://github.com/jluebeck/FaNDOM">FaNDOM</a></td><td>Fast optical genome map alignment</td><td><span class="chip lead">co-lead</span></td></tr>
             <tr><td class="name"><a href="https://github.com/jluebeck/ecSimulator">ecSimulator</a></td><td>Simulated ecDNA structures for benchmarking</td><td><span class="chip lead">lead</span></td></tr>
+            <tr><td class="name">Cycle-Extractor</td><td>Fast resolution of ecDNA sequence from the breakpoint graph</td><td><span class="chip">contributor</span></td></tr>
           </tbody>
         </table></div>
       </section>
       <section id="usage" data-title="Usage">
         <h2>Usage</h2>
-        <p>Samples analysed with AmpliconArchitect or AmpliconSuite in published studies and preprints, by publication date. Hover a step to see the study.</p>
+        <p>Large-scale studies (50 or more samples) that used AmpliconArchitect or AmpliconSuite, counted by samples analysed and plotted by publication date. Preprints are included. Hover a step to see the study.</p>
         <div class="filters" role="group" aria-label="Which studies to count">
           <button type="button" data-u="all" aria-pressed="true">All studies</button>
           <button type="button" data-u="ext" aria-pressed="false">Other groups only</button>
@@ -242,6 +246,7 @@ td a { color: var(--fg); }
       </section>
       <section id="studies" data-title="Studies">
         <h2>Studies using the tools</h2>
+        <p>Published studies and preprints with 50 or more samples.</p>
         <div class="tw"><table><thead><tr><th>Date</th><th>Study</th><th>Cohort</th><th style="text-align:right">Samples</th></tr></thead><tbody id="studytable"></tbody></table></div>
         <button class="more" type="button" id="showall">Show all {{USAGE_STUDIES}} studies</button>
       </section>
@@ -250,16 +255,24 @@ td a { color: var(--fg); }
     <!-- Publications -->
     <article class="page" data-page="publications" hidden>
       <h1>Publications</h1>
-      <p class="lede">45 peer-reviewed papers and 4 preprints. * equal contribution, ^ senior author. Also on <a href="https://scholar.google.com/citations?hl=en&amp;user=bn4vrPUAAAAJ">Google Scholar</a>.</p>
-      <section id="list" data-title="All papers">
+      <p class="lede">45 peer-reviewed papers and 4 preprints. * equal contribution. Also on <a href="https://scholar.google.com/citations?hl=en&amp;user=bn4vrPUAAAAJ">Google Scholar</a>.</p>
+      <section id="list" data-title="Papers">
         <div class="filters" id="pubfilters" role="group" aria-label="Filter publications">
           <button type="button" data-f="all" aria-pressed="true">All<span></span></button>
           <button type="button" data-f="lead" aria-pressed="false">First or senior<span></span></button>
-          <button type="button" data-f="methods" aria-pressed="false">Methods &amp; software<span></span></button>
+          <button type="button" data-f="methods" aria-pressed="false">Computational methods<span></span></button>
           <button type="button" data-f="pre" aria-pressed="false">Preprints<span></span></button>
           <input id="pubq" type="search" placeholder="Search titles, journals, authors" aria-label="Search publications">
         </div>
         <div id="publist"></div>
+      </section>
+      <section id="writing" data-title="Other writing">
+        <h2>Other writing</h2>
+        <ul class="items dated">
+          <li><span><a class="t" href="https://communities.springernature.com/posts/ampliconsuite-and-ampliconrepository-enabling-ecdna-research-at-scale">AmpliconSuite and AmpliconRepository: enabling ecDNA research at scale</a><span class="m">Springer Nature Research Communities</span></span><time>2026</time></li>
+          <li><span><a class="t" href="https://www.cancergrandchallenges.org/news/closing-the-gap-between-tool-development-and-biology-to-decode-extrachromosomal-dna-in-cancer">Closing the gap between tool development and biology to decode extrachromosomal DNA in cancer</a><span class="m">Cancer Grand Challenges</span></span><time>2026</time></li>
+          <li><span><a class="t" href="https://cancercommunity.nature.com/posts/ampliconreconstructor-revealing-focally-amplified-rearrangements-in-cancer">AmpliconReconstructor: revealing focally amplified rearrangements in cancer</a><span class="m">Nature Research Cancer Community</span></span><time>2020</time></li>
+        </ul>
       </section>
     </article>
 
@@ -269,8 +282,8 @@ td a { color: var(--fg); }
       <p class="lede">Computational cancer genomics scientist and scientific software developer.</p>
       <section id="bio" data-title="Bio">
         <h2>Bio</h2>
-        <p>I am an Associate Project Scientist in Computer Science and Engineering at UC San Diego, working with Vineet Bafna. I completed my PhD in Bioinformatics and Systems Biology at UCSD in 2021, an MS in Computer Science along the way, and a BS in Applied and Computational Mathematical Sciences at the University of Washington. In 2022 I consulted for Boundless Bio.</p>
-        <p>Alongside research I run our group's compute cluster (182 cores, 375 TB) and led its NIST 800-171 compliance for controlled-access genomic data.</p>
+        <p>I am an Associate Project Scientist in Computer Science and Engineering at UC San Diego, working with Vineet Bafna. I completed my PhD in Bioinformatics and Systems Biology at UCSD in 2021, an MS in Computer Science along the way, and a BS in Applied and Computational Mathematical Sciences at the University of Washington. I have also previously consulted for Boundless Bio.</p>
+        <p>I look after Genomequery, our group's research computing cluster. I live in the Seattle area.</p>
       </section>
       <section id="recognition" data-title="Recognition">
         <h2>Recognition</h2>
@@ -282,18 +295,22 @@ td a { color: var(--fg); }
         </ul>
       </section>
       <section id="talks" data-title="Talks">
-        <h2>Recent talks</h2>
+        <h2>Selected talks</h2>
+        <figure class="talk">
+          <div class="slot">Talk photo goes here: presenting AmpliconSuite-pipeline at a Cancer Grand Challenges meeting.</div>
+        </figure>
         <ul class="items dated">
           <li><span>eDyNAmiC Symposium<span class="m">Stanford, CA</span></span><time>Oct 2026</time></li>
-          <li><span>NCI Informatics Technology for Cancer Research<span class="m">Online</span></span><time>Sep 2026</time></li>
+          <li><span>AmpliconSuite and AmpliconRepository: enabling ecDNA biology at scale<span class="m">NCI Informatics Technology for Cancer Research · <a href="https://www.cancer.gov/about-nci/organization/cbiit/news-events/events/ampliconsuite-ampliconrepository-enabling-ecdna-biology-at-scale">Recording</a></span></span><time>Sep 2026</time></li>
           <li><span>Cancer Genomics Consortium Annual Meeting<span class="m">Houston, TX</span></span><time>Aug 2026</time></li>
           <li><span>Cancer Grand Challenges Conference: ecDNA<span class="m">London, UK</span></span><time>Jun 2025</time></li>
           <li><span>AACR Annual Meeting, minisymposium<span class="m">Chicago, IL</span></span><time>Apr 2025</time></li>
+          <li><span>Combined NGS and optical genome mapping reveal the complex structures of circular ecDNA and other focal amplifications<span class="m">Bionano Genomics Symposium · <a href="https://bionanogenomics.com/videos/combined-ngs-and-optical-genome-mapping-reveal-the-complex-structures-of-circular-extrachromosomal-dna-and-other-focal-amplifications-in-cancer-genomes/">Recording</a></span></span><time>Jan 2022</time></li>
         </ul>
       </section>
       <section id="mentoring" data-title="Mentoring">
         <h2>Mentoring</h2>
-        <p>Since 2022 I have mentored twelve undergraduate researchers, several of whom are now co-authors on published work.</p>
+        <p>I mentor students from undergraduate through post-baccalaureate and master's level, several of whom are now co-authors on published work. If you would like to ask about a project to collaborate on, reach out with your CV.</p>
       </section>
       <section id="contact" data-title="Contact">
         <h2>Contact</h2>
@@ -309,9 +326,7 @@ td a { color: var(--fg); }
       <section id="all" data-title="All projects">
         <div class="cards">
           <a href="https://github.com/jluebeck/ReactionDiffusionSimulator"><b>Turing patterns</b><small>A reaction-diffusion simulator for spots and stripes.</small><code>/lab/turing</code></a>
-          <a href="#"><b>Maximum-entropy Wordle solver</b><small>Choosing the guess that splits the remaining words most evenly. 2022.</small><code>/writing/wordle</code></a>
-          <div><b>ecDNA inheritance</b><small>An interactive look at uneven segregation. Planned.</small><code>/lab/ecdna</code></div>
-          <div><b>Untitled game</b><small>In progress, in its own repository.</small><code>/game</code></div>
+          <a href="https://jluebeck.github.io/posts/WordleSolver"><b>Maximum-entropy Wordle solver</b><small>Choosing the guess that splits the remaining words most evenly. 2022.</small><code>/posts/WordleSolver</code></a>
         </div>
       </section>
     </article>
@@ -385,7 +400,7 @@ td a { color: var(--fg); }
     rows.forEach(function (p) {
       if (p[0] !== yr) { if (yr !== null) html += '</ul>'; yr = p[0]; html += '<div class="yr">' + yr + '</div><ul class="items">'; }
       var au = esc(p[1]).replace(/Luebeck J(\*|\^)?/, function (m) { return '<mark>' + m + '</mark>'; });
-      var role = /f/.test(p[5]) ? '<span class="r">first</span>' : /s/.test(p[5]) ? '<span class="r">senior</span>' : '';
+      var role = '';
       html += '<li>' + (p[4] ? '<a class="t" href="https://pubmed.ncbi.nlm.nih.gov/' + p[4] + '/">' + esc(p[2]) + '</a>' : '<b>' + esc(p[2]) + '</b>') + role + '<span class="m">' + au + ' <i>' + esc(p[3]) + '</i></span></li>';
     });
     list.innerHTML = rows.length ? html + '</ul>' : '<p class="note">No papers match "' + esc(q.value) + '".</p>';
