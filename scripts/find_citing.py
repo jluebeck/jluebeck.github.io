@@ -16,7 +16,8 @@ USAGE = ROOT / "_data" / "usage.json"
 REVIEWED = ROOT / "scripts" / "usage_reviewed.json"
 API = "https://www.ebi.ac.uk/europepmc/webservices/rest"
 CITED = {"30674876": "AmpliconArchitect (Deshpande 2019)", "42888240": "AmpliconSuite (Luebeck 2026)"}
-TOOLS = r"AmpliconArchitect|AmpliconSuite|AmpliconClassifier|Amplicon Architect|Amplicon Suite"
+# AmpliconRepository is included so reuse of existing results shows up when reading a paper; reuse does not count.
+TOOLS = r"AmpliconArchitect|AmpliconSuite|AmpliconClassifier|AmpliconRepository|Amplicon Architect|Amplicon Suite|Amplicon Repository"
 
 
 def get(url):
