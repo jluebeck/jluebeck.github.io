@@ -1,7 +1,8 @@
 # Pages in the sidebar and on the landing page, in order. id also names the icon in _includes/icons.html.
-# "#papers" and "#tools" in a blurb are replaced by the number of peer-reviewed papers and of rows in _data/tools.yml.
+# In a blurb, "#papers", "#preprints", "#tools" and "#studies" are replaced by the counts of peer-reviewed papers,
+# preprints, rows in _data/tools.yml and large-scale studies in _data/usage.json. &nbsp; keeps a number on the same line as its noun.
 - { id: research, title: Research, url: /research/, blurb: "ecDNA, cancer genomes" }
-- { id: software, title: Software, url: /software/, blurb: "#tools tools" }
-- { id: publications, title: Publications, url: /publications/, blurb: "#papers papers" }
+- { id: software, title: Software, url: /software/, blurb: "#tools&nbsp;tools, supported #studies&nbsp;large-scale studies" }
+- { id: publications, title: Publications, url: /publications/, blurb: "#papers&nbsp;papers, #preprints&nbsp;preprints" }
 - { id: about, title: About, url: /about/, blurb: "bio, talks, contact" }
 - { id: projects, title: Projects, url: /projects/, blurb: "other stuff" }

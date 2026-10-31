@@ -3,6 +3,7 @@ layout: default
 ---
 {% include count-papers.html %}
 {%- assign ntools = site.data.tools | size %}
+{%- assign nstudies = site.data.usage | size %}
 <main class="home">
   <div class="who">
     <img src="{{ '/images/portrait.jpg' | relative_url }}" alt="{{ site.author.name }}" width="112" height="140">
@@ -15,7 +16,7 @@ layout: default
   <div class="bio">{{ content }}</div>
   <nav class="doors" aria-label="Pages">
     {%- for n in site.data.nav %}
-    <a href="{{ n.url | relative_url }}"><svg class="ico" aria-hidden="true"><use href="#i-{{ n.id }}"/></svg><span><b>{{ n.title }}</b><small>{{ n.blurb | replace: "#papers", npapers | replace: "#tools", ntools }}</small></span></a>
+    <a href="{{ n.url | relative_url }}"><svg class="ico" aria-hidden="true"><use href="#i-{{ n.id }}"/></svg><span><b>{{ n.title }}</b><small>{{ n.blurb | replace: "#papers", npapers | replace: "#preprints", npreprints | replace: "#tools", ntools | replace: "#studies", nstudies }}</small></span></a>
     {%- endfor %}
     <a href="{{ site.author.cv }}"><svg class="ico" aria-hidden="true"><use href="#i-cv"/></svg><span><b>CV</b><small>PDF</small></span></a>
   </nav>
