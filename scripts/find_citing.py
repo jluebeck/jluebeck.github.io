@@ -7,7 +7,9 @@ Papers already in _data/usage.json or already reviewed are skipped.
 Usage:
   python3 -I scripts/find_citing.py                 # list new candidates as JSON
   python3 -I scripts/find_citing.py snippets ID     # print full-text passages that mention the tools
-                                                    # (ID is a PMCID or PPR id from the candidate list)
+                                                    # (ID is a candidate's id or DOI; tries Europe PMC,
+                                                    # NCBI, bioRxiv, then the publisher's page)
+Papers marked "unclear" in usage_reviewed.json are listed again each run, so they get another look.
 """
 import datetime, json, pathlib, re, sys, urllib.parse, urllib.request
 
@@ -17,11 +19,16 @@ REVIEWED = ROOT / "scripts" / "usage_reviewed.json"
 API = "https://www.ebi.ac.uk/europepmc/webservices/rest"
 CITED = {"30674876": "AmpliconArchitect (Deshpande 2019)", "42888240": "AmpliconSuite (Luebeck 2026)"}
 # AmpliconRepository is included so reuse of existing results shows up when reading a paper; reuse does not count.
-TOOLS = r"AmpliconArchitect|AmpliconSuite|AmpliconClassifier|AmpliconRepository|Amplicon Architect|Amplicon Suite|Amplicon Repository"
+# Matched case-sensitively so "amplicon architecture" doesn't count as a mention.
+TOOLS = r"AmpliconArchitect|AmpliconSuite|AmpliconClassifier|AmpliconRepository|Amplicon Architect\b|Amplicon Suite|Amplicon Repository"
+
+
+# Sentences naming the tools' own papers are citations, not evidence of use.
+OWN_PAPERS = r"Exploring the landscape of focal amplifications|AmpliconSuite: an end-to-end workflow"
 
 
 def get(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "jluebeck.github.io usage update"})
+    req = urllib.request.Request(url, headers={"User-Agent": "jluebeck.github.io usage update (https://jluebeck.github.io)"})
     with urllib.request.urlopen(req, timeout=60) as r:
         return r.read().decode()
 
@@ -68,9 +75,11 @@ def candidates():
     for pmid, name in CITED.items():
         for r in search(f"CITES:{pmid}_MED AND {window}"):
             found.setdefault(r["id"], (r, set()))[1].add("cites " + name)
-    for r in search(f'({" OR ".join(f"\"{t}\"" for t in TOOLS.split("|"))}) AND {window}'):
+    terms = " OR ".join('"' + t + '"' for t in TOOLS.split("|"))
+    for r in search(f"({terms}) AND {window}"):
         found.setdefault(r["id"], (r, set()))[1].add("mentions a tool in full text")
-    skip = known_ids() | {k.lower() for k in state["reviewed"]}
+    unclear = {k.lower(): v for k, v in state["reviewed"].items() if v.get("decision") == "unclear"}
+    skip = known_ids() | {k.lower() for k in state["reviewed"]} - set(unclear)
     out = []
     for r, why in found.values():
         if ids(r) & skip:
@@ -89,6 +98,7 @@ def candidates():
             "full_text": bool(r.get("pmcid")) or r.get("hasTextMinedTerms") == "Y" or r.get("inEPMC") == "Y",
             "why": sorted(why),
             "link": f"https://doi.org/{r['doi']}" if r.get("doi") else f"https://europepmc.org/article/{r.get('source')}/{r['id']}",
+            "previously": next((unclear[i]["note"] for i in ids(r) if i in unclear), None),
         })
     return sorted(out, key=lambda x: x["date"])
 
@@ -109,16 +119,46 @@ def full_text(pid):
     return None
 
 
-def snippets(pid):
-    xml = full_text(pid)
+def preprint_xml(doi):
+    """bioRxiv/medRxiv full-text XML via their API; None if unavailable (they often rate-limit)."""
+    for server in ("biorxiv", "medrxiv"):
+        try:
+            d = json.loads(get(f"https://api.biorxiv.org/details/{server}/{doi}"))
+            coll = d.get("collection") or []
+            if coll and coll[-1].get("jatsxml"):
+                return get(coll[-1]["jatsxml"])
+        except Exception:
+            pass
+    return None
+
+
+def publisher_page(doi):
+    try:
+        html = get("https://doi.org/" + doi)
+    except Exception:
+        return None
+    html = re.sub(r"<(script|style)\b.*?</\1>", " ", html, flags=re.S | re.I)
+    return html if len(html) > 20000 else None  # short pages are login walls or redirects
+
+
+def snippets(key):
+    """key: a candidate id (PMCID, PPR id, PMID) or a DOI."""
+    doi = key if key.startswith("10.") else None
+    xml = None if doi else full_text(key)
+    if xml is None and not doi:
+        r = search(f"EXT_ID:{key} OR PMCID:{key} OR DOI:{key}") if not key.upper().startswith("PPR") else search(f"EXT_ID:{key} AND SRC:PPR")
+        doi = (r[0].get("doi") if r else None)
+    if xml is None and doi:
+        xml = preprint_xml(doi) if re.match(r"10\.(1101|64898)/", doi) else None
+        xml = xml or publisher_page(doi)
     if xml is None:
-        sys.exit(f"No full text for {pid} from Europe PMC or NCBI; read the paper at its link instead.")
+        sys.exit(f"No readable full text for {key} from Europe PMC, NCBI, bioRxiv or the publisher. Read it with a web-fetch tool at its link, or mark it unclear.")
     xml = re.sub(r"<ref-list.*?</ref-list>", " ", xml, flags=re.S)  # matches in the reference list aren't evidence of use
     text = re.sub(r"<[^>]+>", " ", xml)
     text = re.sub(r"\s+", " ", text)
     sents = re.split(r"(?<=[.!?])\s+(?=[A-Z])", text)
     for i, s in enumerate(sents):
-        if re.search(TOOLS, s, re.I):
+        if re.search(TOOLS, s) and not re.search(OWN_PAPERS, s, re.I):
             print("…", " ".join(sents[max(0, i - 1):i + 2]), "\n")
 
 
