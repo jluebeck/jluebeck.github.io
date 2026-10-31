@@ -7,7 +7,7 @@ layout: default
     <img src="{{ '/images/portrait.jpg' | relative_url }}" alt="{{ site.author.name }}" width="112" height="140">
     <div>
       <h1>{{ site.author.name }}</h1>
-      <p>{{ site.author.role }}</p>
+      <p><span class="nw">{{ site.author.role }}</span> · <span class="nw">{{ site.author.department }}</span></p>
       <p class="loc"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>{{ site.author.location }}</p>
     </div>
   </div>

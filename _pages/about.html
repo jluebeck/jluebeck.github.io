@@ -25,7 +25,7 @@ redirect_from:
   <h2>Recent talks</h2>
   <figure class="talk">
     <img src="/images/talk-edynamic.jpg" alt="Jens Luebeck presenting a slide on the AmpliconSuite-pipeline workflow" width="1200" height="750" loading="lazy">
-    <figcaption>Presenting AmpliconSuite-pipeline to the eDyNAmiC team at a Cancer Grand Challenges meeting.</figcaption>
+    <figcaption>Presenting AmpliconSuite-pipeline at a Cancer Grand Challenges meeting.</figcaption>
   </figure>
   <ul class="items dated">
     {%- for t in site.data.talks %}
@@ -40,5 +40,5 @@ redirect_from:
 <section id="contact" data-title="Contact">
   <h2>Contact</h2>
   <p>I'm open to collaborations and consulting on ecDNA and copy-number analysis, structural variant reconstruction, and research software built for other people to use.</p>
-  <p class="addr" style="font-size:15px">{{ site.author.email }}</p>
+  <p class="addr" style="font-size:calc(15px * var(--ls))">{{ site.author.email }}</p>
 </section>

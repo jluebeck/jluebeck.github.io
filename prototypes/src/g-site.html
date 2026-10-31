@@ -17,7 +17,7 @@
   --sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "Roboto Mono", ui-monospace, Menlo, monospace;
   /* Size scales: every font size is a base size times one of these. */
-  --ts: 1; --hs: 1; --ls: 1;
+  --ts: .975; --hs: 1.125; --ls: 1.075;
   --chart-line: var(--accent); --chart-grid: var(--line); --chart-text: var(--muted); --chart-ink: var(--fg); --chart-surface: var(--bg);
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
@@ -79,6 +79,7 @@ h1, h2 { font-family: var(--head); font-weight: 600; letter-spacing: -.01em; tex
 .page > h1 { font-size: calc(34px * var(--hs)); line-height: 1.15; margin: 0 0 10px; }
 .lede { font-size: calc(18px * var(--ts)); line-height: 1.55; color: var(--muted); margin: 0 0 8px; max-width: 40em; }
 .page section { padding-top: 36px; scroll-margin-top: 16px; }
+.page section:not([data-title]) { padding-top: 20px; }
 .page h2 { font-size: calc(21px * var(--hs)); margin: 0 0 12px; }
 .page p { margin: 0 0 12px; max-width: 42em; }
 .logo { float: right; margin: 2px 0 8px 24px; }
@@ -137,7 +138,7 @@ td a { color: var(--fg); }
 .cards a:hover { border-color: var(--accent); }
 .cards b { font-weight: 600; }
 .cards small { color: var(--muted); font-size: calc(14px * var(--ts)); }
-.cards code { font: 400 calc(12px * var(--ls)) var(--mono); color: var(--accent); margin-top: 6px; }
+.cards code { font: 400 calc(12px * var(--ls)) var(--mono); color: var(--accent); margin-top: 6px; overflow-wrap: anywhere; }
 
 @media (max-width: 860px) {
   .shell { grid-template-columns: minmax(0, 1fr); gap: 0; }
@@ -206,8 +207,7 @@ td a { color: var(--fg); }
     <article class="page" data-page="research" hidden>
       <h1>Research</h1>
       <p class="lede">The structure and consequences of complex cancer genomes.</p>
-      <section id="problem" data-title="Overview">
-        <h2>Overview</h2>
+      <section id="problem">
         <p>Cancer genomes are often rearranged far beyond point mutations. Segments of DNA are amplified, broken and rejoined into complex structures, including circular extrachromosomal DNA (ecDNA), breakage-fusion-bridge cycles and other focal amplifications. These structures can carry dozens of copies of an oncogene, and they shape how a tumour grows, evolves and responds to treatment.</p>
         <p>Sequencing breaks these structures into short fragments, so recovering them means rebuilding the genome's architecture from indirect evidence, usually by building and searching a breakpoint graph. I develop methods that do this with short-read, long-read and optical-mapping data, and that classify what they find.</p>
         <p>With collaborators, I use these methods to ask what the structures do: when they arise, how they evolve, and how they change gene expression and therapy response. ecDNA has been a particular focus, because it is inherited unevenly at cell division and is linked to drug resistance and poor outcomes. The tools are now widely used to study ecDNA and focal amplification, including in pan-cancer analyses of TCGA, PCAWG and the 100,000 Genomes Project. <a href="#software">See how they are used</a>.</p>
