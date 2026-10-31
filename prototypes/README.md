@@ -1,24 +1,13 @@
-# Site redesign prototypes
+# Design prototype
 
-Three directions for a redesigned jluebeck.github.io, all using the same content (current as of the October 2026 CV).
+`g-site.html` is the single-file prototype the live site was built from: a landing page with six
+tiles, and inner pages with a sidebar. It is kept for trying design changes quickly before
+carrying them into `_layouts/` and `assets/css/site.css`. Earlier directions are in the git history.
 
-- `a-monograph.html`: editorial single column with a margin rail and a copy-number plot.
-- `b-metaphase.html`: dark-first bands under a simulated metaphase-spread hero, with project cards.
-- `c-index.html`: a scannable index with a sticky identity column and filterable publications.
+Edit `src/g-site.html`, then rebuild with `python3 prototypes/src/build.py`. Its data
+(`src/publications.js`, `src/aa_usage.json`) is a snapshot; the live site reads `_data/`.
 
-Second round, after feedback that the Index was closest:
+`font-tester/` tries fonts and font sizes on the prototype. Its `site.html` is generated: inline the
+images of a built `g-site.html` and save it next to `index.html`.
 
-- `d-index-2.html`: the Index refined, with a tool-usage chart.
-- `e-landing.html`: a minimal landing page with icon tiles that open sub-pages.
-- `f-plain.html`: a plain, faculty-style single page.
-
-Third round: the landing page was preferred, with Index-style inner pages.
-
-- `g-site.html`: landing page with six tiles; each inner page has a sidebar (page nav plus that
-  page's sections). Usage sits on the Software page.
-
-Shared data lives in `src/`: `publications.js`, `aa_usage.json` (public columns of the AA usage
-spreadsheet, made with `extract_usage.py`) and `usage-chart.js`.
-
-Edit the sources in `src/`, then rebuild with `python3 prototypes/src/build.py`.
-Nothing here is linked from the live site yet.
+Nothing in this folder is published.
