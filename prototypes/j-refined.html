@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Refined · Jens Luebeck</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<style>
+/* Layout: a one-screen landing with six doors; every inner page shares a sticky sidebar (home link, page nav, this page's sections) beside a reading column. */
+:root {
+  --bg: #fdfdfd;
+  --tile: #f3f4f5;
+  --fg: #1a1c1f;
+  --muted: #656a72;
+  --line: #e3e5e8;
+  --accent: #2f5b9a;
+  --serif: "Source Serif 4", Georgia, serif;
+  --sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --chart-line: var(--accent); --chart-grid: var(--line); --chart-text: var(--muted); --chart-ink: var(--fg); --chart-surface: var(--bg);
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #131416; --tile: #1c1e21; --fg: #e7e9ec; --muted: #9da3ab; --line: #2b2e33; --accent: #9bb8e3; color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bg: #131416; --tile: #1c1e21; --fg: #e7e9ec; --muted: #9da3ab; --line: #2b2e33; --accent: #9bb8e3; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+h1, h2 { font-family: var(--serif); font-weight: 600; letter-spacing: -.01em; text-wrap: balance; }
+
+[hidden] { display: none !important; }
+/* ---------- landing ---------- */
+.home { max-width: 640px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); padding-block: clamp(40px, 10vh, 120px) 56px; }
+.who { display: flex; gap: 20px; align-items: center; }
+.who img { width: 112px; height: 140px; border-radius: 10px; object-fit: cover; flex: none; }
+.loc { display: inline-flex; align-items: center; gap: 4px; }
+.loc .ico { width: 15px; height: 15px; stroke: currentColor; stroke-width: 1.8; }
+.who h1 { font-size: 34px; line-height: 1.1; margin: 0; }
+.who p { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+.nw { white-space: nowrap; }
+.bio { font-size: 18px; line-height: 1.6; margin: 28px 0 32px; }
+.doors { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.doors a { display: flex; flex-direction: column; gap: 10px; padding: 14px 16px; border-radius: 10px; background: var(--tile); color: var(--fg); text-decoration: none; border: 1px solid transparent; min-width: 0; }
+.doors a:hover { border-color: var(--accent); }
+.ico { width: 24px; height: 24px; stroke: var(--accent); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.doors b { font-weight: 600; font-size: 15.5px; display: block; }
+.doors small { font-size: 13.5px; color: var(--muted); display: block; margin-top: 1px; }
+.elsewhere { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 28px; font-size: 14.5px; align-items: baseline; }
+.addr { font-size: 14.5px; color: var(--muted); user-select: all; }
+.stamp { margin-top: 48px; font-size: 13px; color: var(--muted); }
+
+/* ---------- inner pages ---------- */
+.shell { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 64px; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+.side { position: sticky; top: env(safe-area-inset-top, 0px); align-self: start; padding-block: 40px 24px; display: flex; flex-direction: column; gap: 26px; }
+.me { display: flex; gap: 10px; align-items: center; text-decoration: none; color: var(--fg); }
+.me img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+.me b { font: 600 17px/1.2 var(--serif); display: block; }
+.me small { font-size: 12.5px; color: var(--muted); }
+.pnav { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; font-size: 14.5px; }
+.pnav > li > a { display: block; padding: 5px 10px; margin-left: -10px; border-radius: 7px; color: var(--muted); text-decoration: none; }
+.pnav > li > a:hover { color: var(--fg); background: var(--tile); }
+.pnav > li > a[aria-current="page"] { color: var(--fg); background: var(--tile); font-weight: 600; }
+.secs { list-style: none; margin: 2px 0 6px; padding: 0 0 0 12px; display: grid; gap: 0; }
+.secs button { all: unset; cursor: pointer; display: block; font-size: 13.5px; color: var(--muted); padding: 3px 8px; border-radius: 5px; }
+.secs button:hover { color: var(--fg); }
+.secs button:focus-visible { outline: 2px solid var(--accent); }
+.side .links { display: flex; flex-wrap: wrap; gap: 2px 14px; font-size: 14px; }
+
+.page { padding-block: 40px 96px; min-width: 0; max-width: 760px; }
+.page > h1 { font-size: 34px; line-height: 1.15; margin: 0 0 10px; }
+.lede { font-size: 18px; line-height: 1.55; color: var(--muted); margin: 0 0 8px; max-width: 40em; }
+.page section { padding-top: 36px; scroll-margin-top: 16px; }
+.page h2 { font-size: 21px; margin: 0 0 12px; }
+.page p { margin: 0 0 12px; max-width: 42em; }
+.logo { float: right; width: 64px; height: 64px; margin: 4px 0 8px 24px; }
+
+.items { list-style: none; margin: 0; padding: 0; }
+.items li { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.items li:first-child { border-top: 1px solid var(--line); }
+.items a.t { font-weight: 600; color: var(--fg); text-decoration: none; }
+.items a.t:hover { color: var(--accent); }
+.items .m { display: block; font-size: 14px; color: var(--muted); }
+.items mark { background: none; color: var(--fg); font-weight: 600; }
+.items .m + .m { margin-top: 2px; }
+.seeall { display: inline-block; margin-top: 14px; font-size: 14.5px; text-decoration: none; }
+.seeall:hover { text-decoration: underline; }
+.dated li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; align-items: baseline; }
+.dated time { font-size: 14px; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+.tw { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+th { text-align: left; font-weight: 500; font-size: 13.5px; color: var(--muted); padding: 0 14px 8px 0; border-bottom: 1px solid var(--line); }
+td { padding: 10px 14px 10px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+td.name { font-weight: 600; white-space: nowrap; }
+td.name a { color: var(--fg); text-decoration: none; }
+td.name a:hover { color: var(--accent); }
+td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.d { white-space: nowrap; color: var(--muted); font-variant-numeric: tabular-nums; }
+.chip { font-style: italic; color: var(--muted); white-space: nowrap; }
+td a { color: var(--fg); }
+
+.filters { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: baseline; margin-bottom: 14px; }
+.filters button { font: 400 14.5px var(--sans); color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-underline-offset: 4px; }
+.filters button:hover { text-decoration: underline; }
+.filters button[aria-pressed="true"] { color: var(--fg); font-weight: 600; text-decoration: underline; text-decoration-thickness: 2px; }
+.filters button span { color: var(--muted); font-weight: 400; margin-left: 4px; font-size: 13px; }
+.filters input { flex: 1 1 180px; min-width: 0; font: 400 14px var(--sans); color: var(--fg); background: var(--tile); border: 1px solid transparent; border-radius: 8px; padding: 6px 12px; }
+.filters input:focus { outline: none; border-color: var(--accent); }
+.yr { font-weight: 600; font-size: 14px; color: var(--muted); padding: 18px 0 6px; font-variant-numeric: tabular-nums; }
+.more { all: unset; cursor: pointer; margin-top: 12px; font-size: 14px; color: var(--accent); display: inline-block; }
+.more:focus-visible { outline: 2px solid var(--accent); }
+.note { font-size: 13px; color: var(--muted); margin: 8px 0 0; }
+.uc-tip { position: absolute; pointer-events: none; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: 12.5px; line-height: 1.45; display: flex; flex-direction: column; max-width: 280px; box-shadow: 0 4px 16px rgb(0 0 0 / .08); }
+.uc-tip[hidden] { display: none; }
+.uc-tip span { color: var(--muted); }
+.uc-tip .uc-n { color: var(--fg); }
+
+.talk { margin: 0 0 16px; }
+.talk img { display: block; width: 100%; height: auto; border-radius: 10px; }
+.talk figcaption { margin-top: 8px; font-size: 13px; color: var(--muted); }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.cards > * { display: flex; flex-direction: column; gap: 4px; padding: 16px; border-radius: 10px; background: var(--tile); border: 1px solid transparent; text-decoration: none; color: var(--fg); min-width: 0; }
+.cards a:hover { border-color: var(--accent); }
+.cards b { font-weight: 600; }
+.cards small { color: var(--muted); font-size: 14px; }
+.cards code { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+@media (max-width: 860px) {
+  .shell { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .side { position: static; padding-block: 20px 0; gap: 14px; }
+  .pnav { display: flex; overflow-x: auto; gap: 4px; padding-bottom: 6px; }
+  .pnav > li > a { margin-left: 0; white-space: nowrap; }
+  .secs, .side .links, .side .addr { display: none; }
+  .page { padding-top: 16px; }
+}
+@media (max-width: 560px) {
+  .doors { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .who h1 { font-size: 28px; }
+  .bio { font-size: 17px; }
+  .cards { grid-template-columns: minmax(0, 1fr); }
+  /* Tools table as stacked rows: name and role, then what it does. */
+  #tools thead { display: none; }
+  #tools tr { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  #tools td { border: 0; padding: 0; }
+  #tools td.name { grid-row: 1; grid-column: 1; }
+  #tools td:nth-child(3) { grid-row: 1; grid-column: 2; }
+  #tools td:nth-child(2) { grid-row: 2; grid-column: 1 / -1; color: var(--muted); }
+}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-research" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 7.4 5" stroke-width="3"/></symbol>
+  <symbol id="i-software" viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5.5l-3 13"/></symbol>
+  <symbol id="i-publications" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7zM14 3v4h4M10 12h5M10 16h5"/></symbol>
+  <symbol id="i-about" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c1.2-3.6 3.9-5.5 7-5.5s5.8 1.9 7 5.5"/></symbol>
+  <symbol id="i-projects" viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1"/><circle cx="16.75" cy="16.75" r="3.25"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.8-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 15.2 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></symbol>
+  <symbol id="i-cv" viewBox="0 0 24 24"><path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 20h14"/></symbol>
+</svg>
+
+<!-- ===== landing ===== -->
+<div class="home" data-view="home">
+  <div class="who">
+    <img src="../images/portrait.jpg" alt="Jens Luebeck" width="112" height="140">
+    <div><h1>Jens Luebeck</h1><p><span class="nw">Associate Project Scientist</span> · <span class="nw">CSE · UC San Diego</span></p><p class="loc"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Seattle, WA</p></div>
+  </div>
+  <p class="bio">I study the structure and consequences of complex cancer genomes. Much of our work focuses on extrachromosomal DNA, and on building methods and open-source software to detect and reconstruct it. I founded and lead <a href="#software">AmpliconSuite</a> and develop computational tooling for the eDyNAmiC Cancer Grand Challenges team.</p>
+  <nav class="doors" aria-label="Pages">
+    <a href="#research"><span><b>Research</b><small>ecDNA, amplicons</small></span></a>
+    <a href="#software"><span><b>Software</b><small>15 tools</small></span></a>
+    <a href="#publications"><span><b>Publications</b><small>45 papers</small></span></a>
+    <a href="#about"><span><b>About</b><small>bio, talks, contact</small></span></a>
+    <a href="#projects"><span><b>Projects</b><small>visualizations, a game</small></span></a>
+    <a href="https://drive.google.com/file/d/1F6BNKErYd7ilL7CxAAEkQoBL2D0QUOxc/view?usp=sharing"><span><b>CV</b><small>PDF</small></span></a>
+  </nav>
+  <div class="elsewhere"><a href="https://github.com/jluebeck">GitHub</a><a href="https://scholar.google.com/citations?hl=en&amp;user=bn4vrPUAAAAJ">Google Scholar</a><a href="https://www.linkedin.com/in/jens-luebeck-b5639a256/">LinkedIn</a><span class="addr">jluebeck@ucsd.edu</span></div>
+  <p class="stamp">Updated October 2026</p>
+</div>
+
+<!-- ===== inner pages ===== -->
+<div class="shell" data-view="inner" hidden>
+  <aside class="side">
+    <a class="me" href="#"><img src="../images/portrait-sq.jpg" alt=""><span><b>Jens Luebeck</b><small>UC San Diego · Seattle, WA</small></span></a>
+    <nav aria-label="Pages"><ul class="pnav" id="pnav"></ul></nav>
+    <div class="links"><a href="https://github.com/jluebeck">GitHub</a><a href="https://scholar.google.com/citations?hl=en&amp;user=bn4vrPUAAAAJ">Scholar</a><a href="https://www.linkedin.com/in/jens-luebeck-b5639a256/">LinkedIn</a><a href="https://drive.google.com/file/d/1F6BNKErYd7ilL7CxAAEkQoBL2D0QUOxc/view?usp=sharing">CV</a></div>
+    <span class="addr">jluebeck@ucsd.edu</span>
+  </aside>
+
+  <main>
+    <!-- Research -->
+    <article class="page" data-page="research" hidden>
+      <h1>Research</h1>
+      <p class="lede">The structure and consequences of complex cancer genomes.</p>
+      <section id="problem" data-title="Overview">
+        <h2>Overview</h2>
+        <p>Cancer genomes are often rearranged far beyond point mutations. Segments of DNA are amplified, broken and rejoined into complex structures, including circular extrachromosomal DNA (ecDNA), breakage-fusion-bridge cycles and other focal amplifications. These structures can carry dozens of copies of an oncogene, and they shape how a tumour grows, evolves and responds to treatment.</p>
+        <p>Sequencing breaks these structures into short fragments, so recovering them means rebuilding the genome's architecture from indirect evidence, usually by building and searching a breakpoint graph. I develop methods that do this with short-read, long-read and optical-mapping data, and that classify what they find.</p>
+        <p>With collaborators, I use these methods to ask what the structures do: when they arise, how they evolve, and how they change gene expression and therapy response. ecDNA has been a particular focus, because it is inherited unevenly at cell division and is linked to drug resistance and poor outcomes. The tools are now widely used to study ecDNA and focal amplification, including in pan-cancer analyses of TCGA, PCAWG and the 100,000 Genomes Project. <a href="#software">See how they are used</a>.</p>
+      </section>
+      <section id="selected" data-title="Selected work">
+        <h2>Selected work</h2>
+        <ul class="items">
+          <li><a class="t" href="https://www.nature.com/articles/s41592-026-03264-x">AmpliconSuite: an end-to-end workflow for analyzing focal amplifications in cancer genomes</a><span class="m"><mark>Luebeck J</mark>, et al. <i>Nature Methods</i>, 2026.</span><span class="m">The toolkit and the AmpliconRepository platform, validated against FISH for 175 genes. <a href="https://communities.springernature.com/posts/ampliconsuite-and-ampliconrepository-enabling-ecdna-research-at-scale">Behind the paper</a> · <a href="https://www.cancergrandchallenges.org/news/closing-the-gap-between-tool-development-and-biology-to-decode-extrachromosomal-dna-in-cancer">CGC feature</a></span></li>
+          <li><a class="t" href="https://pubmed.ncbi.nlm.nih.gov/37046089/">Extrachromosomal DNA in the cancerous transformation of Barrett's oesophagus</a><span class="m"><mark>Luebeck J</mark>, et al. <i>Nature</i>, 2023.</span><span class="m">ecDNA can arise before cancer does and predicts progression, challenging the view of ecDNA as a late event.</span></li>
+          <li><a class="t" href="https://pubmed.ncbi.nlm.nih.gov/32873787/">Integrated analysis of NGS and optical mapping resolves the complex structures of focal amplifications in cancer</a><span class="m"><mark>Luebeck J</mark>, et al. <i>Nature Communications</i>, 2020.</span><span class="m">AmpliconReconstructor: complete ecDNA and breakage-fusion-bridge structures from two technologies. <a href="https://cancercommunity.nature.com/posts/ampliconreconstructor-revealing-focally-amplified-rearrangements-in-cancer">Behind the paper</a></span></li>
+        </ul>
+        <a class="seeall" href="#publications">See all <span id="pubcount">45</span> publications →</a>
+      </section>
+      <section id="collabs" data-title="Collaborations">
+        <h2>Collaborations</h2>
+        <ul class="items dated">
+          <li><span>eDyNAmiC, Cancer Grand Challenges<span class="m">Computational tooling for an international ecDNA team.</span></span><time>2022–</time></li>
+          <li><span>ARPA-H ADAPT program</span><time>2025–</time></li>
+        </ul>
+      </section>
+      <section id="computing" data-title="Research computing">
+        <h2>Research computing</h2>
+        <p>I run Genomequery, our group's research computing cluster, located in the data center of the UC San Diego Computer Science and Engineering building. It is a multi-node Linux cluster with 182 cores and 375 TB of storage. I oversee its system architecture, hardware and software upgrades, and the NIST SP 800-171 compliance process that lets the group analyse controlled-access genomic data.</p>
+      </section>
+      <section id="media" data-title="In the media">
+        <h2>In the media</h2>
+        <ul class="items">
+          <li><a class="t" href="https://www.nytimes.com/2019/11/20/science/dna-genetics-cancer.html">Scientists are just beginning to understand mysterious DNA circles common in cancer cells</a><span class="m"><i>The New York Times</i>, Carl Zimmer</span></li>
+          <li><a class="t" href="https://www.nature.com/articles/d41586-023-00982-6">Extrachromosomal DNA appears before cancer forms</a><span class="m"><i>Nature</i> News &amp; Views</span></li>
+          <li><a class="t" href="https://www.cancer.gov/news-events/cancer-currents-blog/2023/extrachromosomal-dna-barretts-esophageal-cancer">Coming full circle on cancer and extrachromosomal DNA</a><span class="m">National Cancer Institute</span></li>
+          <li><a class="t" href="https://jacobsschool.ucsd.edu/news/release/3404?id=3404">Mapping mutation "hotspots" in cancer reveals new drivers and biomarkers</a><span class="m">UC San Diego Today</span></li>
+        </ul>
+      </section>
+    </article>
+
+    <!-- Software -->
+    <article class="page" data-page="software" hidden>
+      <h1>Software</h1>
+      <p class="lede"><img class="logo" src="../images/ampliconsuite-logo.png" alt="AmpliconSuite logo" width="64" height="64">AmpliconSuite is a set of 15 interoperable open-source tools for analysing focal amplifications, from raw reads to classified, visualised structures. I founded the project and lead its development.</p>
+      <p>The tools have been used in 55 large-scale studies, 39 of them by other groups, covering 50,626 samples. The code is on <a href="https://github.com/AmpliconSuite">GitHub</a>.</p>
+      <section id="tools" data-title="Tools">
+        <h2>Tools</h2>
+        <div class="tw"><table>
+          <thead><tr><th>Tool</th><th>What it does</th><th>Role</th></tr></thead>
+          <tbody>
+            <tr><td class="name"><a href="https://github.com/AmpliconSuite/AmpliconSuite-pipeline">AmpliconSuite-pipeline</a></td><td>End-to-end detection, reconstruction and classification from WGS</td><td><span class="chip lead">lead</span></td></tr>
+            <tr><td class="name"><a href="https://github.com/jluebeck/AmpliconClassifier">AmpliconClassifier</a></td><td>Calls ecDNA, BFB and other amplification types</td><td><span class="chip lead">lead</span></td></tr>
+            <tr><td class="name"><a href="https://ampliconrepository.org">AmpliconRepository.org</a></td><td>Community-editable database of ecDNA annotations</td><td><span class="chip lead">project lead</span></td></tr>
+            <tr><td class="name"><a href="https://github.com/jluebeck/AmpliconArchitect">AmpliconArchitect</a></td><td>Breakpoint graphs of amplified regions from short reads</td><td><span class="chip">maintainer</span></td></tr>
+            <tr><td class="name"><a href="https://github.com/jluebeck/AmpliconReconstructor">AmpliconReconstructor</a></td><td>Joins NGS and optical maps to resolve full structures</td><td><span class="chip lead">lead</span></td></tr>
+            <tr><td class="name"><a href="https://github.com/AmpliconSuite/CoRAL">CoRAL</a></td><td>ecDNA reconstruction from long reads</td><td><span class="chip">co-developer</span></td></tr>
+            <tr><td class="name"><a href="https://github.com/jluebeck/CycleViz">CycleViz</a></td><td>Circular and linear structure visualization</td><td><span class="chip lead">lead</span></td></tr>
+            <tr><td class="name"><a href="https://github.com/jluebeck/FaNDOM">FaNDOM</a></td><td>Fast optical genome map alignment</td><td><span class="chip lead">co-lead</span></td></tr>
+            <tr><td class="name"><a href="https://github.com/jluebeck/ecSimulator">ecSimulator</a></td><td>Simulated ecDNA structures for benchmarking</td><td><span class="chip lead">lead</span></td></tr>
+            <tr><td class="name"><a href="https://github.com/AmpliconSuite/CycleExtractor">CycleExtractor</a></td><td>Fast resolution of ecDNA sequence from the breakpoint graph</td><td><span class="chip">contributor</span></td></tr>
+          </tbody>
+        </table></div>
+      </section>
+      <section id="usage" data-title="Usage">
+        <h2>Usage</h2>
+        <p>Large-scale studies (50 or more samples) that used AmpliconArchitect or AmpliconSuite, counted by samples analysed and plotted by publication date. Preprints are included. Hover a step to see the study.</p>
+        <div class="filters" role="group" aria-label="Which studies to count">
+          <button type="button" data-u="all" aria-pressed="true">All studies</button>
+          <button type="button" data-u="ext" aria-pressed="false">Other groups only</button>
+        </div>
+        <div id="usagechart"></div>
+        <p class="note">Some cohorts were analysed in more than one study.</p>
+      </section>
+      <section id="studies" data-title="Studies">
+        <h2>Large-scale studies using AmpliconSuite tools</h2>
+        <p>Published studies and preprints with 50 or more samples.</p>
+        <div class="tw"><table><thead><tr><th>Date</th><th>Study</th><th>Cohort</th><th style="text-align:right">Samples</th></tr></thead><tbody id="studytable"></tbody></table></div>
+        <button class="more" type="button" id="showall">Show all 55 studies</button>
+      </section>
+    </article>
+
+    <!-- Publications -->
+    <article class="page" data-page="publications" hidden>
+      <h1>Publications</h1>
+      <p class="lede">45 peer-reviewed papers and 4 preprints. * denotes equal contribution. Also on <a href="https://scholar.google.com/citations?hl=en&amp;user=bn4vrPUAAAAJ">Google Scholar</a>.</p>
+      <section id="list" data-title="Papers">
+        <div class="filters" id="pubfilters" role="group" aria-label="Filter publications">
+          <button type="button" data-f="all" aria-pressed="true">All<span></span></button>
+          <button type="button" data-f="lead" aria-pressed="false">First or senior<span></span></button>
+          <button type="button" data-f="methods" aria-pressed="false">Computational methods<span></span></button>
+          <button type="button" data-f="pre" aria-pressed="false">Preprints<span></span></button>
+          <input id="pubq" type="search" placeholder="Search titles, journals, authors" aria-label="Search publications">
+        </div>
+        <div id="publist"></div>
+      </section>
+      <section id="writing" data-title="Other writing">
+        <h2>Other writing</h2>
+        <ul class="items dated">
+          <li><span><a class="t" href="https://communities.springernature.com/posts/ampliconsuite-and-ampliconrepository-enabling-ecdna-research-at-scale">AmpliconSuite and AmpliconRepository: enabling ecDNA research at scale</a><span class="m">Springer Nature Research Communities</span></span><time>2026</time></li>
+          <li><span><a class="t" href="https://www.cancergrandchallenges.org/news/closing-the-gap-between-tool-development-and-biology-to-decode-extrachromosomal-dna-in-cancer">Closing the gap between tool development and biology to decode extrachromosomal DNA in cancer</a><span class="m">Cancer Grand Challenges</span></span><time>2026</time></li>
+          <li><span><a class="t" href="https://cancercommunity.nature.com/posts/ampliconreconstructor-revealing-focally-amplified-rearrangements-in-cancer">AmpliconReconstructor: revealing focally amplified rearrangements in cancer</a><span class="m">Nature Research Cancer Community</span></span><time>2020</time></li>
+        </ul>
+      </section>
+    </article>
+
+    <!-- About -->
+    <article class="page" data-page="about" hidden>
+      <h1>About</h1>
+      <section id="bio" data-title="Bio">
+        <h2>Bio</h2>
+        <p>I am an Associate Project Scientist in Computer Science and Engineering at UC San Diego, working with Vineet Bafna. I completed my PhD in Bioinformatics and Systems Biology at UCSD in 2021, an MS in Computer Science along the way, and a BS in Applied and Computational Mathematical Sciences at the University of Washington. I have also previously consulted for Boundless Bio.</p>
+        <p>I live in the Seattle area. Outside work I run, hike, brew beer and cider, and play the cello.</p>
+      </section>
+      <section id="recognition" data-title="Recognition">
+        <h2>Recognition</h2>
+        <ul class="items dated">
+          <li><span>AGBT Next Gen Leaders Award</span><time>2025</time></li>
+          <li><span>Doreen J. Putrah Cancer Foundation–AACR Scholar-in-Training Award</span><time>2023</time></li>
+          <li><span>Cancer Grand Challenges Future Leader</span><time>2022</time></li>
+          <li><span>JXTX James Taylor Memorial Scholarship</span><time>2020</time></li>
+        </ul>
+      </section>
+      <section id="talks" data-title="Talks">
+        <h2>Recent talks</h2>
+        <figure class="talk">
+          <img src="../images/talk-edynamic.jpg" alt="Jens Luebeck presenting a slide on the AmpliconSuite-pipeline workflow" width="1200" height="750" loading="lazy">
+          <figcaption>Presenting AmpliconSuite-pipeline to the eDyNAmiC team at a Cancer Grand Challenges meeting.</figcaption>
+        </figure>
+        <ul class="items dated">
+          <li><span>eDyNAmiC Symposium<span class="m">Stanford, CA</span></span><time>Oct 2026</time></li>
+          <li><span>AmpliconSuite and AmpliconRepository: enabling ecDNA biology at scale<span class="m">NCI Informatics Technology for Cancer Research · <a href="https://www.cancer.gov/about-nci/organization/cbiit/news-events/events/ampliconsuite-ampliconrepository-enabling-ecdna-biology-at-scale">Recording</a></span></span><time>Sep 2026</time></li>
+          <li><span>Cancer Genomics Consortium Annual Meeting<span class="m">Houston, TX</span></span><time>Aug 2026</time></li>
+          <li><span>Cancer Grand Challenges Conference: ecDNA<span class="m">London, UK</span></span><time>Jun 2025</time></li>
+          <li><span>AACR Annual Meeting, minisymposium<span class="m">Chicago, IL</span></span><time>Apr 2025</time></li>
+        </ul>
+      </section>
+      <section id="mentorship" data-title="Mentorship">
+        <h2>Mentorship</h2>
+        <p>I have mentored students on research projects from undergraduate through post-baccalaureate and master's level, several of whom are now co-authors on published work. If you would like to ask about a project to collaborate on, reach out with your CV and/or GitHub.</p>
+      </section>
+      <section id="contact" data-title="Contact">
+        <h2>Contact</h2>
+        <p>I'm open to collaborations and consulting on ecDNA and copy-number analysis, structural variant reconstruction, and research software built for other people to use.</p>
+        <p class="addr" style="font-size:15px">jluebeck@ucsd.edu</p>
+      </section>
+    </article>
+
+    <!-- Projects -->
+    <article class="page" data-page="projects" hidden>
+      <h1>Projects</h1>
+      <section id="all" data-title="All projects">
+        <div class="cards">
+          <a href="https://github.com/jluebeck/ReactionDiffusionSimulator"><b>Turing patterns</b><small>A reaction-diffusion simulator for spots and stripes.</small><code>/lab/turing</code></a>
+          <a href="https://jluebeck.github.io/posts/WordleSolver"><b>Maximum-entropy Wordle solver</b><small>Choosing the guess that splits the remaining words most evenly. 2022.</small><code>/posts/WordleSolver</code></a>
+        </div>
+      </section>
+    </article>
+  </main>
+</div>
+
+<script>
+/* Cumulative samples analysed with AmpliconArchitect in published studies.
+   UsageChart(container, studies, {height, compact, external}) draws a step-area chart with a hover tooltip.
+   Colors come from the page's CSS custom properties: --chart-line, --chart-grid, --chart-text, --chart-ink, --chart-surface. */
+function UsageChart(el, all, opts) {
+  opts = opts || {};
+  var NS = 'http://www.w3.org/2000/svg';
+  var fmt = function (n) { return n.toLocaleString('en-US'); };
+  var day = function (s) { return new Date(s + 'T00:00:00Z').getTime(); };
+  var mon = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var t0 = day('2017-01-01'), t1 = day('2026-12-31');
+  el.style.position = 'relative';
+  var svg = document.createElementNS(NS, 'svg'), tip = document.createElement('div');
+  svg.setAttribute('role', 'img'); svg.style.display = 'block'; svg.style.width = '100%'; svg.style.overflow = 'visible';
+  tip.className = 'uc-tip'; tip.hidden = true;
+  el.appendChild(svg); el.appendChild(tip);
+
+  function draw() {
+    var rows = all.filter(function (s) { return !opts.external || s.external; });
+    var cum = 0, pts = rows.map(function (s) { cum += s.samples; return { s: s, t: day(s.date), c: cum }; });
+    var W = el.clientWidth || 600, H = opts.height || 220, L = opts.compact ? 0 : 44, R = opts.compact ? 0 : 64, T = 14, B = opts.compact ? 0 : 26;
+    var top = Math.max(10000, Math.ceil(cum / 20000) * 20000);
+    var X = function (t) { return L + (t - t0) / (t1 - t0) * (W - L - R); };
+    var Y = function (v) { return T + (1 - v / top) * (H - T - B); };
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.setAttribute('height', H);
+    svg.setAttribute('aria-label', 'Cumulative samples analysed with AmpliconArchitect in ' + rows.length + ' published studies, reaching ' + fmt(cum) + ' by ' + (rows.length ? rows[rows.length - 1].date.slice(0, 4) : ''));
+    svg.innerHTML = '';
+    function el2(n, a, txt) { var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; svg.appendChild(e); return e; }
+    if (!opts.compact) {
+      for (var v = 0; v <= top; v += top / (top > 40000 ? 3 : 2)) {
+        el2('line', { x1: L, x2: W - R, y1: Y(v), y2: Y(v), stroke: 'var(--chart-grid)', 'stroke-width': 1 });
+        el2('text', { x: L - 8, y: Y(v) + 4, 'text-anchor': 'end', fill: 'var(--chart-text)', 'font-size': 11, style: 'font-variant-numeric: tabular-nums' }, v ? (v / 1000) + 'k' : '0');
+      }
+      [2018, 2020, 2022, 2024, 2026].forEach(function (y) { el2('text', { x: X(day(y + '-01-01')), y: H - 6, 'text-anchor': 'middle', fill: 'var(--chart-text)', 'font-size': 11 }, y); });
+    }
+    if (!pts.length) return;
+    var d = 'M' + X(t0) + ' ' + Y(0), lastT = day('2026-10-30');
+    pts.forEach(function (p) { d += ' H' + X(p.t).toFixed(1) + ' V' + Y(p.c).toFixed(1); });
+    d += ' H' + X(lastT).toFixed(1);
+    el2('path', { d: d + ' V' + Y(0) + ' Z', fill: 'var(--chart-line)', 'fill-opacity': 0.1, stroke: 'none' });
+    el2('path', { d: d, fill: 'none', stroke: 'var(--chart-line)', 'stroke-width': 2, 'stroke-linejoin': 'round' });
+    var end = pts[pts.length - 1];
+    el2('circle', { cx: X(lastT), cy: Y(end.c), r: 4, fill: 'var(--chart-line)', stroke: 'var(--chart-surface)', 'stroke-width': 2 });
+    if (!opts.compact) {
+      el2('text', { x: X(lastT) + 8, y: Y(end.c) + 4, fill: 'var(--chart-ink)', 'font-size': 12, 'font-weight': 600, style: 'font-variant-numeric: tabular-nums' }, fmt(end.c));
+      var big = pts.reduce(function (a, p) { return p.s.samples > a.s.samples ? p : a; });
+      if (big.s.samples > cum * 0.15) {
+        el2('text', { x: X(big.t) - 6, y: Y(big.c) + 14, 'text-anchor': 'end', fill: 'var(--chart-text)', 'font-size': 11 }, big.s.citation.split(',')[0] + ', ' + fmt(big.s.samples));
+      }
+    }
+    var cross = el2('line', { y1: T, y2: H - B, stroke: 'var(--chart-text)', 'stroke-width': 1, 'stroke-dasharray': '2 3', visibility: 'hidden' });
+    var dot = el2('circle', { r: 4.5, fill: 'var(--chart-line)', stroke: 'var(--chart-surface)', 'stroke-width': 2, visibility: 'hidden' });
+    var hit = el2('rect', { x: L, y: 0, width: W - L - R, height: H, fill: 'transparent' });
+    function show(ev) {
+      var r = svg.getBoundingClientRect(), mx = (ev.clientX - r.left) * (W / r.width), best = pts[0];
+      pts.forEach(function (p) { if (Math.abs(X(p.t) - mx) < Math.abs(X(best.t) - mx)) best = p; });
+      var px = X(best.t), py = Y(best.c), dt = new Date(best.t);
+      cross.setAttribute('x1', px); cross.setAttribute('x2', px); cross.setAttribute('visibility', 'visible');
+      dot.setAttribute('cx', px); dot.setAttribute('cy', py); dot.setAttribute('visibility', 'visible');
+      tip.innerHTML = '<b></b><span></span><span class="uc-n"></span>';
+      tip.children[0].textContent = best.s.label;
+      tip.children[1].textContent = best.s.citation + ' · ' + mon[dt.getUTCMonth()] + ' ' + dt.getUTCFullYear();
+      tip.children[2].textContent = '+' + fmt(best.s.samples) + ' samples · ' + fmt(best.c) + ' total';
+      tip.hidden = false;
+      var left = px * (r.width / W), tw = tip.offsetWidth;
+      tip.style.left = Math.max(0, Math.min(r.width - tw, left - tw / 2)) + 'px';
+      tip.style.top = Math.max(0, py * (r.height / H) - tip.offsetHeight - 12) + 'px';
+    }
+    function hide() { tip.hidden = true; cross.setAttribute('visibility', 'hidden'); dot.setAttribute('visibility', 'hidden'); }
+    hit.addEventListener('pointermove', show); hit.addEventListener('pointerdown', show); hit.addEventListener('pointerleave', hide);
+  }
+  draw();
+  if ('ResizeObserver' in window) new ResizeObserver(function () { draw(); }).observe(el);
+  return { set: function (o) { for (var k in o) opts[k] = o[k]; draw(); } };
+}
+
+(function () {
+  var U = [{"label":"NCI-60","date":"2017-03-01","samples":113,"citation":"Turner et al., Nature","url":"","external":false,"preprint":false},{"label":"AmpliconArchitect paper","date":"2019-01-23","samples":68,"citation":"Deshpande et al., Nature Communications","url":"https://doi.org/10.1038/s41467-018-08200-y","external":false,"preprint":false},{"label":"Pan-cancer (TCGA)","date":"2020-08-17","samples":3212,"citation":"Kim et al., Nature Genetics","url":"https://pubmed.ncbi.nlm.nih.gov/32807987/","external":false,"preprint":false},{"label":"Gastric cardia adenocarcinoma","date":"2021-11-11","samples":72,"citation":"Zhao et al., Nature Communications","url":"","external":true,"preprint":false},{"label":"Head-and-neck cancer (HPV-driven)","date":"2021-12-15","samples":72,"citation":"Pang et al., Clinical Cancer Research","url":"https://pubmed.ncbi.nlm.nih.gov/34548317/","external":false,"preprint":false},{"label":"Pan-cancer (clustered mutations)","date":"2022-02-09","samples":2583,"citation":"Bergstrom et al., Nature","url":"https://pubmed.ncbi.nlm.nih.gov/35140399/","external":false,"preprint":false},{"label":"eccDNAdb","date":"2022-04-06","samples":191,"citation":"Peng et al., Oncogene","url":"https://doi.org/10.1038/s41388-022-02286-x","external":true,"preprint":false},{"label":"Esophageal squamous cell carcinoma","date":"2022-10-22","samples":528,"citation":"Cui et al., Nature Communications","url":"","external":true,"preprint":false},{"label":"eccDNA Atlas","date":"2023-02-09","samples":319,"citation":"Zhong et al., Briefings in Bioinformatics","url":"https://doi.org/10.1093/bib/bbad037","external":true,"preprint":false},{"label":"Small cell lung cancer","date":"2023-04-01","samples":143,"citation":"Pongor et al., Cancer Discovery","url":"","external":true,"preprint":false},{"label":"Barrett's and Esophageal adenocarcinoma","date":"2023-04-12","samples":286,"citation":"Luebeck et al., Nature","url":"https://pubmed.ncbi.nlm.nih.gov/37046089/","external":false,"preprint":false},{"label":"Neuroblastoma","date":"2023-10-11","samples":150,"citation":"Rodriguez-Fos et al., Cell Genomics","url":"","external":true,"preprint":false},{"label":"Medulloblastoma","date":"2023-11-01","samples":481,"citation":"Chapman et al., Nature Genetics","url":"https://doi.org/10.1038/s41588-023-01551-3","external":false,"preprint":false},{"label":"Hepatocellular carcinoma (HPV-driven)","date":"2024-02-01","samples":494,"citation":"Chen et al., Nature","url":"https://doi.org/10.1038/s41586-024-07054-3","external":true,"preprint":false},{"label":"GCAP Pancancer WES benchmark","date":"2024-02-19","samples":386,"citation":"Wang et al., Nature Communications","url":"https://www.nature.com/articles/s41467-024-45479-6","external":true,"preprint":false},{"label":"T cell lymphoma","date":"2024-04-02","samples":71,"citation":"Chen et al., Genome Medicine","url":"https://link.springer.com/article/10.1186/s13073-024-01324-5","external":true,"preprint":false},{"label":"Small cell lung cancer","date":"2024-05-01","samples":51,"citation":"Choudhuri et al., Cancer Discovery","url":"https://aacrjournals.org/cancerdiscovery/article/14/5/804/745033","external":true,"preprint":false},{"label":"Esophageal squamous cell carcinoma","date":"2024-05-14","samples":710,"citation":"Ng et al., Nature Communications","url":"https://doi.org/10.1038/s41467-024-47619-4","external":true,"preprint":false},{"label":"Hematological malignancies","date":"2024-07-13","samples":208,"citation":"Zhang et al., Neoplasia","url":"","external":true,"preprint":false},{"label":"Cancer cell lines","date":"2024-08-01","samples":468,"citation":"Fessler et al., NAR Cancer","url":"https://academic.oup.com/narcancer/article/6/3/zcae035/7725462","external":true,"preprint":false},{"label":"Colorectal cancer","date":"2024-08-07","samples":1761,"citation":"Cornish et al., Nature","url":"https://www.nature.com/articles/s41586-024-07747-9","external":true,"preprint":false},{"label":"Colorectal cancer","date":"2024-08-08","samples":1063,"citation":"Nunes et al., Nature","url":"https://www.nature.com/articles/s41586-024-07769-3","external":true,"preprint":false},{"label":"Urothelial carcinoma","date":"2024-08-19","samples":80,"citation":"Lv et al., Theranostics","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC11388072/","external":true,"preprint":false},{"label":"Urothelial carcinoma","date":"2024-10-09","samples":71,"citation":"Nguyen et al., Nature","url":"https://doi.org/10.1038/s41586-024-07955-3","external":true,"preprint":false},{"label":"Pan-cancer long read (matched WGS)","date":"2024-10-14","samples":189,"citation":"O'Neill et al., Cell Genomics","url":"https://www.cell.com/cell-genomics/fulltext/S2666-979X%2824%2900293-3","external":true,"preprint":false},{"label":"Pan-cancer (TCGA, PCAWG, Hartwig)","date":"2024-10-15","samples":8060,"citation":"Kim et al., Nature Genetics","url":"https://pubmed.ncbi.nlm.nih.gov/39402156/","external":false,"preprint":false},{"label":"Genomics England","date":"2024-11-15","samples":14778,"citation":"Bailey et al., Nature","url":"https://www.nature.com/articles/s41586-024-08107-3","external":false,"preprint":false},{"label":"Urothelial carcinoma","date":"2025-01-17","samples":199,"citation":"Zheng et al., iScience","url":"https://www.cell.com/iscience/fulltext/S2589-0042(24)02737-8?uuid=uuid%3Abbcdcde1-10ec-4f42-9658-f44d0e5c5e89","external":true,"preprint":false},{"label":"Osteosarcoma","date":"2025-01-23","samples":356,"citation":"Valle-Inclan et al., Cell","url":"https://www.cell.com/cell/fulltext/S0092-8674(24)01418-1","external":true,"preprint":false},{"label":"Urothelial carcinoma","date":"2025-03-11","samples":1411,"citation":"Lv et al., Cancer Discovery","url":"https://pubmed.ncbi.nlm.nih.gov/40062518/","external":false,"preprint":false},{"label":"Glioma","date":"2025-04-14","samples":579,"citation":"Mayr et al., Cancer Cell","url":"https://www.cell.com/cancer-cell/fulltext/S1535-6108(25)00070-4","external":true,"preprint":false},{"label":"Diffuse glioma (100kGP)","date":"2025-05-07","samples":403,"citation":"Kinnersley et al., Nature Communications","url":"https://doi.org/10.1038/s41467-025-59156-9","external":true,"preprint":false},{"label":"Pan-cancer 3D genome (TCGA)","date":"2025-05-12","samples":169,"citation":"Yost et al., Nature Genetics","url":"https://www.nature.com/articles/s41588-025-02188-0","external":false,"preprint":false},{"label":"Glioma","date":"2025-05-21","samples":93,"citation":"Akdemir et al., bioRxiv","url":"https://www.biorxiv.org/content/10.1101/2025.05.16.654515v1.full.pdf","external":true,"preprint":true},{"label":"PanPedCan","date":"2025-06-15","samples":3796,"citation":"Sridhar et al., medRxiv","url":"https://www.medrxiv.org/content/10.1101/2025.07.22.24308163v2.full","external":false,"preprint":true},{"label":"Testicular cancer","date":"2025-06-16","samples":252,"citation":"Zhang et al., ResearchSquare","url":"https://www.researchsquare.com/article/rs-6735635/v1","external":true,"preprint":true},{"label":"Ovarian cancer","date":"2025-07-01","samples":324,"citation":"Ewing et al., Nature Communications","url":"https://www.nature.com/articles/s41467-025-60655-y","external":true,"preprint":false},{"label":"Lung cancer","date":"2025-07-24","samples":1216,"citation":"Khandekar et al., bioRxiv","url":"https://pubmed.ncbi.nlm.nih.gov/40501879/","external":false,"preprint":true},{"label":"Prostate cancer","date":"2025-08-12","samples":69,"citation":"Mout et al., bioRxiv","url":"https://www.biorxiv.org/content/10.1101/2025.08.08.668693v1.abstract","external":true,"preprint":true},{"label":"Pediatric PDX models","date":"2025-08-18","samples":338,"citation":"Kenkre et al., bioRxiv","url":"https://www.biorxiv.org/content/10.1101/2025.08.14.670153v1.abstract","external":false,"preprint":true},{"label":"Pancreatic organoids","date":"2025-09-04","samples":260,"citation":"Li et al., Cell Stem Cell","url":"https://www.cell.com/cell-stem-cell/fulltext/S1934-5909(25)00265-6#sec-8-1","external":true,"preprint":false},{"label":"Bladder cancer","date":"2025-09-10","samples":114,"citation":"Xiao et al., Cell Genomics","url":"https://www.cell.com/cell-genomics/fulltext/S2666-979X(25)00184-3","external":true,"preprint":false},{"label":"Gastric cancer","date":"2025-10-18","samples":81,"citation":"Hokazono et al., Gastric Cancer","url":"https://link.springer.com/article/10.1007/s10120-025-01666-y","external":true,"preprint":false},{"label":"Breast cancer (ecDNAInspector)","date":"2025-12-02","samples":231,"citation":"Pribus et al., bioRxiv","url":"https://doi.org/10.64898/2025.12.01.691649","external":true,"preprint":true},{"label":"Breast cancer","date":"2025-12-03","samples":1364,"citation":"Kim et al., Nature","url":"https://www.nature.com/articles/s41586-025-09812-3","external":true,"preprint":false},{"label":"Acute myeloid leukemia (ATLAS/MEASURE)","date":"2025-12-07","samples":255,"citation":"Yu et al., medRxiv","url":"https://doi.org/10.64898/2025.12.04.25340141","external":true,"preprint":true},{"label":"Glioblastoma (ecDNA atlas / ecLego3)","date":"2025-12-25","samples":55,"citation":"Wong et al., bioRxiv","url":"https://doi.org/10.64898/2025.12.24.696443","external":true,"preprint":true},{"label":"Renal cell carcinoma","date":"2026-02-26","samples":164,"citation":"Culliford et al., Molecular Cancer Research","url":"https://aacrjournals.org/mcr/article/doi/10.1158/1541-7786.MCR-25-0616/774897/Contrasting-Features-of-Papillary-and-Chromophobe","external":true,"preprint":false},{"label":"Small cell lung cancer","date":"2026-03-17","samples":76,"citation":"Nones et al., Genome Medicine","url":"https://link.springer.com/article/10.1186/s13073-026-01624-y","external":true,"preprint":false},{"label":"Prostate cancer (WCDT + CASCADE)","date":"2026-04-15","samples":193,"citation":"Moreno-Rodriguez et al., Genome Biology","url":"https://doi.org/10.1186/s13059-026-04074-2","external":true,"preprint":false},{"label":"Ductal carcinoma in situ","date":"2026-05-19","samples":113,"citation":"Chmelova et al., Nature Communications","url":"https://www.nature.com/articles/s41467-026-72952-1","external":false,"preprint":false},{"label":"Bladder cancer (TCGA rerun)","date":"2026-07-04","samples":408,"citation":"Yesudhas et al., bioRxiv","url":"https://doi.org/10.64898/2026.07.01.735125","external":true,"preprint":true},{"label":"Cervical cancer (HTMCP)","date":"2026-07-20","samples":118,"citation":"MacLennan et al., bioRxiv","url":"https://doi.org/10.64898/2026.07.15.733834","external":true,"preprint":true},{"label":"HCMI models and tumors","date":"2026-08-05","samples":989,"citation":"ElHarouni et al., Nature","url":"https://doi.org/10.1038/s41586-026-10806-y","external":true,"preprint":false},{"label":"Cancer cell lines (CCLE)","date":"2026-10-16","samples":392,"citation":"Luebeck et al., Nature Methods","url":"https://www.nature.com/articles/s41592-026-03264-x","external":false,"preprint":false}], chart = null;
+  // [year, authors, title, venue, pmid, flags]  flags: f = first/co-first, s = senior, m = computational methods, p = preprint
+  var P = [
+    [2026,"Luebeck J*, Liefeld T*, Wong ITL*, Huang E*, et al.","AmpliconSuite: an end-to-end workflow for analyzing focal amplifications in cancer genomes","Nature Methods","42888240","fm"],
+    [2026,"Zhao W, Cheng Z, Tian K, … Luebeck J, … Hua Y.","A living multi-omics PDX biobank of high-risk sarcomas reveals ecDNA-driven oncogene amplification in osteosarcoma","Advanced Science","42864811",""],
+    [2026,"Jones MG, Weiser NE, Hung KL, … Luebeck J, … Chang HY.","scAmp analyzes focal gene amplifications at single-cell resolution","Nature Communications","42706270","m"],
+    [2026,"Khandekar A, Hoang PH, Luebeck J, et al.","Examining the role of extrachromosomal DNA in lung cancer","J Natl Cancer Inst","42554978",""],
+    [2026,"Li C, Dehkordi SR, Muliaditan D, DasGupta R, Luebeck J, et al.","Detecting and reconstructing breakage-fusion-bridge cycles from long-read sequencing using BFBArchitect","Bioinformatics","42412795","m"],
+    [2026,"Kenkre R, Chapman OS, Chow EYC, Luebeck J, et al.","Preservation and clonal behavior of extrachromosomal DNA in patient-derived xenograft models of childhood cancers","Genome Medicine","42210429",""],
+    [2026,"Chmelova L, Davies HR, Degasperi A, … Luebeck J, … Nik-Zainal S.","High-depth whole genome sequencing of premalignant breast lesions reveals rearrangement hotspots","Nature Communications","42156386",""],
+    [2026,"Yi H, Zhang S, Swinderman J, … Luebeck J, … Chang HY.","EcDNA-borne structural variants drive oncogenic fusion transcript amplification","Cell","41506267",""],
+    [2025,"Chowdhury B, Zhu K, Li C, Alsing J, Luebeck J, et al.","Reconstructing the three-dimensional architecture of extrachromosomal DNA with ec3D","Nature Communications","41422275","m"],
+    [2025,"Kraft K, Murphy SE, Jones MG, … Luebeck J, … Chang HY.","Enhancer activation from transposable elements in extrachromosomal DNA","Nature Cell Biology","39282372",""],
+    [2025,"Noorani I, Haughey M, Luebeck J, et al.","Extrachromosomal DNA-driven oncogene spatial heterogeneity and evolution in glioblastoma","Cancer Discovery","39484416",""],
+    [2025,"Lv W, Zeng Y, Li C, … Luebeck J, … Han P.","Spatial-temporal diversity of extrachromosomal DNA shapes urothelial carcinoma evolution and tumor-immune microenvironment","Cancer Discovery","40062518",""],
+    [2025,"Yost KE, Zhao Y, Hung KL, … Luebeck J, … Chang HY.","Three-dimensional genome landscape of primary human cancers","Nature Genetics","40355593",""],
+    [2025,"Nakagawa T, Luebeck J, Zhu K, et al.","Inhibition of human-HPV hybrid ecDNA enhancers reduces oncogene expression and tumor growth in oropharyngeal cancer","Nature Communications","40140353",""],
+    [2025,"Dehkordi SR, Wong ITL, Ni J, Luebeck J, et al.","Breakage fusion bridge cycles drive high oncogene number with moderate intratumoural heterogeneity","Nature Communications","39929823",""],
+    [2025,"Rose JC, Belk JA, Wong ITL, Luebeck J, et al.","Disparate pathways for extrachromosomal DNA biogenesis and genomic DNA repair","Cancer Discovery","37961138",""],
+    [2024,"Pradella D, Zhang M, Gao R, … Luebeck J, … Ventura A.","Engineered extrachromosomal oncogene amplifications promote tumorigenesis","Nature","39695225",""],
+    [2024,"Bailey C, Pich O, Thol K, Watkins TBK, Luebeck J, et al.","Origins and impact of extrachromosomal DNA","Nature","39506150",""],
+    [2024,"Hung KL, Jones MG, Wong ITL, … Luebeck J, et al.","Coordinated inheritance of extrachromosomal DNAs in cancer cells","Nature","39506152",""],
+    [2024,"Tang J, Weiser NE, Wang G, … Luebeck J, … Chang HY.","Enhancing transcription–replication conflict targets ecDNA-positive cancers","Nature","39506153",""],
+    [2024,"Kim H, Kim S, Wade T, … Luebeck J, Verhaak RGW.","Mapping extrachromosomal DNA amplifications during cancer progression","Nature Genetics","39402156","s"],
+    [2024,"Zhu K, Jones MG, Luebeck J, et al.","CoRAL accurately resolves extrachromosomal DNA genome structures with long-read sequencing","Genome Research","38981681","m"],
+    [2024,"Lin MS, Jo SY, Luebeck J, et al.","Transcriptional immune suppression and upregulation of double-stranded DNA damage and repair repertoires in ecDNA-containing tumors","eLife","38896472",""],
+    [2024,"Noorani I*, Luebeck J*, Rowan A, et al.","Oncogenic extrachromosomal DNA identification using whole-genome sequencing from formalin-fixed glioblastomas","Annals of Oncology","38555024","f"],
+    [2023,"Chapman OS, Luebeck J, Sridhar S, et al.","Circular extrachromosomal DNA promotes tumor heterogeneity in high-risk medulloblastoma","Nature Genetics","37945900",""],
+    [2023,"Agustinus A, Al-Rawi D, Dameracharla B, … Luebeck J, et al.","Epigenetic dysregulation from chromosomal transit in micronuclei","Nature","37286593",""],
+    [2023,"Raviram R, Raman A, Preissl S, … Luebeck J, et al.","Integrated analysis of single-cell chromatin state and transcriptome identified common vulnerability despite glioblastoma heterogeneity","PNAS","",""],
+    [2023,"Luebeck J, Ng AWT, Galipeau PC, et al.","Extrachromosomal DNA in the cancerous transformation of Barrett's esophagus","Nature","37046089","f"],
+    [2022,"Hung KL, Luebeck J, Dehkordi SR, et al.","Targeted profiling of human extrachromosomal DNA by CRISPR-CATCH","Nature Genetics","36253572",""],
+    [2022,"Javadzadeh S, Rajkumar U, Nguyen N, Sarmashghi S, Luebeck J, Shang J, Bafna V.","FastViFi: fast and accurate detection of (hybrid) viral DNA and RNA","NAR Genomics and Bioinformatics","35493723","m"],
+    [2022,"Bergstrom EN, Luebeck J, Petljak M, et al.","Mapping clustered mutations in cancer reveals APOBEC3 mutagenesis of ecDNA","Nature","35140399",""],
+    [2021,"Song K, Minami JK, Huang A, Dehkordi SR, Lomeli SH, Luebeck J, et al.","Plasticity of extrachromosomal and intrachromosomal BRAF amplifications in overcoming targeted therapy dosage challenges","Cancer Discovery","34930786",""],
+    [2021,"Hung KL, Yost KE, Xie L, Shi Q, Helmsauer K, Luebeck J, et al.","ecDNA hubs drive cooperative intermolecular oncogene expression","Nature","34819668",""],
+    [2021,"Pang J*, Nguyen N*, Luebeck J*, et al.","Extrachromosomal DNA in HPV-mediated oropharyngeal cancer drives diverse oncogene transcription","Clinical Cancer Research","34548317","f"],
+    [2021,"Dehkordi SR*, Luebeck J*, Bafna V.","FaNDOM: fast nested distance-based seeding of optical maps","Patterns","34027500","fm"],
+    [2020,"Luebeck J, Coruh C, Dehkordi SR, et al.","Integrated analysis of NGS and optical mapping resolves the complex structures of focal amplifications in cancer","Nature Communications","32873787","fm"],
+    [2020,"Kim H, Nguyen N, Turner K, Wu S, Gujar A, Luebeck J, et al.","Extrachromosomal DNA is associated with oncogene amplification and poor outcome across multiple cancers","Nature Genetics","32807987",""],
+    [2020,"Rocca C, Rainaldi J, Sharma J, … Luebeck J, Mali P, Cherqui S.","CRISPR/Cas9 gene editing of hematopoietic stem cells from patients with Friedreich's ataxia","Mol Ther Methods Clin Dev","32462051",""],
+    [2019,"Rajkumar U, Turner K, Luebeck J, et al.","EcSeg: semantic segmentation of metaphase images containing extrachromosomal DNA","iScience","31706138","m"],
+    [2019,"Wu S, Turner KM, Nguyen N, … Luebeck J, et al.","Circular ecDNA promotes accessible chromatin and high oncogene expression","Nature","31748743",""],
+    [2019,"Deshpande V, Luebeck J, Nguyen ND, et al.","Exploring the landscape of focal amplifications in cancer using AmpliconArchitect","Nature Communications","30674876","m"],
+    [2018,"Nguyen ND, Deshpande V, Luebeck J, Mischel PS, Bafna V.","ViFi: accurate detection of viral integration and mRNA fusion","Nucleic Acids Research","29579309","m"],
+    [2018,"Zhao D, Badur MG, Luebeck J, et al.","Combinatorial CRISPR-Cas9 metabolic screens reveal critical redox control points dependent on the KEAP1-NRF2 regulatory axis","Molecular Cell","29452643",""],
+    [2018,"Gray VE, Hause RJ, Luebeck J, Shendure J, Fowler DM.","Quantitative missense variant effect prediction using large-scale mutagenesis data","Cell Systems","29226803",""],
+    [2017,"Shen JP, Zhao D, Sasik R, Luebeck J, et al.","Combinatorial CRISPR-Cas9 screens for de novo mapping of genetic interactions","Nature Methods","28319113",""],
+    [2026,"Dameracharla B, Prasad G, Luebeck J, … Bafna V.","Inferring ecDNA evolution from allele frequency spectra","bioRxiv","","p"],
+    [2026,"Sang J, Zhang M, Chavez S, … Luebeck J, … Zhang T.","Endogenous mutational mechanisms and metabolic context shape endometrial cancer","bioRxiv","","p"],
+    [2026,"Faizrahnemoon M, Luebeck J, Hung KL, et al.","Fast and accurate resolution of ecDNA sequence using Cycle-Extractor","bioRxiv","","pm"],
+    [2025,"Chapman OS, Sridhar S, Chow EYC, … Luebeck J, … Chavez L.","Extrachromosomal DNA associates with poor survival across a broad spectrum of childhood solid tumors","medRxiv","","p"]
+  ];
+
+  var PAGES = [['research', 'Research'], ['software', 'Software'], ['publications', 'Publications'], ['about', 'About'], ['projects', 'Projects']];
+  var home = document.querySelector('[data-view="home"]'), shell = document.querySelector('[data-view="inner"]'), pnav = document.getElementById('pnav');
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  function route() {
+    var v = (location.hash || '').slice(1), page = document.querySelector('[data-page="' + v + '"]');
+    home.hidden = !!page; shell.hidden = !page;
+    document.querySelectorAll('[data-page]').forEach(function (p) { p.hidden = p !== page; });
+    if (page) {
+      pnav.innerHTML = PAGES.map(function (p) {
+        var cur = p[0] === v, secs = '';
+        if (cur) secs = '<ul class="secs">' + Array.prototype.map.call(page.querySelectorAll('section[data-title]'), function (s) { return '<li><button type="button" data-sec="' + s.id + '">' + esc(s.dataset.title) + '</button></li>'; }).join('') + '</ul>';
+        return '<li><a href="#' + p[0] + '"' + (cur ? ' aria-current="page"' : '') + '>' + p[1] + '</a>' + secs + '</li>';
+      }).join('');
+      if (v === 'software' && !chart) chart = UsageChart(document.getElementById('usagechart'), U, { height: 230 });
+      document.title = PAGES.filter(function (p) { return p[0] === v; })[0][1] + ' · Jens Luebeck';
+    } else document.title = 'Jens Luebeck';
+    scrollTo(0, 0);
+  }
+  pnav.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-sec]'); if (!b) return;
+    document.getElementById(b.dataset.sec).scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  });
+  addEventListener('hashchange', route); route();
+
+
+  // software: usage chart filter and studies table
+  document.querySelectorAll('[data-u]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('[data-u]').forEach(function (o) { o.setAttribute('aria-pressed', o === b); });
+      if (chart) chart.set({ external: b.dataset.u === 'ext' });
+    });
+  });
+  var mon = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], showAll = false;
+  function studies() {
+    var rows = U.slice().reverse();
+    document.getElementById('studytable').innerHTML = (showAll ? rows : rows.slice(0, 8)).map(function (s) {
+      return '<tr><td class="d">' + mon[+s.date.slice(5, 7) - 1] + ' ' + s.date.slice(0, 4) + '</td><td>' + (s.url ? '<a href="' + esc(s.url) + '">' + esc(s.citation) + '</a>' : esc(s.citation)) + '</td><td>' + esc(s.label) + '</td><td class="n">' + s.samples.toLocaleString('en-US') + '</td></tr>';
+    }).join('');
+    document.getElementById('showall').textContent = showAll ? 'Show recent studies only' : 'Show all ' + U.length + ' studies';
+  }
+  document.getElementById('showall').addEventListener('click', function () { showAll = !showAll; studies(); });
+  studies();
+
+  // publications
+  var test = { all: function (p) { return p[5].indexOf('p') < 0; }, lead: function (p) { return /[fs]/.test(p[5]); }, methods: function (p) { return p[5].indexOf('m') >= 0; }, pre: function (p) { return p[5].indexOf('p') >= 0; } };
+  var mode = 'all', list = document.getElementById('publist'), q = document.getElementById('pubq');
+  document.querySelectorAll('#pubfilters button').forEach(function (b) { b.querySelector('span').textContent = P.filter(test[b.dataset.f]).length; });
+  document.getElementById('pubcount').textContent = P.filter(test.all).length;
+  function render() {
+    var term = q.value.trim().toLowerCase(), html = '', yr = null;
+    var rows = P.filter(test[mode]).filter(function (p) { return !term || (p[1] + ' ' + p[2] + ' ' + p[3]).toLowerCase().indexOf(term) >= 0; });
+    document.querySelectorAll('#pubfilters button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.f === mode); });
+    rows.forEach(function (p) {
+      if (p[0] !== yr) { if (yr !== null) html += '</ul>'; yr = p[0]; html += '<div class="yr">' + yr + '</div><ul class="items">'; }
+      var au = esc(p[1]).replace(/Luebeck J(\*|\^)?/, function (m) { return '<mark>' + m + '</mark>'; });
+      var role = '';
+      html += '<li>' + (p[4] ? '<a class="t" href="https://pubmed.ncbi.nlm.nih.gov/' + p[4] + '/">' + esc(p[2]) + '</a>' : '<b>' + esc(p[2]) + '</b>') + role + '<span class="m">' + au + ' <i>' + esc(p[3]) + '</i></span></li>';
+    });
+    list.innerHTML = rows.length ? html + '</ul>' : '<p class="note">No papers match "' + esc(q.value) + '".</p>';
+  }
+  document.getElementById('pubfilters').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { mode = b.dataset.f; render(); } });
+  q.addEventListener('input', render); render();
+})();
+</script>
+
+</body>
+</html>
