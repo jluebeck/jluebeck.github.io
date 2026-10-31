@@ -11,21 +11,21 @@
 <style>
 /* Layout: a one-screen landing with six doors; every inner page shares a sticky sidebar (home link, page nav, this page's sections) beside a reading column. */
 :root {
-  --bg: #fdfdfd;
-  --tile: #f3f4f5;
-  --fg: #1a1c1f;
-  --muted: #656a72;
-  --line: #e3e5e8;
-  --accent: #2f5b9a;
+  --bg: #fdfdfc;
+  --tile: #f3f4f2;
+  --fg: #191b1a;
+  --muted: #676d69;
+  --line: #e3e5e1;
+  --accent: #0f5e66;
   --serif: "Source Serif 4", Georgia, serif;
   --sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
   --chart-line: var(--accent); --chart-grid: var(--line); --chart-text: var(--muted); --chart-ink: var(--fg); --chart-surface: var(--bg);
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #131416; --tile: #1c1e21; --fg: #e7e9ec; --muted: #9da3ab; --line: #2b2e33; --accent: #9bb8e3; color-scheme: dark;
+  --bg: #121413; --tile: #1b1e1d; --fg: #e8eae7; --muted: #9ba19d; --line: #2a2e2c; --accent: #6cc3c9; color-scheme: dark;
 } }
 :root[data-theme="dark"] {
-  --bg: #131416; --tile: #1c1e21; --fg: #e7e9ec; --muted: #9da3ab; --line: #2b2e33; --accent: #9bb8e3; color-scheme: dark;
+  --bg: #121413; --tile: #1b1e1d; --fg: #e8eae7; --muted: #9ba19d; --line: #2a2e2c; --accent: #6cc3c9; color-scheme: dark;
 }
 * { box-sizing: border-box; }
 body { background: var(--bg); color: var(--fg); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
@@ -77,7 +77,8 @@ h1, h2 { font-family: var(--serif); font-weight: 600; letter-spacing: -.01em; te
 .page section { padding-top: 36px; scroll-margin-top: 16px; }
 .page h2 { font-size: 21px; margin: 0 0 12px; }
 .page p { margin: 0 0 12px; max-width: 42em; }
-.logo { float: right; width: 64px; height: 64px; margin: 4px 0 8px 24px; }
+.logo { float: right; margin: 2px 0 8px 24px; }
+.logo img { display: block; width: 96px; height: 96px; }
 
 .items { list-style: none; margin: 0; padding: 0; }
 .items li { padding: 12px 0; border-bottom: 1px solid var(--line); }
@@ -239,8 +240,8 @@ td a { color: var(--fg); }
     <!-- Software -->
     <article class="page" data-page="software" hidden>
       <h1>Software</h1>
-      <p class="lede"><img class="logo" src="../images/ampliconsuite-logo.png" alt="AmpliconSuite logo" width="64" height="64">AmpliconSuite is a set of 15 interoperable open-source tools for analysing focal amplifications, from raw reads to classified, visualised structures. I founded the project and lead its development.</p>
-      <p>The tools have been used in 55 large-scale studies, 39 of them by other groups, covering 50,626 samples. The code is on <a href="https://github.com/AmpliconSuite">GitHub</a>.</p>
+      <p class="lede"><a class="logo" href="https://github.com/AmpliconSuite"><img src="../images/ampliconsuite-logo.png" alt="AmpliconSuite on GitHub" width="96" height="96"></a><a href="https://github.com/AmpliconSuite">AmpliconSuite</a> is a set of 15 interoperable open-source tools for analysing focal amplifications, from raw reads to classified, visualised structures. I founded the project and lead its development.</p>
+      <p>The tools have been used in 55 large-scale studies, 39 of them by other groups, covering 50,626 samples.</p>
       <section id="tools" data-title="Tools">
         <h2>Tools</h2>
         <div class="tw"><table>
