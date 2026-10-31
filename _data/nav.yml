@@ -2,7 +2,7 @@
 # In a blurb, "#papers", "#preprints", "#tools" and "#studies" are replaced by the counts of peer-reviewed papers,
 # preprints, rows in _data/tools.yml and large-scale studies in _data/usage.json. &nbsp; keeps a number on the same line as its noun.
 - { id: research, title: Research, url: /research/, blurb: "ecDNA, cancer genomes" }
-- { id: software, title: Software, url: /software/, blurb: "#tools&nbsp;tools, supported #studies&nbsp;large-scale studies" }
+- { id: software, title: Software, url: /software/, blurb: "#tools&nbsp;tools, used in #studies&nbsp;large-scale studies" }
 - { id: publications, title: Publications, url: /publications/, blurb: "#papers&nbsp;papers, #preprints&nbsp;preprints" }
 - { id: about, title: About, url: /about/, blurb: "bio, talks, contact" }
 - { id: projects, title: Projects, url: /projects/, blurb: "other stuff" }
