@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Font tester</title>
+<style>
+:root { --bg: #f2f2f0; --fg: #1b1c1b; --muted: #6a6e6b; --line: #d9dbd8; --card: #ffffff; --on: #1b1c1b; --on-fg: #ffffff; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #161717; --fg: #e8e9e7; --muted: #9ea29f; --line: #333634; --card: #1f2121; --on: #e8e9e7; --on-fg: #161717; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg: #161717; --fg: #e8e9e7; --muted: #9ea29f; --line: #333634; --card: #1f2121; --on: #e8e9e7; --on-fg: #161717; color-scheme: dark; }
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 13.5px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; display: flex; flex-direction: column; }
+.bar { padding: 10px 16px; border-bottom: 1px solid var(--line); display: grid; gap: 8px; }
+.row { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }
+.row > b { font-weight: 600; min-width: 64px; }
+.presets { display: flex; flex-wrap: wrap; gap: 4px; }
+.presets button, .seg button { font: inherit; color: var(--fg); background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 3px 9px; cursor: pointer; }
+.presets button[aria-pressed="true"], .seg button[aria-pressed="true"] { background: var(--on); color: var(--on-fg); border-color: var(--on); }
+label { display: flex; gap: 6px; align-items: center; color: var(--muted); }
+select { font: inherit; color: var(--fg); background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 3px 6px; max-width: 190px; }
+.seg { display: inline-flex; gap: 4px; }
+.now { color: var(--muted); }
+.now strong { color: var(--fg); font-weight: 600; }
+.stage { flex: 1; min-height: 0; display: flex; justify-content: center; padding: 12px; }
+iframe { border: 1px solid var(--line); border-radius: 6px; background: #fff; width: 100%; height: 100%; }
+.stage.phone iframe { width: 390px; }
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="row"><b>Presets</b><div class="presets" id="presets"></div></div>
+  <div class="row">
+    <b>Mix</b>
+    <label>Headings <select id="h"></select></label>
+    <label>Text <select id="t"></select></label>
+    <label>Labels <select id="m"></select></label>
+    <span class="seg" id="theme" role="group" aria-label="Theme"><button type="button" data-v="" aria-pressed="true">Auto</button><button type="button" data-v="light" aria-pressed="false">Light</button><button type="button" data-v="dark" aria-pressed="false">Dark</button></span>
+    <span class="seg" id="width" role="group" aria-label="Width"><button type="button" data-v="desk" aria-pressed="true">Desktop</button><button type="button" data-v="phone" aria-pressed="false">Phone</button></span>
+  </div>
+  <div class="now" id="now"></div>
+</div>
+<div class="stage" id="stage"><iframe id="site" src="site.html" title="Site preview"></iframe></div>
+<script>
+(function () {
+  var F = {"serif": {"Source Serif 4": "opsz,wght@8..60,400;8..60,600", "Newsreader": "opsz,wght@6..72,400;6..72,600", "Literata": "opsz,wght@7..72,400;7..72,600", "EB Garamond": "wght@400;600", "Crimson Pro": "wght@400;600", "Libre Caslon Text": "wght@400;700", "Spectral": "wght@400;600", "Lora": "wght@400;600", "IBM Plex Serif": "wght@400;600", "Fraunces": "opsz,wght@9..144,400;9..144,600", "Instrument Serif": "", "Young Serif": ""}, "sans": {"Hanken Grotesk": "wght@400;500;600", "Source Sans 3": "wght@400;500;600", "IBM Plex Sans": "wght@400;500;600", "Public Sans": "wght@400;500;600", "Libre Franklin": "wght@400;500;600", "Work Sans": "wght@400;500;600", "Karla": "wght@400;500;600", "Figtree": "wght@400;500;600", "Lato": "wght@400;700", "Atkinson Hyperlegible": "wght@400;700", "Space Grotesk": "wght@400;500;600", "Schibsted Grotesk": "wght@400;500;600", "Instrument Sans": "wght@400;500;600"}, "mono": {"Geist Mono": "wght@400;500", "JetBrains Mono": "wght@400;500", "IBM Plex Mono": "wght@400;500", "Source Code Pro": "wght@400;500", "Fira Mono": "wght@400;500", "DM Mono": "wght@400;500", "Red Hat Mono": "wght@400;500", "Space Mono": "wght@400;700", "Roboto Mono": "wght@400;500", "Courier Prime": "wght@400;700"}};
+  var SYS = { 'Georgia (system)': 'Georgia, "Times New Roman", serif', 'System UI': 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif', 'System mono': 'ui-monospace, "SF Mono", Menlo, Consolas, monospace' };
+  var PRESETS = [
+    ['As built', 'Source Serif 4', 'Hanken Grotesk', 'Geist Mono'],
+    ['Source family', 'Source Serif 4', 'Source Sans 3', 'Source Code Pro'],
+    ['IBM Plex', 'IBM Plex Serif', 'IBM Plex Sans', 'IBM Plex Mono'],
+    ['Newsreader + Public Sans', 'Newsreader', 'Public Sans', 'JetBrains Mono'],
+    ['Literata + Karla', 'Literata', 'Karla', 'DM Mono'],
+    ['Libre Caslon + Franklin', 'Libre Caslon Text', 'Libre Franklin', 'Fira Mono'],
+    ['Spectral + Work Sans', 'Spectral', 'Work Sans', 'Red Hat Mono'],
+    ['Instrument', 'Instrument Serif', 'Instrument Sans', 'JetBrains Mono'],
+    ['EB Garamond + Atkinson', 'EB Garamond', 'Atkinson Hyperlegible', 'IBM Plex Mono'],
+    ['All sans', 'Schibsted Grotesk', 'Schibsted Grotesk', 'Geist Mono'],
+    ['Space', 'Space Grotesk', 'Space Grotesk', 'Space Mono'],
+    ['System fonts', 'Georgia (system)', 'System UI', 'System mono']
+  ];
+  var all = {}; ['serif', 'sans', 'mono'].forEach(function (g) { for (var k in F[g]) all[k] = { group: g, spec: F[g][k] }; });
+  function stack(name) {
+    if (SYS[name]) return SYS[name];
+    var g = all[name].group;
+    return '"' + name + '", ' + (g === 'serif' ? 'Georgia, serif' : g === 'mono' ? 'ui-monospace, monospace' : 'system-ui, sans-serif');
+  }
+  function fill(sel, groups, extra) {
+    var html = '';
+    groups.forEach(function (g) {
+      html += '<optgroup label="' + g + '">' + Object.keys(F[g]).map(function (k) { return '<option>' + k + '</option>'; }).join('') + '</optgroup>';
+    });
+    html += '<optgroup label="system">' + extra.map(function (k) { return '<option>' + k + '</option>'; }).join('') + '</optgroup>';
+    sel.innerHTML = html;
+  }
+  var h = document.getElementById('h'), t = document.getElementById('t'), m = document.getElementById('m');
+  fill(h, ['serif', 'sans'], ['Georgia (system)', 'System UI']);
+  fill(t, ['sans', 'serif'], ['System UI', 'Georgia (system)']);
+  fill(m, ['mono'], ['System mono']);
+  var frame = document.getElementById('site');
+  function apply() {
+    var doc; try { doc = frame.contentDocument; } catch (e) { return; }
+    if (!doc || !doc.head) return;
+    [h.value, t.value, m.value].forEach(function (n) {
+      if (SYS[n] || doc.getElementById('gf-' + n)) return;
+      var l = doc.createElement('link'); l.rel = 'stylesheet'; l.id = 'gf-' + n;
+      l.href = 'https://fonts.googleapis.com/css2?family=' + n.replace(/ /g, '+') + (all[n].spec ? ':' + all[n].spec : '') + '&display=swap';
+      doc.head.appendChild(l);
+    });
+    var st = doc.getElementById('fx') || doc.head.appendChild(Object.assign(doc.createElement('style'), { id: 'fx' }));
+    var hs = all[h.value] && all[h.value].spec, light = all[h.value] && !/600|700/.test(hs);
+    st.textContent = ':root{--serif:' + stack(h.value) + ';--sans:' + stack(t.value) + ';--mono:' + stack(m.value) + '}' + (light ? 'h1,h2,.me b{font-weight:400}' : '');
+    document.getElementById('now').innerHTML = 'Showing <strong>' + h.value + '</strong> for headings, <strong>' + t.value + '</strong> for text, <strong>' + m.value + '</strong> for labels.';
+    document.querySelectorAll('#presets button').forEach(function (b, i) { var p = PRESETS[i]; b.setAttribute('aria-pressed', p[1] === h.value && p[2] === t.value && p[3] === m.value); });
+  }
+  var pr = document.getElementById('presets');
+  pr.innerHTML = PRESETS.map(function (p, i) { return '<button type="button" data-i="' + i + '">' + p[0] + '</button>'; }).join('');
+  pr.addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; var p = PRESETS[+b.dataset.i]; h.value = p[1]; t.value = p[2]; m.value = p[3]; apply(); });
+  [h, t, m].forEach(function (s) { s.addEventListener('change', apply); });
+  h.value = 'Source Serif 4'; t.value = 'Hanken Grotesk'; m.value = 'Geist Mono';
+  frame.addEventListener('load', apply); apply();
+  function seg(id, fn) {
+    var el = document.getElementById(id);
+    el.addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; el.querySelectorAll('button').forEach(function (o) { o.setAttribute('aria-pressed', o === b); }); fn(b.dataset.v); });
+  }
+  seg('theme', function (v) { try { var r = frame.contentDocument.documentElement; if (v) r.setAttribute('data-theme', v); else r.removeAttribute('data-theme'); } catch (e) {} });
+  seg('width', function (v) { document.getElementById('stage').classList.toggle('phone', v === 'phone'); });
+})();
+</script>
+</body>
+</html>
