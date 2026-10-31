@@ -1,4 +1,95 @@
 {
  "since": "2026-09-01",
- "reviewed": {}
+ "reviewed": {
+  "10.1002/advs.78200": {
+   "title": "A Living Multi-Omics PDX Biobank of High-Risk Sarcomas Reveals ecDNA-Driven Oncogene Amplification in Osteosarcoma",
+   "citation": "Zhao et al., Advanced Science",
+   "date": "2026-10-12",
+   "link": "https://doi.org/10.1002/advs.78200",
+   "decision": "added",
+   "samples": 73,
+   "note": "Ran AmpliconSuite on WGS of 73 unique PDX models (ecDNA in 44)."
+  },
+  "10.1038/s41586-026-11048-8": {
+   "title": "MMEJ repair of breaks at TA repeats maintains ecDNA and cancer fitness",
+   "citation": "Billing et al., Nature",
+   "date": "2026-09-23",
+   "link": "https://doi.org/10.1038/s41586-026-11048-8",
+   "decision": "reused existing results",
+   "samples": null,
+   "note": "Analysed AmpliconArchitect/AmpliconClassifier reconstructions downloaded from AmpliconRepository (PCAWG, Hartwig, PedPanCan, GLASS, CUGA)."
+  },
+  "10.64898/2026.09.06.749680": {
+   "title": "Quantitative and sensitive neuroblastoma minimal residual disease detection using ecDNA breakpoints",
+   "citation": "Szymansky et al., bioRxiv",
+   "date": "2026-09-10",
+   "link": "https://doi.org/10.64898/2026.09.06.749680",
+   "decision": "not used",
+   "samples": null,
+   "note": "Mentions AmpliconArchitect/AmpliconClassifier only in the discussion."
+  },
+  "10.1038/s12276-026-01846-5": {
+   "title": "Immune pathway activation in gastric cancers with LINE-1 retrotransposon overexpression",
+   "citation": "Kim et al., Experimental & Molecular Medicine",
+   "date": "2026-09-07",
+   "link": "https://doi.org/10.1038/s12276-026-01846-5",
+   "decision": "not used",
+   "samples": null,
+   "note": "Cites AmpliconArchitect only as background on ecDNA; the tools are not named in the text."
+  },
+  "pmc13665086": {
+   "title": "Clinical and Genetic Interplay Between Chronic Pancreatitis, Cystic Fibrosis and ...",
+   "citation": "Vincenzo et al., International Journal of Molecular Sciences",
+   "date": "2026-09-26",
+   "link": "https://europepmc.org/article/PMC/PMC13665086",
+   "decision": "not used",
+   "samples": null,
+   "note": "'AmpliconSuite' here is unrelated commercial NGS software (SmartSeq)."
+  },
+  "10.1007/s00345-026-06790-7": {
+   "title": "Circulating tumour DNA and extrachromosomal DNA in prostate and bladder cancer",
+   "citation": "Elmasmoudi et al., World Journal of Urology",
+   "date": "2026-10-01",
+   "link": "https://doi.org/10.1007/s00345-026-06790-7",
+   "decision": "not used",
+   "samples": null,
+   "note": "Review article (Europe PMC lists it as a review)."
+  },
+  "10.3390/cells15201834": {
+   "title": "Extrachromosomal DNA: A New Therapeutic Frontier for Overcoming Cancer Drug Resistance",
+   "citation": "Jeoung, Cells",
+   "date": "2026-10-09",
+   "link": "https://doi.org/10.3390/cells15201834",
+   "decision": "not used",
+   "samples": null,
+   "note": "Review; mentions AmpliconArchitect only as an example method."
+  },
+  "10.1038/s41586-026-11035-z": {
+   "title": "Evolution and heterogeneity of lethal metastatic bladder cancer subtypes",
+   "citation": "Itagi et al., Nature",
+   "date": "2026-09-16",
+   "link": "https://doi.org/10.1038/s41586-026-11035-z",
+   "decision": "added",
+   "samples": 101,
+   "note": "Ran AmpliconSuite-pipeline on 101 samples (count confirmed by Jens)."
+  },
+  "10.1038/s41588-026-02768-8": {
+   "title": "Lineage identity governs oncogene dependence in mouse NSCLC models of KRAS inhibitor resistance",
+   "citation": "Mathey-Andrews et al., Nature Genetics",
+   "date": "2026-09-30",
+   "link": "https://doi.org/10.1038/s41588-026-02768-8",
+   "decision": "not used",
+   "samples": null,
+   "note": "Checked by Jens: doesn't meet the inclusion criteria."
+  },
+  "10.1016/j.molcel.2026.08.003": {
+   "title": "Hypertranscription caused by p53 deficiency triggers nucleotide insufficiency",
+   "citation": "Zaatra et al., Molecular Cell",
+   "date": "2026-09-01",
+   "link": "https://doi.org/10.1016/j.molcel.2026.08.003",
+   "decision": "not used",
+   "samples": null,
+   "note": "Checked by Jens: doesn't meet the inclusion criteria."
+  }
+ }
 }

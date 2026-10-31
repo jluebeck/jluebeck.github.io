@@ -486,6 +486,24 @@
   "preprint": false
  },
  {
+  "label": "Metastatic bladder cancer",
+  "date": "2026-09-16",
+  "samples": 101,
+  "citation": "Itagi et al., Nature",
+  "url": "https://doi.org/10.1038/s41586-026-11035-z",
+  "external": true,
+  "preprint": false
+ },
+ {
+  "label": "Sarcoma PDX models",
+  "date": "2026-10-12",
+  "samples": 73,
+  "citation": "Zhao et al., Advanced Science",
+  "url": "https://doi.org/10.1002/advs.78200",
+  "external": false,
+  "preprint": false
+ },
+ {
   "label": "Cancer cell lines (CCLE)",
   "date": "2026-10-16",
   "samples": 392,

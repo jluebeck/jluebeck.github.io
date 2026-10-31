@@ -9,9 +9,12 @@ Usage:
   python3 -I scripts/find_citing.py snippets ID     # print full-text passages that mention the tools
                                                     # (ID is a candidate's id or DOI; tries Europe PMC,
                                                     # NCBI, bioRxiv, then the publisher's page)
+  python3 -I scripts/find_citing.py table > scripts/usage_review.csv
+                                                    # review sheet: every paper reviewed on this branch
+                                                    # but not yet on master, one row each
 Papers marked "unclear" in usage_reviewed.json are listed again each run, so they get another look.
 """
-import datetime, json, pathlib, re, sys, urllib.parse, urllib.request
+import csv, datetime, json, pathlib, re, subprocess, sys, urllib.parse, urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 USAGE = ROOT / "_data" / "usage.json"
@@ -51,6 +54,11 @@ def ids(r):
     return s
 
 
+def title_key(t):
+    """First 50 letters and digits of a title, for matching records that lack a DOI."""
+    return re.sub(r"[^a-z0-9]", "", (t or "").lower())[:50]
+
+
 def known_ids():
     seen = set()
     for row in json.loads(USAGE.read_text()):
@@ -80,9 +88,10 @@ def candidates():
         found.setdefault(r["id"], (r, set()))[1].add("mentions a tool in full text")
     unclear = {k.lower(): v for k, v in state["reviewed"].items() if v.get("decision") == "unclear"}
     skip = known_ids() | {k.lower() for k in state["reviewed"]} - set(unclear)
+    skip |= {title_key(v.get("title")) for v in state["reviewed"].values() if v.get("decision") != "unclear"}
     out = []
     for r, why in found.values():
-        if ids(r) & skip:
+        if (ids(r) | {title_key(r.get("title"))}) & skip:
             continue
         authors = r.get("authorString", "")
         out.append({
@@ -162,8 +171,43 @@ def snippets(key):
             print("…", " ".join(sents[max(0, i - 1):i + 2]), "\n")
 
 
+def table(out=sys.stdout):
+    """CSV of papers reviewed on this branch that master doesn't have yet, added studies first."""
+    reviewed = json.loads(REVIEWED.read_text())["reviewed"]
+    try:
+        base = json.loads(subprocess.run(["git", "show", "origin/master:scripts/usage_reviewed.json"], cwd=ROOT,
+                                         capture_output=True, text=True, check=True).stdout)["reviewed"]
+    except Exception:
+        base = {}
+    usage = {re.sub(r"^https?://doi\.org/", "", r["url"]).lower(): r for r in json.loads(USAGE.read_text())}
+    order = {"added": 0, "unclear": 1, "under 50 samples": 2, "reused existing results": 3, "not used": 4}
+    rows = []
+    for key, v in reviewed.items():
+        if base.get(key) == v:
+            continue
+        u = usage.get(key, {}) if v.get("decision") == "added" else {}
+        rows.append({
+            "decision": v.get("decision", ""),
+            "citation": u.get("citation") or v.get("citation", ""),
+            "cohort": u.get("label", ""),
+            "samples": u.get("samples", v.get("samples") or ""),
+            "date": u.get("date") or v.get("date", ""),
+            "external": {True: "yes", False: "no"}.get(u.get("external"), ""),
+            "preprint": {True: "yes", False: "no"}.get(u.get("preprint"), ""),
+            "link": u.get("url") or v.get("link", ""),
+            "title": v.get("title", ""),
+            "note": v.get("note", ""),
+        })
+    rows.sort(key=lambda r: (order.get(r["decision"], 9), r["date"]))
+    w = csv.DictWriter(out, fieldnames=["decision", "citation", "cohort", "samples", "date", "external", "preprint", "link", "title", "note"])
+    w.writeheader()
+    w.writerows(rows)
+
+
 if __name__ == "__main__":
     if len(sys.argv) > 2 and sys.argv[1] == "snippets":
         snippets(sys.argv[2])
+    elif len(sys.argv) > 1 and sys.argv[1] == "table":
+        table()
     else:
         print(json.dumps(candidates(), indent=1, ensure_ascii=False))
