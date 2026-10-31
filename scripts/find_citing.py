@@ -51,6 +51,11 @@ def ids(r):
     return s
 
 
+def title_key(t):
+    """First 50 letters and digits of a title, for matching records that lack a DOI."""
+    return re.sub(r"[^a-z0-9]", "", (t or "").lower())[:50]
+
+
 def known_ids():
     seen = set()
     for row in json.loads(USAGE.read_text()):
@@ -80,9 +85,10 @@ def candidates():
         found.setdefault(r["id"], (r, set()))[1].add("mentions a tool in full text")
     unclear = {k.lower(): v for k, v in state["reviewed"].items() if v.get("decision") == "unclear"}
     skip = known_ids() | {k.lower() for k in state["reviewed"]} - set(unclear)
+    skip |= {title_key(v.get("title")) for v in state["reviewed"].values() if v.get("decision") != "unclear"}
     out = []
     for r, why in found.values():
-        if ids(r) & skip:
+        if (ids(r) | {title_key(r.get("title"))}) & skip:
             continue
         authors = r.get("authorString", "")
         out.append({
