@@ -31,7 +31,7 @@ python3 -I scripts/extract_usage.py path/to/AA_usage.xlsx
 A weekly scheduled Claude task looks for new studies. `scripts/find_citing.py` lists papers on Europe PMC,
 first published since the date in `scripts/usage_reviewed.json`, that cite the AmpliconArchitect or
 AmpliconSuite papers or mention the tools in their full text. The task reads each paper's methods, adds
-studies that ran the tools on 50 or more samples to `_data/usage.json`, records every paper it checked in
+studies that ran the tools themselves (not reused results, e.g. from AmpliconRepository) on 50 or more samples to `_data/usage.json`, records every paper it checked in
 `scripts/usage_reviewed.json`, and opens a pull request for review.
 
 ```bash
