@@ -1,0 +1,10 @@
+# Cards on /projects/. A project can live in /lab/<name>/ in this repo, or in its own
+# repository with GitHub Pages turned on, which serves it at jluebeck.github.io/<repo>/.
+- title: Turing patterns
+  url: https://github.com/jluebeck/ReactionDiffusionSimulator
+  blurb: A reaction-diffusion simulator for spots and stripes.
+  where: github.com/jluebeck/ReactionDiffusionSimulator
+- title: Maximum-entropy Wordle solver
+  url: /posts/WordleSolver
+  blurb: Choosing the guess that splits the remaining words most evenly. 2022.
+  where: /posts/WordleSolver

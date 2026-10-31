@@ -1,0 +1,48 @@
+# Software table on /software/. lead: true highlights the role chip.
+- name: AmpliconSuite-pipeline
+  url: https://github.com/AmpliconSuite/AmpliconSuite-pipeline
+  does: End-to-end detection, reconstruction and classification from WGS
+  role: lead
+  lead: true
+- name: AmpliconClassifier
+  url: https://github.com/jluebeck/AmpliconClassifier
+  does: Calls ecDNA, BFB and other amplification types
+  role: lead
+  lead: true
+- name: AmpliconRepository.org
+  url: https://ampliconrepository.org
+  does: Community-editable database of ecDNA annotations
+  role: project lead
+  lead: true
+- name: AmpliconArchitect
+  url: https://github.com/jluebeck/AmpliconArchitect
+  does: Breakpoint graphs of amplified regions from short reads
+  role: maintainer
+- name: AmpliconReconstructor
+  url: https://github.com/jluebeck/AmpliconReconstructor
+  does: Joins NGS and optical maps to resolve full structures
+  role: lead
+  lead: true
+- name: CoRAL
+  url: https://github.com/AmpliconSuite/CoRAL
+  does: ecDNA reconstruction from long reads
+  role: co-developer
+- name: CycleViz
+  url: https://github.com/jluebeck/CycleViz
+  does: Circular and linear structure visualization
+  role: lead
+  lead: true
+- name: FaNDOM
+  url: https://github.com/jluebeck/FaNDOM
+  does: Fast optical genome map alignment
+  role: co-lead
+  lead: true
+- name: ecSimulator
+  url: https://github.com/jluebeck/ecSimulator
+  does: Simulated ecDNA structures for benchmarking
+  role: lead
+  lead: true
+- name: CycleExtractor
+  url: https://github.com/AmpliconSuite/CycleExtractor
+  does: Fast resolution of ecDNA sequence from the breakpoint graph
+  role: contributor

@@ -1,0 +1,60 @@
+---
+layout: page
+title: Software
+nav: software
+permalink: /software/
+description: "AmpliconSuite: open-source tools for detecting, reconstructing and classifying focal amplifications and ecDNA, and how widely they are used."
+---
+{% include count-usage.html %}
+<p class="lede"><a class="logo" href="https://github.com/AmpliconSuite"><img src="/images/ampliconsuite-logo.png" alt="AmpliconSuite on GitHub" width="96" height="96"></a><a href="https://github.com/AmpliconSuite">AmpliconSuite</a> is a set of 15 interoperable open-source tools for analysing focal amplifications, from raw reads to classified, visualised structures. I founded the project and lead its development.</p>
+<div class="facts"><span><b>{{ nstudies }}</b> large-scale studies</span><span><b>{{ nexternal }}</b> by other groups</span><span><b>{% include number.html n=nsamples %}</b> samples analysed</span><a href="https://github.com/AmpliconSuite">github.com/AmpliconSuite</a></div>
+<section id="tools" data-title="Tools">
+  <h2>Tools</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Tool</th><th>What it does</th><th>Role</th></tr></thead>
+    <tbody>
+      {%- for t in site.data.tools %}
+      <tr><td class="name">{% if t.url %}<a href="{{ t.url }}">{{ t.name }}</a>{% else %}{{ t.name }}{% endif %}</td><td>{{ t.does }}</td><td><span class="chip{% if t.lead %} lead{% endif %}">{{ t.role }}</span></td></tr>
+      {%- endfor %}
+    </tbody>
+  </table></div>
+</section>
+<section id="usage" data-title="Usage">
+  <h2>Usage</h2>
+  <p>Large-scale studies (50 or more samples) that used AmpliconArchitect or AmpliconSuite, counted by samples analysed and plotted by publication date. Preprints are included. Hover a step to see the study.</p>
+  <div class="filters" role="group" aria-label="Which studies to count">
+    <button type="button" data-u="all" aria-pressed="true">All studies</button>
+    <button type="button" data-u="ext" aria-pressed="false">Other groups only</button>
+  </div>
+  <div id="usagechart"></div>
+  <p class="note">Some cohorts were analysed in more than one study.</p>
+</section>
+<section id="studies" data-title="Studies">
+  <h2>Large-scale studies using AmpliconSuite tools</h2>
+  <p>Published studies and preprints with 50 or more samples.</p>
+  <div class="tw"><table class="studies"><thead><tr><th>Date</th><th>Study</th><th>Cohort</th><th style="text-align:right">Samples</th></tr></thead><tbody id="studytable">
+    {%- assign rows = site.data.usage | reverse %}
+    {%- for u in rows %}
+    <tr{% if forloop.index > 8 %} class="extra"{% endif %}><td class="d">{{ u.date | date: "%b %Y" }}</td><td>{% if u.url != "" %}<a href="{{ u.url }}">{{ u.citation }}</a>{% else %}{{ u.citation }}{% endif %}</td><td>{{ u.label }}</td><td class="n">{% include number.html n=u.samples %}</td></tr>
+    {%- endfor %}
+  </tbody></table></div>
+  <button class="more" type="button" id="showall" hidden>Show all {{ nstudies }} studies</button>
+</section>
+
+<script src="/assets/js/usage-chart.js"></script>
+<script>
+(function () {
+  var U = {{ site.data.usage | jsonify }};
+  var chart = UsageChart(document.getElementById('usagechart'), U, { height: 230 });
+  document.querySelectorAll('[data-u]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('[data-u]').forEach(function (o) { o.setAttribute('aria-pressed', o === b); });
+      chart.set({ external: b.dataset.u === 'ext' });
+    });
+  });
+  // The studies table shows the 8 most recent until expanded.
+  var extra = document.querySelectorAll('#studytable tr.extra'), btn = document.getElementById('showall'), label = btn.textContent, open = false;
+  function apply() { extra.forEach(function (r) { r.hidden = !open; }); btn.textContent = open ? 'Show recent studies only' : label; }
+  btn.hidden = false; btn.addEventListener('click', function () { open = !open; apply(); }); apply();
+})();
+</script>

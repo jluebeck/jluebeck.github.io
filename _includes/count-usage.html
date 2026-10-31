@@ -1,0 +1,6 @@
+{%- comment -%} Sets nstudies, nexternal and nsamples from _data/usage.json. {%- endcomment -%}
+{%- assign nstudies = site.data.usage | size -%}{%- assign nexternal = 0 -%}{%- assign nsamples = 0 -%}
+{%- for s in site.data.usage -%}
+  {%- assign nsamples = nsamples | plus: s.samples -%}
+  {%- if s.external -%}{%- assign nexternal = nexternal | plus: 1 -%}{%- endif -%}
+{%- endfor -%}

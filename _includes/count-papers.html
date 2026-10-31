@@ -1,0 +1,5 @@
+{%- comment -%} Sets npapers (peer-reviewed) and npreprints from _data/publications.yml. {%- endcomment -%}
+{%- assign npapers = 0 -%}{%- assign npreprints = 0 -%}
+{%- for p in site.data.publications -%}
+  {%- if p.flags contains "p" -%}{%- assign npreprints = npreprints | plus: 1 -%}{%- else -%}{%- assign npapers = npapers | plus: 1 -%}{%- endif -%}
+{%- endfor -%}

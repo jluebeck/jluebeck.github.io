@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell">
+  <aside class="side">
+    <a class="me" href="{{ '/' | relative_url }}"><img src="{{ '/images/portrait-sq.jpg' | relative_url }}" alt="" width="36" height="36"><span><b>{{ site.author.name }}</b><small>{{ site.author.affiliation }} · {{ site.author.location }}</small></span></a>
+    <nav aria-label="Pages">
+      <ul class="pnav">
+        {%- for n in site.data.nav %}
+        <li><a href="{{ n.url | relative_url }}"{% if page.nav == n.id %} aria-current="page"{% endif %}><svg class="ico" aria-hidden="true"><use href="#i-{{ n.id }}"/></svg>{{ n.title }}</a>{% if page.nav == n.id %}<ul class="secs" id="secs"></ul>{% endif %}</li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    <div class="links"><a href="{{ site.author.github }}">GitHub</a><a href="{{ site.author.scholar }}">Scholar</a><a href="{{ site.author.linkedin }}">LinkedIn</a><a href="{{ site.author.cv }}">CV</a></div>
+    <span class="addr">{{ site.author.email }}</span>
+  </aside>
+  <main id="main">
+    <article class="page">
+      <h1>{{ page.title }}</h1>
+      {{ content }}
+    </article>
+  </main>
+</div>
+<script src="{{ '/assets/js/site.js' | relative_url }}"></script>

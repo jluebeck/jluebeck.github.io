@@ -1,0 +1,263 @@
+# One entry per paper, newest first; preprints go at the end.
+# flags: f = first or co-first author, s = senior author, m = computational methods, p = preprint
+# pmid links the title to PubMed; use url instead for a paper without one.
+
+- year: 2026
+  authors: "Luebeck J*, Liefeld T*, Wong ITL*, Huang E*, et al."
+  title: "AmpliconSuite: an end-to-end workflow for analyzing focal amplifications in cancer genomes"
+  venue: "Nature Methods"
+  pmid: "42888240"
+  flags: fm
+- year: 2026
+  authors: "Zhao W, Cheng Z, Tian K, … Luebeck J, … Hua Y."
+  title: "A living multi-omics PDX biobank of high-risk sarcomas reveals ecDNA-driven oncogene amplification in osteosarcoma"
+  venue: "Advanced Science"
+  pmid: "42864811"
+- year: 2026
+  authors: "Jones MG, Weiser NE, Hung KL, … Luebeck J, … Chang HY."
+  title: "scAmp analyzes focal gene amplifications at single-cell resolution"
+  venue: "Nature Communications"
+  pmid: "42706270"
+  flags: m
+- year: 2026
+  authors: "Khandekar A, Hoang PH, Luebeck J, et al."
+  title: "Examining the role of extrachromosomal DNA in lung cancer"
+  venue: "J Natl Cancer Inst"
+  pmid: "42554978"
+- year: 2026
+  authors: "Li C, Dehkordi SR, Muliaditan D, DasGupta R, Luebeck J, et al."
+  title: "Detecting and reconstructing breakage-fusion-bridge cycles from long-read sequencing using BFBArchitect"
+  venue: "Bioinformatics"
+  pmid: "42412795"
+  flags: m
+- year: 2026
+  authors: "Kenkre R, Chapman OS, Chow EYC, Luebeck J, et al."
+  title: "Preservation and clonal behavior of extrachromosomal DNA in patient-derived xenograft models of childhood cancers"
+  venue: "Genome Medicine"
+  pmid: "42210429"
+- year: 2026
+  authors: "Chmelova L, Davies HR, Degasperi A, … Luebeck J, … Nik-Zainal S."
+  title: "High-depth whole genome sequencing of premalignant breast lesions reveals rearrangement hotspots"
+  venue: "Nature Communications"
+  pmid: "42156386"
+- year: 2026
+  authors: "Yi H, Zhang S, Swinderman J, … Luebeck J, … Chang HY."
+  title: "EcDNA-borne structural variants drive oncogenic fusion transcript amplification"
+  venue: "Cell"
+  pmid: "41506267"
+- year: 2025
+  authors: "Chowdhury B, Zhu K, Li C, Alsing J, Luebeck J, et al."
+  title: "Reconstructing the three-dimensional architecture of extrachromosomal DNA with ec3D"
+  venue: "Nature Communications"
+  pmid: "41422275"
+  flags: m
+- year: 2025
+  authors: "Kraft K, Murphy SE, Jones MG, … Luebeck J, … Chang HY."
+  title: "Enhancer activation from transposable elements in extrachromosomal DNA"
+  venue: "Nature Cell Biology"
+  pmid: "39282372"
+- year: 2025
+  authors: "Noorani I, Haughey M, Luebeck J, et al."
+  title: "Extrachromosomal DNA-driven oncogene spatial heterogeneity and evolution in glioblastoma"
+  venue: "Cancer Discovery"
+  pmid: "39484416"
+- year: 2025
+  authors: "Lv W, Zeng Y, Li C, … Luebeck J, … Han P."
+  title: "Spatial-temporal diversity of extrachromosomal DNA shapes urothelial carcinoma evolution and tumor-immune microenvironment"
+  venue: "Cancer Discovery"
+  pmid: "40062518"
+- year: 2025
+  authors: "Yost KE, Zhao Y, Hung KL, … Luebeck J, … Chang HY."
+  title: "Three-dimensional genome landscape of primary human cancers"
+  venue: "Nature Genetics"
+  pmid: "40355593"
+- year: 2025
+  authors: "Nakagawa T, Luebeck J, Zhu K, et al."
+  title: "Inhibition of human-HPV hybrid ecDNA enhancers reduces oncogene expression and tumor growth in oropharyngeal cancer"
+  venue: "Nature Communications"
+  pmid: "40140353"
+- year: 2025
+  authors: "Dehkordi SR, Wong ITL, Ni J, Luebeck J, et al."
+  title: "Breakage fusion bridge cycles drive high oncogene number with moderate intratumoural heterogeneity"
+  venue: "Nature Communications"
+  pmid: "39929823"
+- year: 2025
+  authors: "Rose JC, Belk JA, Wong ITL, Luebeck J, et al."
+  title: "Disparate pathways for extrachromosomal DNA biogenesis and genomic DNA repair"
+  venue: "Cancer Discovery"
+  pmid: "37961138"
+- year: 2024
+  authors: "Pradella D, Zhang M, Gao R, … Luebeck J, … Ventura A."
+  title: "Engineered extrachromosomal oncogene amplifications promote tumorigenesis"
+  venue: "Nature"
+  pmid: "39695225"
+- year: 2024
+  authors: "Bailey C, Pich O, Thol K, Watkins TBK, Luebeck J, et al."
+  title: "Origins and impact of extrachromosomal DNA"
+  venue: "Nature"
+  pmid: "39506150"
+- year: 2024
+  authors: "Hung KL, Jones MG, Wong ITL, … Luebeck J, et al."
+  title: "Coordinated inheritance of extrachromosomal DNAs in cancer cells"
+  venue: "Nature"
+  pmid: "39506152"
+- year: 2024
+  authors: "Tang J, Weiser NE, Wang G, … Luebeck J, … Chang HY."
+  title: "Enhancing transcription–replication conflict targets ecDNA-positive cancers"
+  venue: "Nature"
+  pmid: "39506153"
+- year: 2024
+  authors: "Kim H, Kim S, Wade T, … Luebeck J, Verhaak RGW."
+  title: "Mapping extrachromosomal DNA amplifications during cancer progression"
+  venue: "Nature Genetics"
+  pmid: "39402156"
+  flags: s
+- year: 2024
+  authors: "Zhu K, Jones MG, Luebeck J, et al."
+  title: "CoRAL accurately resolves extrachromosomal DNA genome structures with long-read sequencing"
+  venue: "Genome Research"
+  pmid: "38981681"
+  flags: m
+- year: 2024
+  authors: "Lin MS, Jo SY, Luebeck J, et al."
+  title: "Transcriptional immune suppression and upregulation of double-stranded DNA damage and repair repertoires in ecDNA-containing tumors"
+  venue: "eLife"
+  pmid: "38896472"
+- year: 2024
+  authors: "Noorani I*, Luebeck J*, Rowan A, et al."
+  title: "Oncogenic extrachromosomal DNA identification using whole-genome sequencing from formalin-fixed glioblastomas"
+  venue: "Annals of Oncology"
+  pmid: "38555024"
+  flags: f
+- year: 2023
+  authors: "Chapman OS, Luebeck J, Sridhar S, et al."
+  title: "Circular extrachromosomal DNA promotes tumor heterogeneity in high-risk medulloblastoma"
+  venue: "Nature Genetics"
+  pmid: "37945900"
+- year: 2023
+  authors: "Agustinus A, Al-Rawi D, Dameracharla B, … Luebeck J, et al."
+  title: "Epigenetic dysregulation from chromosomal transit in micronuclei"
+  venue: "Nature"
+  pmid: "37286593"
+- year: 2023
+  authors: "Raviram R, Raman A, Preissl S, … Luebeck J, et al."
+  title: "Integrated analysis of single-cell chromatin state and transcriptome identified common vulnerability despite glioblastoma heterogeneity"
+  venue: "PNAS"
+- year: 2023
+  authors: "Luebeck J, Ng AWT, Galipeau PC, et al."
+  title: "Extrachromosomal DNA in the cancerous transformation of Barrett's esophagus"
+  venue: "Nature"
+  pmid: "37046089"
+  flags: f
+- year: 2022
+  authors: "Hung KL, Luebeck J, Dehkordi SR, et al."
+  title: "Targeted profiling of human extrachromosomal DNA by CRISPR-CATCH"
+  venue: "Nature Genetics"
+  pmid: "36253572"
+- year: 2022
+  authors: "Javadzadeh S, Rajkumar U, Nguyen N, Sarmashghi S, Luebeck J, Shang J, Bafna V."
+  title: "FastViFi: fast and accurate detection of (hybrid) viral DNA and RNA"
+  venue: "NAR Genomics and Bioinformatics"
+  pmid: "35493723"
+  flags: m
+- year: 2022
+  authors: "Bergstrom EN, Luebeck J, Petljak M, et al."
+  title: "Mapping clustered mutations in cancer reveals APOBEC3 mutagenesis of ecDNA"
+  venue: "Nature"
+  pmid: "35140399"
+- year: 2021
+  authors: "Song K, Minami JK, Huang A, Dehkordi SR, Lomeli SH, Luebeck J, et al."
+  title: "Plasticity of extrachromosomal and intrachromosomal BRAF amplifications in overcoming targeted therapy dosage challenges"
+  venue: "Cancer Discovery"
+  pmid: "34930786"
+- year: 2021
+  authors: "Hung KL, Yost KE, Xie L, Shi Q, Helmsauer K, Luebeck J, et al."
+  title: "ecDNA hubs drive cooperative intermolecular oncogene expression"
+  venue: "Nature"
+  pmid: "34819668"
+- year: 2021
+  authors: "Pang J*, Nguyen N*, Luebeck J*, et al."
+  title: "Extrachromosomal DNA in HPV-mediated oropharyngeal cancer drives diverse oncogene transcription"
+  venue: "Clinical Cancer Research"
+  pmid: "34548317"
+  flags: f
+- year: 2021
+  authors: "Dehkordi SR*, Luebeck J*, Bafna V."
+  title: "FaNDOM: fast nested distance-based seeding of optical maps"
+  venue: "Patterns"
+  pmid: "34027500"
+  flags: fm
+- year: 2020
+  authors: "Luebeck J, Coruh C, Dehkordi SR, et al."
+  title: "Integrated analysis of NGS and optical mapping resolves the complex structures of focal amplifications in cancer"
+  venue: "Nature Communications"
+  pmid: "32873787"
+  flags: fm
+- year: 2020
+  authors: "Kim H, Nguyen N, Turner K, Wu S, Gujar A, Luebeck J, et al."
+  title: "Extrachromosomal DNA is associated with oncogene amplification and poor outcome across multiple cancers"
+  venue: "Nature Genetics"
+  pmid: "32807987"
+- year: 2020
+  authors: "Rocca C, Rainaldi J, Sharma J, … Luebeck J, Mali P, Cherqui S."
+  title: "CRISPR/Cas9 gene editing of hematopoietic stem cells from patients with Friedreich's ataxia"
+  venue: "Mol Ther Methods Clin Dev"
+  pmid: "32462051"
+- year: 2019
+  authors: "Rajkumar U, Turner K, Luebeck J, et al."
+  title: "EcSeg: semantic segmentation of metaphase images containing extrachromosomal DNA"
+  venue: "iScience"
+  pmid: "31706138"
+  flags: m
+- year: 2019
+  authors: "Wu S, Turner KM, Nguyen N, … Luebeck J, et al."
+  title: "Circular ecDNA promotes accessible chromatin and high oncogene expression"
+  venue: "Nature"
+  pmid: "31748743"
+- year: 2019
+  authors: "Deshpande V, Luebeck J, Nguyen ND, et al."
+  title: "Exploring the landscape of focal amplifications in cancer using AmpliconArchitect"
+  venue: "Nature Communications"
+  pmid: "30674876"
+  flags: m
+- year: 2018
+  authors: "Nguyen ND, Deshpande V, Luebeck J, Mischel PS, Bafna V."
+  title: "ViFi: accurate detection of viral integration and mRNA fusion"
+  venue: "Nucleic Acids Research"
+  pmid: "29579309"
+  flags: m
+- year: 2018
+  authors: "Zhao D, Badur MG, Luebeck J, et al."
+  title: "Combinatorial CRISPR-Cas9 metabolic screens reveal critical redox control points dependent on the KEAP1-NRF2 regulatory axis"
+  venue: "Molecular Cell"
+  pmid: "29452643"
+- year: 2018
+  authors: "Gray VE, Hause RJ, Luebeck J, Shendure J, Fowler DM."
+  title: "Quantitative missense variant effect prediction using large-scale mutagenesis data"
+  venue: "Cell Systems"
+  pmid: "29226803"
+- year: 2017
+  authors: "Shen JP, Zhao D, Sasik R, Luebeck J, et al."
+  title: "Combinatorial CRISPR-Cas9 screens for de novo mapping of genetic interactions"
+  venue: "Nature Methods"
+  pmid: "28319113"
+- year: 2026
+  authors: "Dameracharla B, Prasad G, Luebeck J, … Bafna V."
+  title: "Inferring ecDNA evolution from allele frequency spectra"
+  venue: "bioRxiv"
+  flags: p
+- year: 2026
+  authors: "Sang J, Zhang M, Chavez S, … Luebeck J, … Zhang T."
+  title: "Endogenous mutational mechanisms and metabolic context shape endometrial cancer"
+  venue: "bioRxiv"
+  flags: p
+- year: 2026
+  authors: "Faizrahnemoon M, Luebeck J, Hung KL, et al."
+  title: "Fast and accurate resolution of ecDNA sequence using Cycle-Extractor"
+  venue: "bioRxiv"
+  flags: pm
+- year: 2025
+  authors: "Chapman OS, Sridhar S, Chow EYC, … Luebeck J, … Chavez L."
+  title: "Extrachromosomal DNA associates with poor survival across a broad spectrum of childhood solid tumors"
+  venue: "medRxiv"
+  flags: p
