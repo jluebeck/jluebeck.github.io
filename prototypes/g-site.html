@@ -7,7 +7,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Hanken+Grotesk:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Roboto+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: a one-screen landing with six doors; every inner page shares a sticky sidebar (home link, page nav, this page's sections) beside a reading column. */
 :root {
@@ -18,9 +18,11 @@
   --line: #e3e5e1;
   --accent: #0f5e66;
   --accent-soft: #e2efef;
-  --serif: "Source Serif 4", Georgia, serif;
-  --sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono: "Geist Mono", ui-monospace, Menlo, monospace;
+  --head: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "Roboto Mono", ui-monospace, Menlo, monospace;
+  /* Size scales: every font size is a base size times one of these. */
+  --ts: 1; --hs: 1; --ls: 1;
   --chart-line: var(--accent); --chart-grid: var(--line); --chart-text: var(--muted); --chart-ink: var(--fg); --chart-surface: var(--bg);
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
@@ -30,10 +32,10 @@
   --bg: #121413; --tile: #1b1e1d; --fg: #e8eae7; --muted: #9ba19d; --line: #2a2e2c; --accent: #6cc3c9; --accent-soft: #19302f; color-scheme: dark;
 }
 * { box-sizing: border-box; }
-body { background: var(--bg); color: var(--fg); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+body { background: var(--bg); color: var(--fg); font: 400 calc(16px * var(--ts))/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
 a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
-h1, h2 { font-family: var(--serif); font-weight: 600; letter-spacing: -.01em; text-wrap: balance; }
+h1, h2 { font-family: var(--head); font-weight: 600; letter-spacing: -.01em; text-wrap: balance; }
 
 [hidden] { display: none !important; }
 /* ---------- landing ---------- */
@@ -42,51 +44,51 @@ h1, h2 { font-family: var(--serif); font-weight: 600; letter-spacing: -.01em; te
 .who img { width: 112px; height: 140px; border-radius: 10px; object-fit: cover; flex: none; }
 .loc { display: inline-flex; align-items: center; gap: 4px; }
 .loc .ico { width: 15px; height: 15px; stroke: currentColor; stroke-width: 1.8; }
-.who h1 { font-size: 34px; line-height: 1.1; margin: 0; }
-.who p { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+.who h1 { font-size: calc(34px * var(--hs)); line-height: 1.1; margin: 0; }
+.who p { margin: 4px 0 0; color: var(--muted); font-size: calc(15px * var(--ts)); }
 .nw { white-space: nowrap; }
-.bio { font-size: 18px; line-height: 1.6; margin: 28px 0 32px; }
+.bio { font-size: calc(18px * var(--ts)); line-height: 1.6; margin: 28px 0 32px; }
 .doors { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
 .doors a { display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: 10px; background: var(--tile); color: var(--fg); text-decoration: none; border: 1px solid transparent; min-width: 0; }
 .doors a:hover { border-color: var(--accent); }
 .ico { width: 24px; height: 24px; stroke: var(--accent); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex: none; }
-.doors b { font-weight: 600; font-size: 15.5px; display: block; }
-.doors small { font: 400 12px var(--mono); color: var(--muted); display: block; margin-top: 2px; }
-.elsewhere { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 28px; font-size: 14.5px; align-items: baseline; }
-.addr { font: 400 13.5px var(--mono); color: var(--muted); user-select: all; }
-.stamp { margin-top: 48px; font: 400 12px var(--mono); color: var(--muted); }
+.doors b { font-weight: 600; font-size: calc(15.5px * var(--ts)); display: block; }
+.doors small { font: 400 calc(12px * var(--ls)) var(--mono); color: var(--muted); display: block; margin-top: 2px; }
+.elsewhere { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 28px; font-size: calc(14.5px * var(--ts)); align-items: baseline; }
+.addr { font: 400 calc(13.5px * var(--ls)) var(--mono); color: var(--muted); user-select: all; }
+.stamp { margin-top: 48px; font: 400 calc(12px * var(--ls)) var(--mono); color: var(--muted); }
 
 /* ---------- inner pages ---------- */
 .shell { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 64px; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
 .side { position: sticky; top: env(safe-area-inset-top, 0px); align-self: start; padding-block: 40px 24px; display: flex; flex-direction: column; gap: 26px; }
 .me { display: flex; gap: 10px; align-items: center; text-decoration: none; color: var(--fg); }
 .me img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
-.me b { font: 600 17px/1.2 var(--serif); display: block; }
-.me small { font-size: 12.5px; color: var(--muted); }
-.pnav { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; font-size: 14.5px; }
+.me b { font: 600 calc(17px * var(--hs))/1.2 var(--head); display: block; }
+.me small { font-size: calc(12.5px * var(--ts)); color: var(--muted); }
+.pnav { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; font-size: calc(14.5px * var(--ts)); }
 .pnav > li > a { display: flex; align-items: center; gap: 10px; padding: 6px 10px; margin-left: -10px; border-radius: 7px; color: var(--muted); text-decoration: none; }
 .pnav > li > a .ico { width: 17px; height: 17px; stroke: currentColor; }
 .pnav > li > a:hover { color: var(--fg); background: var(--tile); }
 .pnav > li > a[aria-current="page"] { color: var(--fg); background: var(--tile); font-weight: 600; }
 .pnav > li > a[aria-current="page"] .ico { stroke: var(--accent); }
 .secs { list-style: none; margin: 4px 0 6px 17px; padding: 0 0 0 10px; border-left: 1px solid var(--line); display: grid; gap: 1px; }
-.secs button { all: unset; cursor: pointer; display: block; font-size: 13.5px; color: var(--muted); padding: 3px 8px; border-radius: 5px; }
+.secs button { all: unset; cursor: pointer; display: block; font-size: calc(13.5px * var(--ts)); color: var(--muted); padding: 3px 8px; border-radius: 5px; }
 .secs button:hover { color: var(--fg); }
 .secs button.on { color: var(--accent); }
 .secs button:focus-visible { outline: 2px solid var(--accent); }
 .side .links { display: flex; flex-wrap: wrap; gap: 6px; }
-.side .links a { font: 500 12px var(--mono); text-decoration: none; color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; }
+.side .links a { font: 500 calc(12px * var(--ls)) var(--mono); text-decoration: none; color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; }
 .side .links a:hover { border-color: var(--accent); }
 
 .page { padding-block: 40px 96px; min-width: 0; max-width: 760px; }
-.page > h1 { font-size: 34px; line-height: 1.15; margin: 0 0 10px; }
-.lede { font-size: 18px; line-height: 1.55; color: var(--muted); margin: 0 0 8px; max-width: 40em; }
+.page > h1 { font-size: calc(34px * var(--hs)); line-height: 1.15; margin: 0 0 10px; }
+.lede { font-size: calc(18px * var(--ts)); line-height: 1.55; color: var(--muted); margin: 0 0 8px; max-width: 40em; }
 .page section { padding-top: 36px; scroll-margin-top: 16px; }
-.page h2 { font-size: 21px; margin: 0 0 12px; }
+.page h2 { font-size: calc(21px * var(--hs)); margin: 0 0 12px; }
 .page p { margin: 0 0 12px; max-width: 42em; }
 .logo { float: right; margin: 2px 0 8px 24px; }
 .logo img { display: block; width: 96px; height: 96px; }
-.facts { clear: both; display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 18px 0 0; padding: 14px 0; border-block: 1px solid var(--line); font-size: 14.5px; color: var(--muted); }
+.facts { clear: both; display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 18px 0 0; padding: 14px 0; border-block: 1px solid var(--line); font-size: calc(14.5px * var(--ts)); color: var(--muted); }
 .facts b { color: var(--fg); font-weight: 600; font-variant-numeric: tabular-nums; }
 
 .items { list-style: none; margin: 0; padding: 0; }
@@ -94,53 +96,53 @@ h1, h2 { font-family: var(--serif); font-weight: 600; letter-spacing: -.01em; te
 .items li:first-child { border-top: 1px solid var(--line); }
 .items a.t { font-weight: 600; color: var(--fg); text-decoration: none; }
 .items a.t:hover { color: var(--accent); }
-.items .m { display: block; font-size: 14px; color: var(--muted); }
-.items .r { font: 500 11px var(--mono); color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 2px 6px; margin-left: 8px; white-space: nowrap; vertical-align: 1px; }
+.items .m { display: block; font-size: calc(14px * var(--ts)); color: var(--muted); }
+.items .r { font: 500 calc(11px * var(--ls)) var(--mono); color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 2px 6px; margin-left: 8px; white-space: nowrap; vertical-align: 1px; }
 .items mark { background: none; color: var(--fg); font-weight: 600; }
 .items .m + .m { margin-top: 2px; }
-.seeall { display: inline-block; margin-top: 14px; font-size: 14.5px; text-decoration: none; }
+.seeall { display: inline-block; margin-top: 14px; font-size: calc(14.5px * var(--ts)); text-decoration: none; }
 .seeall:hover { text-decoration: underline; }
 .dated li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; align-items: baseline; }
-.dated time { font: 400 12.5px var(--mono); color: var(--muted); white-space: nowrap; }
+.dated time { font: 400 calc(12.5px * var(--ls)) var(--mono); color: var(--muted); white-space: nowrap; }
 
 .tw { overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
-th { text-align: left; font: 500 11.5px var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; padding: 0 14px 8px 0; border-bottom: 1px solid var(--line); }
+table { width: 100%; border-collapse: collapse; font-size: calc(14.5px * var(--ts)); }
+th { text-align: left; font: 500 calc(11.5px * var(--ls)) var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; padding: 0 14px 8px 0; border-bottom: 1px solid var(--line); }
 td { padding: 10px 14px 10px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
 td.name { font-weight: 600; white-space: nowrap; }
 td.name a { color: var(--fg); text-decoration: none; }
 td.name a:hover { color: var(--accent); }
 td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 td.d { white-space: nowrap; color: var(--muted); font-variant-numeric: tabular-nums; }
-.chip { font: 500 11px var(--mono); padding: 3px 6px; border-radius: 4px; background: var(--tile); color: var(--muted); white-space: nowrap; }
+.chip { font: 500 calc(11px * var(--ls)) var(--mono); padding: 3px 6px; border-radius: 4px; background: var(--tile); color: var(--muted); white-space: nowrap; }
 .chip.lead { background: var(--accent-soft); color: var(--accent); }
 td a { color: var(--fg); }
 
 .filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 14px; }
-.filters button { font: 500 13px var(--sans); color: var(--muted); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+.filters button { font: 500 calc(13px * var(--ts)) var(--sans); color: var(--muted); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; cursor: pointer; }
 .filters button[aria-pressed="true"] { color: var(--fg); border-color: var(--fg); }
-.filters button span { font: 400 11.5px var(--mono); margin-left: 4px; }
-.filters input { flex: 1 1 180px; min-width: 0; font: 400 14px var(--sans); color: var(--fg); background: var(--tile); border: 1px solid transparent; border-radius: 8px; padding: 6px 12px; }
+.filters button span { font: 400 calc(11.5px * var(--ls)) var(--mono); margin-left: 4px; }
+.filters input { flex: 1 1 180px; min-width: 0; font: 400 calc(14px * var(--ts)) var(--sans); color: var(--fg); background: var(--tile); border: 1px solid transparent; border-radius: 8px; padding: 6px 12px; }
 .filters input:focus { outline: none; border-color: var(--accent); }
-.yr { font: 500 12px var(--mono); color: var(--muted); padding: 18px 0 6px; }
-.more { all: unset; cursor: pointer; margin-top: 12px; font-size: 14px; color: var(--accent); display: inline-block; }
+.yr { font: 500 calc(12px * var(--ls)) var(--mono); color: var(--muted); padding: 18px 0 6px; }
+.more { all: unset; cursor: pointer; margin-top: 12px; font-size: calc(14px * var(--ts)); color: var(--accent); display: inline-block; }
 .more:focus-visible { outline: 2px solid var(--accent); }
-.note { font-size: 13px; color: var(--muted); margin: 8px 0 0; }
-.uc-tip { position: absolute; pointer-events: none; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: 12.5px; line-height: 1.45; display: flex; flex-direction: column; max-width: 280px; box-shadow: 0 4px 16px rgb(0 0 0 / .08); }
+.note { font-size: calc(13px * var(--ts)); color: var(--muted); margin: 8px 0 0; }
+.uc-tip { position: absolute; pointer-events: none; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: calc(12.5px * var(--ts)); line-height: 1.45; display: flex; flex-direction: column; max-width: 280px; box-shadow: 0 4px 16px rgb(0 0 0 / .08); }
 .uc-tip[hidden] { display: none; }
 .uc-tip span { color: var(--muted); }
 .uc-tip .uc-n { color: var(--fg); }
 
 .talk { margin: 0 0 16px; }
 .talk img { display: block; width: 100%; height: auto; border-radius: 10px; }
-.talk figcaption { margin-top: 8px; font-size: 13px; color: var(--muted); }
-.talk .slot { aspect-ratio: 16 / 7; max-width: 100%; border: 1px dashed var(--muted); border-radius: 10px; display: grid; place-items: center; text-align: center; padding: 16px; font: 400 13px/1.5 var(--mono); color: var(--muted); }
+.talk figcaption { margin-top: 8px; font-size: calc(13px * var(--ts)); color: var(--muted); }
+.talk .slot { aspect-ratio: 16 / 7; max-width: 100%; border: 1px dashed var(--muted); border-radius: 10px; display: grid; place-items: center; text-align: center; padding: 16px; font: 400 calc(13px * var(--ls))/1.5 var(--mono); color: var(--muted); }
 .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .cards > * { display: flex; flex-direction: column; gap: 4px; padding: 16px; border-radius: 10px; background: var(--tile); border: 1px solid transparent; text-decoration: none; color: var(--fg); min-width: 0; }
 .cards a:hover { border-color: var(--accent); }
 .cards b { font-weight: 600; }
-.cards small { color: var(--muted); font-size: 14px; }
-.cards code { font: 400 12px var(--mono); color: var(--accent); margin-top: 6px; }
+.cards small { color: var(--muted); font-size: calc(14px * var(--ts)); }
+.cards code { font: 400 calc(12px * var(--ls)) var(--mono); color: var(--accent); margin-top: 6px; }
 
 @media (max-width: 860px) {
   .shell { grid-template-columns: minmax(0, 1fr); gap: 0; }
@@ -152,8 +154,8 @@ td a { color: var(--fg); }
 }
 @media (max-width: 560px) {
   .doors { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .who h1 { font-size: 28px; }
-  .bio { font-size: 17px; }
+  .who h1 { font-size: calc(28px * var(--hs)); }
+  .bio { font-size: calc(17px * var(--ts)); }
   .cards { grid-template-columns: minmax(0, 1fr); }
   /* Tools table as stacked rows: name and role, then what it does. */
   #tools thead { display: none; }
@@ -185,7 +187,7 @@ td a { color: var(--fg); }
     <img src="../images/portrait.jpg" alt="Jens Luebeck" width="112" height="140">
     <div><h1>Jens Luebeck</h1><p><span class="nw">Associate Project Scientist</span> · <span class="nw">CSE · UC San Diego</span></p><p class="loc"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Seattle, WA</p></div>
   </div>
-  <p class="bio">I study the structure and consequences of complex cancer genomes. Much of our work focuses on extrachromosomal DNA, and on building methods and open-source software to detect and reconstruct it. I founded and lead <a href="#software">AmpliconSuite</a> and develop computational tooling for the eDyNAmiC Cancer Grand Challenges team.</p>
+  <p class="bio">I study the structure and consequences of complex cancer genomes. My work focuses on extrachromosomal DNA, and on building methods and open-source software to detect and reconstruct it. I founded and lead <a href="#software">AmpliconSuite</a> and develop computational tooling for the eDyNAmiC Cancer Grand Challenges team.</p>
   <nav class="doors" aria-label="Pages">
     <a href="#research"><svg class="ico"><use href="#i-research"/></svg><span><b>Research</b><small>ecDNA, amplicons</small></span></a>
     <a href="#software"><svg class="ico"><use href="#i-software"/></svg><span><b>Software</b><small>15 tools</small></span></a>
@@ -336,7 +338,7 @@ td a { color: var(--fg); }
         <h2>Recent talks</h2>
         <figure class="talk">
           <img src="../images/talk-edynamic.jpg" alt="Jens Luebeck presenting a slide on the AmpliconSuite-pipeline workflow" width="1200" height="750" loading="lazy">
-          <figcaption>Presenting AmpliconSuite-pipeline to the eDyNAmiC team at a Cancer Grand Challenges meeting.</figcaption>
+          <figcaption>Presenting AmpliconSuite-pipeline at a Cancer Grand Challenges meeting.</figcaption>
         </figure>
         <ul class="items dated">
           <li><span>eDyNAmiC Symposium<span class="m">Stanford, CA</span></span><time>Oct 2026</time></li>
@@ -353,7 +355,7 @@ td a { color: var(--fg); }
       <section id="contact" data-title="Contact">
         <h2>Contact</h2>
         <p>I'm open to collaborations and consulting on ecDNA and copy-number analysis, structural variant reconstruction, and research software built for other people to use.</p>
-        <p class="addr" style="font-size:15px">jluebeck@ucsd.edu</p>
+        <p class="addr" style="font-size:calc(15px * var(--ls))">jluebeck@ucsd.edu</p>
       </section>
     </article>
 
