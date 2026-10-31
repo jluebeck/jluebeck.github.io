@@ -28,6 +28,17 @@ Each `<section id="…" data-title="…">` on a page gets a link in the sidebar 
 python3 -I scripts/extract_usage.py path/to/AA_usage.xlsx
 ```
 
+A weekly scheduled Claude task looks for new studies. `scripts/find_citing.py` lists papers on Europe PMC,
+first published since the date in `scripts/usage_reviewed.json`, that cite the AmpliconArchitect or
+AmpliconSuite papers or mention the tools in their full text. The task reads each paper's methods, adds
+studies that ran the tools on 50 or more samples to `_data/usage.json`, records every paper it checked in
+`scripts/usage_reviewed.json`, and opens a pull request for review.
+
+```bash
+python3 -I scripts/find_citing.py                  # new candidates, as JSON
+python3 -I scripts/find_citing.py snippets PMC123  # passages in a paper that mention the tools
+```
+
 ## Adding a project
 
 Put a self-contained page or app in `lab/<name>/` (served at `/lab/<name>/`), or keep it in its own repository with GitHub Pages turned on (served at `jluebeck.github.io/<repo>/`). Then add a card to `_data/projects.yml`.
