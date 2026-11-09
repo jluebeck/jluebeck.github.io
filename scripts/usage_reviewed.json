@@ -90,6 +90,42 @@
    "decision": "not used",
    "samples": null,
    "note": "Checked by Jens: doesn't meet the inclusion criteria."
+  },
+  "10.64898/2026.09.11.751063": {
+   "title": "Inverted logic of ecDNA localization converts nuclear periphery into oncogenic transcription hubs",
+   "citation": "Wang et al., bioRxiv",
+   "date": "2026-09-17",
+   "link": "https://doi.org/10.64898/2026.09.11.751063",
+   "decision": "under 50 samples",
+   "samples": null,
+   "note": "Ran AmpliconArchitect on a few cell lines; TCGA ecDNA status was taken from AmpliconRepository (reused)."
+  },
+  "10.1016/j.molcel.2026.09.032": {
+   "title": "An epigenetic program dictates MYC amplification dynamics that promote transient, extrachromosomal ...",
+   "citation": "Ferman et al., Molecular Cell",
+   "date": "2026-10-02",
+   "link": "https://doi.org/10.1016/j.molcel.2026.09.032",
+   "decision": "under 50 samples",
+   "samples": null,
+   "note": "Ran AmpliconSuite-pipeline on a handful of SETD2-inhibited RPE cell lines and xenografts."
+  },
+  "10.3389/fonc.2026.1980333": {
+   "title": "From ecDNA structure to tumor immune escape and therapeutic resistance",
+   "citation": "Rehman, Frontiers in Oncology",
+   "date": "2026-10-23",
+   "link": "https://doi.org/10.3389/fonc.2026.1980333",
+   "decision": "not used",
+   "samples": null,
+   "note": "Review; describes AmpliconArchitect and AmpliconClassifier as methods."
+  },
+  "10.1101/gr.282262.126": {
+   "title": "Fast and accurate resolution of ecDNA sequence using Cycle-Extractor",
+   "citation": "Faizrahnemoon et al., Genome Research",
+   "date": "2026-11-04",
+   "link": "https://doi.org/10.1101/gr.282262.126",
+   "decision": "unclear",
+   "samples": null,
+   "note": "Methods paper (Bafna lab); full text not reachable here, so the number of real samples run through AmpliconSuite is unknown."
   }
  }
 }
