@@ -125,7 +125,34 @@
    "link": "https://doi.org/10.1101/gr.282262.126",
    "decision": "unclear",
    "samples": null,
-   "note": "Methods paper (Bafna lab); full text not reachable here, so the number of real samples run through AmpliconSuite is unknown."
+   "note": "Methods paper (Bafna lab); full text still not reachable (retried 16 and 23 Nov), so the number of real samples run through AmpliconSuite is unknown."
+  },
+  "10.1038/s41576-026-01020-7": {
+   "title": "Small variant calling in the era of long-read sequencing",
+   "citation": "Zheng et al., Nature Reviews Genetics",
+   "date": "2026-10-20",
+   "link": "https://doi.org/10.1038/s41576-026-01020-7",
+   "decision": "not used",
+   "samples": null,
+   "note": "Review; cites the AmpliconSuite paper."
+  },
+  "10.3390/biology15211974": {
+   "title": "Extrachromosomal DNA as a Driver of Therapeutic Escape in Cancer",
+   "citation": "Kim et al., Biology",
+   "date": "2026-11-02",
+   "link": "https://doi.org/10.3390/biology15211974",
+   "decision": "not used",
+   "samples": null,
+   "note": "Review; lists AmpliconArchitect among ecDNA detection methods."
+  },
+  "10.1016/j.canlet.2026.218973": {
+   "title": "Amplification of ABCB1-harboring extrachromosomal amplicons endows gallbladder cancer with bortezomib resistance",
+   "citation": "Chen et al., Cancer Letters",
+   "date": "2026-11-13",
+   "link": "https://doi.org/10.1016/j.canlet.2026.218973",
+   "decision": "under 50 samples",
+   "samples": null,
+   "note": "WGS of one bortezomib-resistant gallbladder cancer cell line (from the abstract; full text not reachable)."
   }
  }
 }
