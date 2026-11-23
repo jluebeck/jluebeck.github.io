@@ -123,9 +123,9 @@
    "citation": "Faizrahnemoon et al., Genome Research",
    "date": "2026-11-04",
    "link": "https://doi.org/10.1101/gr.282262.126",
-   "decision": "unclear",
+   "decision": "under 50 samples",
    "samples": null,
-   "note": "Methods paper (Bafna lab); full text still not reachable (retried 16 and 23 Nov), so the number of real samples run through AmpliconSuite is unknown."
+   "note": "Methods paper (Bafna lab); fewer than 50 real samples run through AmpliconSuite (confirmed by Jens)."
   },
   "10.1038/s41576-026-01020-7": {
    "title": "Small variant calling in the era of long-read sequencing",
